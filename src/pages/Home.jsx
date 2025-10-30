@@ -1,11 +1,23 @@
-import React from 'react'
+// src/pages/Home.jsx
+
+import React from 'react';
+
+// import Hero from '../components/home/Hero';
+import Hero2 from '../components/home/Hero2';
+import HeroCard from '../components/home/Herocard';
+
 
 const Home = () => {
-  return (
-    <div className='text-red-800'>
-      home
-    </div>
-  )
-}
+  return (<>
+ 
+   
+        <Hero2 />
+        <HeroCard/>
+        
 
-export default Home
+      
+    </>
+  );
+};
+
+export default Home;
