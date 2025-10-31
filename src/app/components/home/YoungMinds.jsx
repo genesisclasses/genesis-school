@@ -120,7 +120,7 @@ const YoungMinds = () => {
     <div
       className="w-full xl:min-h-[800px] bg-cover bg-center relative"
       style={{
-        backgroundImage: "url('/young-minds/young-mind-bg.svg')"
+        backgroundImage: "url('assets/home/young-minds/young-mind-bg.svg')"
       }}
     >
       {/* Internal Responsive Styles */}
@@ -129,7 +129,7 @@ const YoungMinds = () => {
         {/* Left Side: SVG/Image */}
         <div className="shrink-0 flex items-center justify-center min-h-[340px]">
           <img 
-            src="/young-minds/young-minds.png"
+            src="/assets/home/young-minds/young-minds.png"
             alt="Young Minds Grid"
             className="w-[280px] sm:w-[260px] md:w-[400px] lg:w-[300px] xl:w-[450px] 2xl:w-[500px] h-auto"
             draggable={false}

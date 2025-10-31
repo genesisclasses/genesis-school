@@ -61,7 +61,7 @@ const GenesisPath = () => {
       
 
       {/* Cards Timeline using grid */}
-      <div className="relative z-10 w-full h-[510px] grid grid-cols-1 lg:grid-cols-3">
+      <div className="relative z-10 w-full xl:h-[510px] grid grid-cols-1 lg:grid-cols-3">
         {genesisCards.map((card, idx) => (
           <div
             key={idx}

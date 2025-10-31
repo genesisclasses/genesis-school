@@ -4,6 +4,9 @@ import Herocard from "./components/home/Herocard";
 import SecondSection from "./components/home/SecondSection";
 import YoungMinds from "./components/home/YoungMinds";
 import GenesisPath from "./components/home/GenesisPath";
+import OurAlumni from "./components/home/OurAlumni";
+import ProjectDarpan from "./components/home/ProjectDarpan";
+import Snapshots from "./components/home/Snapshots";
 
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
 <SecondSection />
 <YoungMinds />
 <GenesisPath />
+<OurAlumni/>
+<ProjectDarpan/>
+<Snapshots/>
    </>
   );
 }
