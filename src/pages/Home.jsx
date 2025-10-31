@@ -1,5 +1,5 @@
 import React from 'react'
-import Banner from '../components/home/banner'
+
 import SecondSection from '../components/home/SecondSection'
 import YoungMinds from '../components/home/YoungMinds'
 import GenesisPath from '../components/home/GenesisPath'
@@ -8,7 +8,8 @@ import GenesisPath from '../components/home/GenesisPath'
 const Home = () => {
   return (
     <div>
-    <Banner/>
+       <Hero />
+       <Herocard/>
     <SecondSection/>
     <YoungMinds/>
     <GenesisPath/>
@@ -16,4 +17,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
