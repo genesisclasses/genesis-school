@@ -137,10 +137,10 @@ const YoungMinds = () => {
         </div>
         {/* Right Side: Content & Card Grid */}
         <div className="flex-1 2xl:ml-12 flex flex-col justify-center">
-          <h2 className="text-center md:text-left text-[24px] sm:text-[29px] md:text-[35px] lg:text-[40px] 2xl:text-[48px] font-bold leading-tight text-[#002650] mb-6">
+          <h2 className="text-center md:text-left text-[28px] sm:text-[29px] md:text-[35px] lg:text-[40px] 2xl:text-[48px] font-bold leading-tight text-[#002650] mb-6">
             Inspiring Young Minds,<br/>Building Bright Futures
           </h2>
-          <p className="text-center md:text-left  text-gray-600 mb-7 text-[16px] sm:text-[18px] font-[Lato,sans-serif]">
+          <p className="text-center md:text-left  text-gray-600 mb-7 text-[16px] sm:text-[18px] ">
             At Genesis, we go beyond textbooks to create an environment where every child can learn, grow, and lead with confidence.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 md:gap-x-0 lg:gap-x-4 gap-y-4">
