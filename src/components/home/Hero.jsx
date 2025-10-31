@@ -1,46 +1,62 @@
 import React from 'react'
 import bannerImage from '../../assets/banner.png'; 
 import centralLogo from '../../assets/Logo.svg';
-import Banner from '../../assets/banner.png'
+
 const Hero = () => {
   return (
-    <div style={{
-              backgroundImage: `url(${Banner})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              height: '90vh',
-              width: '100%'
-            }} className='mt-[-70px] pt-[220px]'>  {/* Hero Text Content (Centered) */}
-            <div className="relative z-10 text-center text-white p-4 max-w-7xl mx-auto">
-              <img 
-                className="mx-auto h-28 w-auto mb-5 drop-shadow-lg" 
-                src={centralLogo} 
-                alt="Genesis School Crest" 
-              />
-              
-              {/* Kameron: Primary Title */}
-              <h1 className="text-5xl tracking-wide text-[48px] font-extrabold mb-3 leading-tight  ">The Genesis School</h1>
-              
-              {/* Lato: Subtitle (Large Text) */}
-              {/* <h2 className="text-xl font-normal tracking-wider mb-6 italic   "></h2> */}
-              
-              {/* Kameron: Tagline */}
-              <h1 className="text-[48px] tracking-wide font-extrabold mb-5 leading-tight  ">
-              Excellence in Education, Excellence in Life
-              </h1>
-              
-              {/* Lato: Description (Para) */}
-              <p className="max-w-5xl mx-auto text-base mb-8 font-light leading-relaxed px-2   ">
-                From the first step in pre-primary to the final years of senior secondary, we guide every learner with a world-class curriculum, expert faculty, Olympiad and competitive exam training, and holistic support that ensures success in higher education and beyond.
-              </p>
-              
-              {/* Lato: Button Text (Large Text) */}
-              <button 
-                className="bg-amber-500 text-[#001f3f] font-semibold px-8 py-3 rounded-4xl text-lg hover:bg-amber-400 transition duration-200 shadow-xl   "
-              >
-                Book Campus Tour
-              </button>
-            </div></div>
+    <section
+      style={{
+        backgroundImage: `url(${bannerImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '70vh', // Responsive minimum for mobile
+        width: '100%'
+      }}
+      className="
+        relative
+        flex items-center justify-center
+        w-full
+        pt-20 sm:pt-28 lg:pt-40
+        pb-14 sm:pb-24 lg:pb-28
+        min-h-[70vh] lg:h-[90vh]
+        mt-[-70px] lg:mt-[-80px]
+      "
+    >
+      <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto">
+        <img 
+          className="mx-auto h-16 sm:h-20 lg:h-24 w-auto mb-3 sm:mb-4 drop-shadow-lg" 
+          src={centralLogo} 
+          alt="Genesis School Crest" 
+        />
+        
+        {/* Main Title */}
+        <h1 className="text-2xl sm:text-4xl lg:text-4xl tracking-wide font-extrabold mb-2 sm:mb-3 leading-tight">
+          The Genesis School
+        </h1>
+
+        {/* Tagline */}
+        <h2 className="text-lg sm:text-2xl lg:text-2xl tracking-wide font-extrabold mb-3 sm:mb-4 leading-tight">
+          Excellence in Education, Excellence in Life
+        </h2>
+        
+        {/* Description */}
+        <p className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto text-xs sm:text-sm lg:text-base mb-6 sm:mb-7 font-light leading-relaxed px-1">
+          From the first step in pre-primary to the final years of senior secondary, we guide every learner with a world-class curriculum, expert faculty, Olympiad and competitive exam training, and holistic support that ensures success in higher education and beyond.
+        </p>
+        
+        {/* Action Button */}
+        <button 
+          className="
+            bg-amber-500 text-[#001f3f] font-semibold px-5 sm:px-6 py-2 rounded-3xl text-sm sm:text-base 
+            hover:bg-amber-400 transition duration-200 shadow-lg
+          "
+        >
+          Book Campus Tour
+        </button>
+      </div>
+      {/* Bottom Padding for Overlap */}
+      <div className="absolute bottom-0 w-full" style={{ height: '42px' }}></div>
+    </section>
   )
 }
 
