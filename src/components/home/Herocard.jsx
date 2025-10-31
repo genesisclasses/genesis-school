@@ -172,7 +172,13 @@
 //   );
 // };
 
-// export default Herocard;
+
+
+
+
+
+
+// Herocard.jsx (or CardsSection.jsx)
 import React from 'react';
 
 // --- 1. Your Provided Data Structure ---
@@ -180,76 +186,72 @@ import React from 'react';
 // Define the paths for your SVG icons
 const placeholderIcons = {
   // NOTE: Ensure these paths are correct relative to your project structure
-  // In a real React app, you often need to 'import' SVGs instead of using a string path
-  // unless you're serving them from the 'public' folder.
   academics: 'src/assets/1.svg',
   athletics: 'src/assets/2.svg',
   artsCulture: 'src/assets/3.svg',
   campusLife: 'src/assets/4.svg',
+  // ADDED: Path for the arrow SVG
+  arrow: 'src/assets/arrow.svg', 
 };
 
 // Data for the feature cards
 const featureCards = [
   { title: 'Academics', iconPath: placeholderIcons.academics },
-  { title: 'Athletics', titleClass: 'mt-1', iconPath: placeholderIcons.athletics }, // Added mt-1 to align Athletics title better if needed
+  { title: 'Athletics', iconPath: placeholderIcons.athletics },
   { title: 'Arts & Culture', iconPath: placeholderIcons.artsCulture },
   { title: 'Campus Life', iconPath: placeholderIcons.campusLife },
 ];
 
 
-// --- 2. The Reusable Card Component ---
+// --- 2. The Reusable Card Component (Adjusted) ---
 
 const Card = ({ title, iconPath }) => {
   return (
-    // The card styling for shadow, background, and hover effect
+    // Card styling
     <div className="flex flex-col w-full bg-white shadow-xl rounded-lg p-6 transition duration-300 ease-in-out hover:shadow-2xl cursor-pointer">
       
-      {/* Card Title - Exact look from the image: Bold, clean text */}
+      {/* Card Title */}
       <h3 className="text-xl font-bold mb-4 text-gray-900">{title}</h3>
 
-      {/* Illustration/Icon Area */}
-      <div className="flex-grow flex items-center justify-start h-24 mb-4">
-        {/*
-          Using the img tag to load your provided SVG path.
-          The h-full and w-auto ensure the image scales correctly within the container.
-        */}
-        <img 
-          src={iconPath} 
-          alt={`${title} Icon`} 
-          className="h-full w-auto max-h-24"
-        />
-      </div>
+      {/* Main Content Area (Illustration and Arrow) */}
+      {/* flex-col flex-grow ensures this area takes up remaining space and arranges content vertically */}
+     <div className='flex'>
+      <div className="flex flex-col flex-grow justify-end">
+        
+        {/* Illustration/Icon Area */}
+        {/* We use items-end to push the image to the bottom of this container, lowering it. */}
+        
+          <img 
+            src={iconPath} 
+            alt={`${title} Icon`} 
+            className="h-full w-auto max-h-24 flex items-end justify-start h-24 mt-3 mb-0"
+          />
+        </div>
 
-      {/* Arrow (Icon from the original image) */}
-      <div className="flex justify-end pt-2">
-        {/* This creates the right-pointing arrow icon (similar to the image) */}
-        <svg
-          className="w-8 h-8 text-amber-600 transform transition duration-300 ease-in-out hover:translate-x-1"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M13 5l7 7-7 7M5 12h14"
-          ></path>
-        </svg>
+        {/* Arrow at the bottom, aligned with the image's "line" */}
+        {/* Using a bottom margin on the image and top padding on the arrow container 
+           helps align them visually near the baseline. */}
+        <div className="flex justify-end pt-2">
+          {/* Replaced SVG path with img tag for arrow.svg */}
+          <img 
+            src={placeholderIcons.arrow} // Uses the new arrow SVG path
+            alt="Arrow" 
+            // Tailwind classes for size and hover effect
+            className="w-8 h-8 transform transition duration-300 ease-in-out hover:translate-x-1" 
+          />
+        </div>
       </div>
-    </div>
+      </div>
+    
   );
 };
 
 
-// --- 3. Main Exported Component for Home.jsx ---
+// --- 3. Main Exported Component for Home.jsx (Unchanged) ---
 
 const Herocard = () => {
   return (
-    // THE KEY FOR OVERLAP: 
-    // -mt-20 pulls the component up over the Hero.jsx component.
-    // relative z-10 ensures the cards are drawn on top of the hero's background.
+    // THE KEY FOR OVERLAP: -mt-20 and relative z-10
     <section className="relative z-10 -mt-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Responsive grid for the four cards */}
@@ -268,3 +270,100 @@ const Herocard = () => {
 };
 
 export default Herocard;
+// // export default Herocard;
+// import React from 'react';
+
+// // --- 1. Your Provided Data Structure ---
+
+// // Define the paths for your SVG icons
+// const placeholderIcons = {
+//   // NOTE: Ensure these paths are correct relative to your project structure
+//   // In a real React app, you often need to 'import' SVGs instead of using a string path
+//   // unless you're serving them from the 'public' folder.
+//   academics: 'src/assets/1.svg',
+//   athletics: 'src/assets/2.svg',
+//   artsCulture: 'src/assets/3.svg',
+//   campusLife: 'src/assets/4.svg',
+// };
+
+// // Data for the feature cards
+// const featureCards = [
+//   { title: 'Academics', iconPath: placeholderIcons.academics },
+//   { title: 'Athletics', titleClass: 'mt-1', iconPath: placeholderIcons.athletics }, // Added mt-1 to align Athletics title better if needed
+//   { title: 'Arts & Culture', iconPath: placeholderIcons.artsCulture },
+//   { title: 'Campus Life', iconPath: placeholderIcons.campusLife },
+// ];
+
+
+// // --- 2. The Reusable Card Component ---
+
+// const Card = ({ title, iconPath }) => {
+//   return (
+//     // The card styling for shadow, background, and hover effect
+//     <div className="flex flex-col w-full bg-white shadow-xl rounded-lg p-6 transition duration-300 ease-in-out hover:shadow-2xl cursor-pointer">
+      
+//       {/* Card Title - Exact look from the image: Bold, clean text */}
+//       <h3 className="text-xl font-bold mb-4 text-gray-900">{title}</h3>
+
+//       {/* Illustration/Icon Area */}
+//       <div className="flex-grow flex items-center justify-start h-24 mb-4">
+//         {/*
+//           Using the img tag to load your provided SVG path.
+//           The h-full and w-auto ensure the image scales correctly within the container.
+//         */}
+//         <img 
+//           src={iconPath} 
+//           alt={`${title} Icon`} 
+//           className="h-full w-auto max-h-24"
+//         />
+//       </div>
+
+//       {/* Arrow (Icon from the original image) */}
+//       <div className="flex justify-end pt-2">
+//         {/* This creates the right-pointing arrow icon (similar to the image) */}
+//         <svg
+//           className="w-8 h-8 text-amber-600 transform transition duration-300 ease-in-out hover:translate-x-1"
+//           fill="none"
+//           stroke="currentColor"
+//           viewBox="0 0 24 24"
+//           xmlns="http://www.w3.org/2000/svg"
+//         >
+//           <path
+//             strokeLinecap="round"
+//             strokeLinejoin="round"
+//             strokeWidth="2"
+//             d="M13 5l7 7-7 7M5 12h14"
+//           ></path>
+//         </svg>
+//       </div>
+//     </div>
+//   );
+// };
+
+
+// // --- 3. Main Exported Component for Home.jsx ---
+
+// const Herocard = () => {
+//   return (
+//     // THE KEY FOR OVERLAP: 
+//     // -mt-20 pulls the component up over the Hero.jsx component.
+//     // relative z-10 ensures the cards are drawn on top of the hero's background.
+//     <section className="relative z-10 -mt-20 px-4 sm:px-6 lg:px-8">
+//       <div className="max-w-7xl mx-auto">
+//         {/* Responsive grid for the four cards */}
+//         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+//           {featureCards.map((card) => (
+//             <Card
+//               key={card.title}
+//               title={card.title}
+//               iconPath={card.iconPath}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Herocard;
+
