@@ -1,10 +1,4 @@
 import Image from "next/image";
-
-
-
-
-
-
 import GenesisPath from "@/components/home/GenesisPath";
 import Hero from "@/components/home/Hero";
 import Herocard from "@/components/home/Herocard";

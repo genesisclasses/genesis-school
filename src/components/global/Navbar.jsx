@@ -60,10 +60,11 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-7">
             <ul className="flex space-x-7 text-gray-900 text-sm font-medium">
               <li><Link href="/" className="hover:text-amber-400 transition duration-150">Home</Link></li>
-              <li><Link href="/about" className="hover:text-amber-400 transition duration-150">About</Link></li>
               <li><Link href="/academics" className="hover:text-amber-400 transition duration-150">Academics</Link></li>
-              <li><Link href="/darpan" className="hover:text-amber-400 transition duration-150">Project DARPAN</Link></li>
-              <li><Link href="/campus" className="hover:text-amber-400 transition duration-150">Campus Life</Link></li>
+              <li><Link href="/about" className="hover:text-amber-400 transition duration-150">About</Link></li>
+              <li><Link href="/project-darpan" className="hover:text-amber-400 transition duration-150">Project DARPAN</Link></li>
+              <li><Link href="/co-curricular" className="hover:text-amber-400 transition duration-150">Co-Curricular</Link></li>
+              <li><Link href="/blogs" className="hover:text-amber-400 transition duration-150">Blogs</Link></li>
             </ul>
             <div className="flex text-sm font-semibold space-x-0 ml-4">
               <Link
