@@ -18,14 +18,9 @@
   .youngminds-desc {
     font-size: 0.7rem;
   }
-  /* Mobile-specific SVG background setup */
-  .youngminds-container {
-    background-image: url('/assets/home/young-minds/young-mind-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: 95% auto;
-    background-position: right bottom;
-  }
+  
 }
+
 
 @media (max-width: 768px) {
   .glass-card {
@@ -89,3 +84,22 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media (max-width: 768px) {
+  .youngminds-container {
+    background-image: url('/assets/home/young-minds/young-mind-bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 95% 50%;              /* Try 100% auto or contain for bigger/smaller */
+    background-position: 235% 102%;           /* Tweak to move the SVG right/left/up/down */
+  }
+}
+
+@media (max-width: 425px) {
+  .youngminds-container {
+    background-image: url('/assets/home/young-minds/young-mind-bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 95% 56%;              /* Try 100% auto or contain for bigger/smaller */
+    background-position: 235% 125%;           /* Tweak to move the SVG right/left/up/down */
+  }
+}
+
