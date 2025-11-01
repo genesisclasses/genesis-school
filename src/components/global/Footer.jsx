@@ -115,14 +115,14 @@ export default function Footer() {
     <footer className="w-full bg-[#ECECEC]">
       
       {/* Top Section */}
-      <div className="max-w-[1729px] mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row justify-between items-center md:items-start">
+      <div className="max-w-[1729px] md:pl-12 mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row justify-between items-center md:items-start">
         
         {/* Logo */}
         <div className="flex justify-center md:block">
         <Image
                   src="/assets/logo.svg"
                   alt="Genesis School Logo"
-                  width={120}
+                  width={1}
                   height={120}
                   className="w-[120px] h-auto"
                   priority
@@ -130,7 +130,13 @@ export default function Footer() {
         </div>
 
        {/* Right Side Content */}
-<div className="grid grid-cols-1 sm:grid-cols-3 gap-12 mt-10 md:mt-0 w-full md:w-auto text-center md:text-left">
+<div className="
+  grid grid-cols-1 sm:grid-cols-3 gap-12 
+  mt-10 md:mt-0 
+  w-full md:w-auto
+  text-center md:text-left
+  md:max-w-[500px] lg:max-w-[1000px]
+">
   
   {/* Quick Links */}
   <div>
