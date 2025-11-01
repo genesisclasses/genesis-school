@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import bannerImage from '../../../../public/assets/banner.png'
+// import bannerImage from '../../../../public/assets/banner.png'
+import bannerImage from '../../../public/assets/banner.png'
 
 
 const Hero = () => {
@@ -25,7 +26,7 @@ const Hero = () => {
     >
       <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto">
         <Image
-          className="mx-auto h-16 sm:h-20 lg:h-24 w-auto mb-3 sm:mb-4 drop-shadow-lg"
+          className="mx-auto h-16 sm:h-20 lg:h-24 w-auto mb-3 sm:mb-4 xl:h-30 xl:w-30 drop-shadow-lg"
           src="/assets/logo.svg"
           alt="Genesis School Crest"
           width={96}
@@ -35,13 +36,13 @@ const Hero = () => {
 
         {/* Main Title */}
         <h1 className="text-2xl sm:text-4xl lg:text-4xl tracking-wide font-extrabold mb-2 sm:mb-3 leading-tight">
-          The Genesis School
+        Excellence in Education, Excellence in Life
         </h1>
 
-        {/* Tagline */}
+        {/* Tagline
         <h2 className="text-lg sm:text-2xl lg:text-2xl tracking-wide font-extrabold mb-3 sm:mb-4 leading-tight">
           Excellence in Education, Excellence in Life
-        </h2>
+        </h2> */}
 
         {/* Description */}
         <p className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto text-xs sm:text-sm lg:text-base mb-6 sm:mb-7 font-light leading-relaxed px-1">
@@ -51,7 +52,7 @@ const Hero = () => {
         {/* Action Button */}
         <button
           className="
-            bg-amber-500 text-[#001f3f] font-semibold px-5 sm:px-6 py-2 rounded-3xl text-sm sm:text-base
+            bg-white text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4 rounded-4xl text-sm sm:text-base
             hover:bg-amber-400 transition duration-200 shadow-lg
           "
         >
