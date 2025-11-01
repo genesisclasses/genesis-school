@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import Image from "next/image";
-import QuoteIcon from "../../../../public/assets/home/quote-icon.svg"; // adjust path if needed
+import QuoteIcon from "../../../public/assets/home/quote-icon.svg"; // adjust path if needed
 
 const alumniData = [
   {

@@ -1,12 +1,20 @@
 import Image from "next/image";
-import Hero from "./components/home/Hero";
-import Herocard from "./components/home/Herocard";
-import SecondSection from "./components/home/SecondSection";
-import YoungMinds from "./components/home/YoungMinds";
-import GenesisPath from "./components/home/GenesisPath";
-import OurAlumni from "./components/home/OurAlumni";
-import ProjectDarpan from "./components/home/ProjectDarpan";
-import Snapshots from "./components/home/Snapshots";
+
+
+
+
+
+
+import GenesisPath from "@/components/home/GenesisPath";
+import Hero from "@/components/home/Hero";
+import Herocard from "@/components/home/Herocard";
+import OurAlumni from "@/components/home/OurAlumni";
+import ProjectDarpan from "@/components/home/ProjectDarpan";
+import SecondSection from "@/components/home/SecondSection";
+import Snapshots from "@/components/home/Snapshots";
+import YoungMinds from "@/components/home/YoungMinds";
+import AdmissionsSection from "@/components/home/AdmissionsSection";
+import Toppers from "@/components/home/Toppers";
 
 export default function Home() {
   return (
@@ -15,8 +23,8 @@ export default function Home() {
 <Herocard />
 <AdmissionsSection/>
 <Toppers/>
-<SecondSection />
-<YoungMinds />
+<SecondSection/>
+<YoungMinds/>
 <GenesisPath />
 <OurAlumni/>
 <ProjectDarpan/>
