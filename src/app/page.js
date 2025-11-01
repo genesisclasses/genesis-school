@@ -21,11 +21,11 @@ export default function Home() {
    <>
 <Hero />
 <Herocard />
-<AdmissionsSection/>
-<Toppers/>
 <SecondSection/>
 <YoungMinds/>
 <GenesisPath />
+<AdmissionsSection/>
+<Toppers/>
 <OurAlumni/>
 <ProjectDarpan/>
 <Snapshots/>
