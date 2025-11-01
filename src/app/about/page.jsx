@@ -1,10 +1,15 @@
 import React from 'react'
-import Hero from '@/components/home/Hero'
+import Aboutgenesis from '../components/about/Aboutgenesis'
+import Mission from '../components/about/Mission'
+import Directorsection from '../components/about/Directorsection'
 
 const page = () => {
   return (
-    
-    <div><Hero/></div>
+    <div>
+        <Aboutgenesis/>
+        <Mission/>
+        <Directorsection/>
+    </div>
   )
 }
 
