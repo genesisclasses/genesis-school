@@ -9,6 +9,7 @@ import Snapshots from "@/components/home/Snapshots";
 import YoungMinds from "@/components/home/YoungMinds";
 import AdmissionsSection from "@/components/home/AdmissionsSection";
 import Toppers from "@/components/home/Toppers";
+import ContactUs from "@/components/home/ContactUs";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
 <OurAlumni/>
 <ProjectDarpan/>
 <Snapshots/>
+<ContactUs/>
    </>
   );
 }
