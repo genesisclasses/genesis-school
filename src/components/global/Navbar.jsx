@@ -78,7 +78,7 @@ const Navbar = () => {
                 Schedule a Visit
               </Link>
               <Link
-                href="/contactus"
+                href="/contact"
                 className="bg-black text-white px-4 py-2 hover:bg-gray-800 transition-all duration-150 whitespace-nowrap"
                 style={{
                   borderTopRightRadius: '1.25rem',
