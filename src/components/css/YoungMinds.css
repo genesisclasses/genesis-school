@@ -1,0 +1,105 @@
+/* MOBILE ONLY - below 768px styles for cards and background image */
+@media (max-width: 767px) {
+  .glass-card {
+    padding: 12px !important;
+    height: 115px !important;
+    max-width: 142px !important;
+    border-radius: 7px !important;
+    gap: 5px !important;
+  }
+  .youngminds-icon {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  .youngminds-title {
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+  }
+  .youngminds-desc {
+    font-size: 0.7rem;
+  }
+  
+}
+
+
+@media (max-width: 768px) {
+  .glass-card {
+    height: 156px !important;
+    max-width: 100% !important;
+  }
+  .youngminds-icon {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .youngminds-title {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 4px;
+    text-align: left;
+  }
+  .youngminds-desc {
+    font-size: 16px;
+    color: #444;
+    text-align: left;
+  }
+}
+
+@media (max-width: 425px) {
+  .youngminds-title { font-size: 16px; }
+  .youngminds-desc { font-size: 14px; }
+  .glass-card {
+    max-width: 100% !important;
+    height: 170px !important;
+  }
+}
+@media (max-width: 375px) {
+  .youngminds-title { font-size: 15px; }
+  .youngminds-desc { font-size: 13px; }
+  .glass-card {
+    max-width: 100% !important;
+    height: 170px !important;
+  }
+}
+@media (max-width: 360px) {
+  .youngminds-title { font-size: 14px; }
+  .youngminds-desc { font-size: 12px; }
+  .glass-card {
+    max-width: 100% !important;
+    height: 170px !important;
+  }
+}
+@media (max-width: 320px) {
+  .youngminds-title { font-size: 13px; }
+  .youngminds-desc { font-size: 11px; }
+  .glass-card {
+    max-width: 100% !important;
+    height: 170px !important;
+  }
+}
+
+/* Default (ABOVE 768px): Desktop/tablet gets normal desktop SVG and card styles */
+.youngminds-container {
+  background-image: url('/assets/home/young-minds/young-mind-bg.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .youngminds-container {
+    background-image: url('/assets/home/young-minds/young-mind-bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 95% 50%;              /* Try 100% auto or contain for bigger/smaller */
+    background-position: 235% 102%;           /* Tweak to move the SVG right/left/up/down */
+  }
+}
+
+@media (max-width: 425px) {
+  .youngminds-container {
+    background-image: url('/assets/home/young-minds/young-mind-bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 95% 56%;              /* Try 100% auto or contain for bigger/smaller */
+    background-position: 235% 125%;           /* Tweak to move the SVG right/left/up/down */
+  }
+}
+

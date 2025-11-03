@@ -37,7 +37,7 @@ const ProjectDarpan = () => {
             <div className="text-[#F8B535] text-base sm:text-lg font-medium tracking-wide mb-1 sm:mb-0">
               PROJECT
             </div>
-            <h1 className="text-[26px] sm:text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold mb-4 sm:mb-8 leading-tight text-black">
+            <h1 className="text-[28px] sm:text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold mb-4 sm:mb-8 leading-tight text-black">
               DARPAN
             </h1>
             <p className="text-[#777777] text-[15px] sm:text-base xl:w-[837px] mb-2 sm:mb-4 tracking-wide">
@@ -46,7 +46,7 @@ const ProjectDarpan = () => {
             <p className="text-[#777777] text-[15px] sm:text-base xl:w-[837px] mb-4 sm:mb-6 tracking-wide">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempos leu eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
             </p>
-            <Link href="/darpan" passHref legacyBehavior>
+            <Link href="/project-darpan" passHref legacyBehavior>
               <a className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 border border-gray-400 rounded-md text-[#333333] font-medium transition hover:bg-gray-100 justify-center">
                 Know More
                 <Image
