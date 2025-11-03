@@ -1,14 +1,14 @@
 import React from 'react'
-import Aboutgenesis from '../components/about/Aboutgenesis'
-import Mission from '../components/about/Mission'
-import Directorsection from '../components/about/Directorsection'
+// import Aboutgenesis from '@/components'
+// import Mission from '../components/about/Mission'
+// import Directorsection from '../components/about/Directorsection'
 
 const page = () => {
   return (
     <div>
-        <Aboutgenesis/>
+        {/* <Aboutgenesis/>
         <Mission/>
-        <Directorsection/>
+        <Directorsection/> */}
     </div>
   )
 }
