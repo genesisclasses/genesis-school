@@ -10,3 +10,12 @@ body, div, a, p, span, ul, li, h3, h4, h5, h6, button, input, label {
 h1, h2 {
   font-family: 'Kameron', serif;
 }
+
+.rotate-y-180 {
+  transform: rotateY(-180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
