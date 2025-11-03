@@ -65,8 +65,27 @@ const textBox = {
 
 const YoungMinds = () => {
   return (
-    <div className="youngminds-container w-full xl:min-h-[800px] bg-cover bg-center relative">
-      <div className="max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 py-16 flex flex-col lg:flex-row items-stretch gap-12">
+    <div
+  className={
+    `youngminds-container w-full relative
+    bg-no-repeat
+    bg-[url('/assets/home/young-minds/young-mind-bg-mobile.svg')] bg-contain bg-bottom
+    lg:bg-[url('/assets/home/young-minds/young-mind-bg.svg')] lg:bg-cover`
+  }
+>
+  <style jsx>{`
+    @media (min-width: 1024px) {
+      .youngminds-container {
+        background-position: center top 50px !important;
+      }
+    }
+      @media (max-width: 425px) {
+      .youngminds-container {
+        background-position: bottom 10px left 50px !important;
+      }
+    }
+  `}</style>
+      <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 py-16 xl:mb-20 flex flex-col lg:flex-row items-stretch gap-12">
         {/* Left Side: SVG/Image */}
         <div className="shrink-0 flex items-center justify-center min-h-[340px]">
           <img
@@ -89,7 +108,7 @@ const YoungMinds = () => {
             Minds,Building <br />
             Bright Futures
           </h2>
-          <p className="text-left  text-gray-600 mb-7 text-[16px] sm:text-[18px] ">
+          <p className="text-left text-gray-600 mb-7 text-[16px] sm:text-[18px]">
             At Genesis, we go beyond textbooks to create an environment where every child can learn, grow, and lead with confidence.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-4 lg:gap-x-4 gap-y-4">
