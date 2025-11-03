@@ -1,3 +1,5 @@
+'use client'
+
 // pages/about.jsx
 import Image from "next/image";
 
