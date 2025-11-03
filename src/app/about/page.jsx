@@ -1,14 +1,20 @@
+import Aboutgenesis from '@/components/about/Aboutgenesis'
+import DirectorMessage from '@/components/about/Directorsection'
+import AboutSection from '@/components/about/Mission'
+import PillarsOfGenesis from '@/components/about/Pillarsofgenesis'
+
+import Whythegenesis from '@/components/about/Whythegenesis'
 import React from 'react'
-// import Aboutgenesis from '@/components'
-// import Mission from '../components/about/Mission'
-// import Directorsection from '../components/about/Directorsection'
 
 const page = () => {
   return (
     <div>
-        {/* <Aboutgenesis/>
-        <Mission/>
-        <Directorsection/> */}
+      <Aboutgenesis/>
+      <AboutSection/>
+      <DirectorMessage/>
+      <Whythegenesis/>
+      <PillarsOfGenesis/>
+
     </div>
   )
 }
