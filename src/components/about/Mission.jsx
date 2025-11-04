@@ -3,17 +3,17 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="max-w-[1340px] mx-auto px-4 py-16 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+    <section className="max-w-[1340px] mx-auto px-4 py-16 flex flex-col md:flex-row items-center justify-center gap-0 md:gap-0">
 
       {/* Mission Card */}
-      <div className="bg-white shadow-[0_4px_24px_rgba(0,0,0,0.1)] rounded-xl md:rounded-l-xl md:rounded-r-none
-                      h-auto md:h-[500px] w-full md:w-[400px]
+      <div className="bg-[#FFFFFF] shadow-[0_4px_24px_rgba(0,0,0,0.1)] rounded-xl md:rounded-l-xl md:rounded-r-none
+                      h-[370px] md:h-[500px] w-full md:w-[400px]
                       px-6 py-8 md:px-[50px] md:py-[50px]
                       flex flex-col justify-center text-left">
-        <h3 className="text-[20px] md:text-[22px] font-semibold text-[#000000] mb-3 md:mb-4">
+        <h1 className="text-[22px] md:text-[22px] font-semibold text-[#002650] mb-3 md:mb-4">
           Mission
-        </h3>
-        <p className="text-[15px] md:text-[16px] text-[#777777] leading-relaxed">
+        </h1>
+        <p className="text-[16px] md:text-[16px] text-[#777777] leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
           nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -35,14 +35,14 @@ export default function AboutSection() {
       </div>
 
       {/* Vision Card */}
-      <div className="bg-white shadow-[0_4px_24px_rgba(0,0,0,0.1)] rounded-xl md:rounded-r-xl md:rounded-l-none
-                      h-auto md:h-[500px] w-full md:w-[400px]
+      <div className="bg-[#FFFFFF] shadow-[0_4px_24px_rgba(0,0,0,0.1)] rounded-xl md:rounded-r-xl md:rounded-l-none
+                      h-[370px] md:h-[500px] w-full md:w-[400px]
                       px-6 py-8 md:px-[50px] md:py-[50px]
                       flex flex-col justify-center text-left">
-        <h3 className="text-[20px] md:text-[22px] font-semibold text-[#000000] mb-3 md:mb-4">
+        <h1 className="text-[22px] md:text-[22px] font-semibold text-[#002650] mb-3 md:mb-4">
           Vision
-        </h3>
-        <p className="text-[15px] md:text-[16px] text-[#777777] leading-relaxed">
+        </h1>
+        <p className="text-[16px] md:text-[16px] text-[#777777] leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
           nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

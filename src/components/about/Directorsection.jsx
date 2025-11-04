@@ -30,7 +30,7 @@ export default function DirectorMessage() {
               height={64}
               className="mb-2 rounded-lg"
             />
-            <h2 className="text-[18px] font-bold text-[#0d1b50] leading-relaxed">
+            <h2 className="text-[24px] md:text-[34px] mb-3 font-bold text-[#0d1b50] leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
@@ -55,7 +55,7 @@ export default function DirectorMessage() {
 
           {/* Content paragraphs */}
           <div>
-            <p className="text-[18px] text-gray-700 leading-relaxed mb-0">
+            <p className="text-[18px] text-gray-700 leading-relaxed mb-3">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
               pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu
               aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
@@ -73,9 +73,9 @@ export default function DirectorMessage() {
           </div>
 
           {/* Name and Designation */}
-          <div className="mt-2 lg:mt-6">
-            <h3 className="text-[20px] font-bold text-gray-900 mb-1">Seema Sharma</h3>
-            <p className="text-[18px] font-medium text-gray-700">
+          <div className="mt-3 lg:mt-6">
+            <h3 className="md:text-[20px] text-[18px]  font-extrabold text-gray-900 mb-1">Seema Sharma</h3>
+            <p className="md:text-[18px] text-[16px] font-extrabold text-gray-700">
               (Director) 36+ Years of Delivering Excellence
             </p>
           </div>

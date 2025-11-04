@@ -124,14 +124,13 @@ export default function Whythegenesis() {
 
   return (
     <section className="w-full flex flex-col items-center bg-white py-8">
-      <div className="max-w-[1340px] w-full px-6">
+      <div className="max-w-[1340px] w-full px-3">
         <div className="flex items-center justify-between mb-10">
-          <h2 className="text-3xl font-bold">
-            <span className="text-blue-900">Why </span>
-            <span className="text-yellow-600">The Genesis School?</span>
-          </h2>
+          <h1 className="text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold ">
+            <span className="text-[#002650]">Why </span>
+            <span className="text-[#F8B535]">The Genesis School?</span>
+          </h1>
         </div>
-
         <div
           ref={scrollRef}
           tabIndex={0}
@@ -161,7 +160,7 @@ export default function Whythegenesis() {
               className={`
                 flex-shrink-0
                 snap-center
-                w-[310px]
+                w-[280px]
                 max-w-xs h-[280px]
                 md:max-w-sm
                 rounded-xl
@@ -178,7 +177,7 @@ export default function Whythegenesis() {
               `}
             >
               <div className="absolute left-6 -op-4">
-                <div className="rounded-full bg-white shadow-md border flex items-center justify-center w-10 h-10 font-semibold text-gray-800">
+                <div className="rounded-full bg-white shadow-md  flex items-center justify-center w-10 h-10 font-semibold text-gray-800">
                   {card.number}
                 </div>
               </div>
@@ -189,11 +188,6 @@ export default function Whythegenesis() {
             </div>
           ))}
         </div>
-
-
-
-
-
       </div>
     </section>
   );

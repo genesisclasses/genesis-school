@@ -1,14 +1,13 @@
 'use client'
 
-// pages/about.jsx
 import Image from "next/image";
 
 export default function Aboutgenesis() {
   return (
-    <section className="max-w-[1340px] mx-auto px-4 py-3 md:py-16 flex flex-col lg:flex-row items-center lg:items-start gap-8">
+    <section className="max-w-[1340px] mx-auto px-4 py-3 md:py-16 flex flex-col-reverse lg:flex-row items-center lg:items-start gap-8">
       {/* Text Section */}
       <div className="lg:w-[60%]">
-        <h2 className="text-[48px] font-semibold mb-4 text-[#000000]">About Genesis</h2>
+        <h2 className="text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold mb-4 text-[#000000]">About Genesis</h2>
         <p className="text-[#222222] leading-relaxed font-lato font-medium text-[18px]">
           Genesis International School is a premier educational institution in Hyderabad,
           established in 2008, offering Nursery to Class 10 under the CBSE curriculum.
@@ -22,14 +21,14 @@ export default function Aboutgenesis() {
         </p>
       </div>
 
-      {/* Single Image Collage Section */}
-      <div className="lg:w-[40%] ">
+      {/* Image Section */}
+      <div className="lg:w-[40%]">
         <Image
-          src="/assets/about/aboutpagesgenesis.png" // <-- Correct path
+          src="/assets/about/aboutpagesgenesis.png"
           alt="Genesis International School"
           width={400}
           height={400}
-          className="rounded-lg  object-cover lg:w-[428px] lg:h-[370px]  h-auto"
+          className="rounded-lg object-cover lg:w-[428px] lg:h-[370px] h-auto"
         />
       </div>
     </section>
