@@ -221,7 +221,7 @@ export default function AdminDashboard() {
 
           {/* View Blog Card */}
           <Link
-            href="/blog"
+            href="/blogs"
             className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden block"
           >
             <div className="p-8">
