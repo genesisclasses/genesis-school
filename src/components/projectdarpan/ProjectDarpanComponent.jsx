@@ -93,7 +93,7 @@ const ProjectDarpanComponent = ({ noBg = false }) => {
           {/* Top (mobile/tablet) / Left (desktop): Project image/collage */}
           <div className="w-full h-auto lg:w-[530px] lg:h-[520px] xl:w-[550px] xl:h-[540px] p-0 sm:p-4 flex items-center justify-center mb-6 lg:mb-0">
             <Image
-              src="/assets/home/project-darpan.svg"
+              src="/assets/home/darpan/project-darpan.svg"
               alt="Project Darpan"
               width={420}
               height={320}
@@ -119,7 +119,7 @@ const ProjectDarpanComponent = ({ noBg = false }) => {
               <a className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 border border-gray-400 rounded-md text-[#333333] font-medium transition hover:bg-gray-100 justify-center">
                 Know More
                 <Image
-                  src="/assets/home/know-more-btn.svg"
+                  src="/assets/home/darpan/know-more-btn.svg"
                   alt="External Link Icon"
                   width={22}
                   height={22}
