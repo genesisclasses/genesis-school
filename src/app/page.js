@@ -3,7 +3,7 @@ import GenesisPath from "@/components/home/GenesisPath";
 import Hero from "@/components/home/Hero";
 import Herocard from "@/components/home/Herocard";
 import OurAlumni from "@/components/home/OurAlumni";
-import ProjectDarpan from "@/components/home/ProjectDarpan";
+import ProjectDarpan from "@/components/projectdarpan/ProjectDarpanComponent";
 import SecondSection from "@/components/home/SecondSection";
 import Snapshots from "@/components/home/Snapshots";
 import YoungMinds from "@/components/home/YoungMinds";

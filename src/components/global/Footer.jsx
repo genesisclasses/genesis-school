@@ -160,7 +160,7 @@ export default function Footer() {
         Genesis School, Sector 45,<br />Karnal, Haryana – 122003
       </li>
 
-      <li className="flex md:justify-start justify-center gap-2 items-center">
+      <li className="flex md:justify-start  justify-center gap-2 items-center">
         <Phone size={16} /> +91 98765 43210
       </li>
 

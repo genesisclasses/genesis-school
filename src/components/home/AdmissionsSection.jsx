@@ -38,7 +38,7 @@ const AdmissionsSection = () => (
       </h1>
 
       {/* Features row */}
-      <div className="flex flex-row items-center justify-center gap-8 mb-6 text-sm sm:text-base">
+      <div className="flex flex-row items-center justify-center md:gap-8 gap-2 mb-6 text-sm sm:text-base">
         <div className="flex items-center gap-2 opacity-80">
           <Users size={16} className="text-white" /> Limited seats per grade
         </div>
@@ -50,10 +50,10 @@ const AdmissionsSection = () => (
 
       {/* Buttons row */}
       <div className="flex flex-row items-center justify-center gap-4">
-        <button className="bg-amber-400 text-[#09254a] font-bold rounded-full px-6 py-3 text-base shadow-md hover:bg-amber-300 transition">
+        <button className="bg-amber-400 text-[#09254a] font-bold rounded-full md:px-6 md:py-3 py-2 px-2 text-base shadow-md hover:bg-amber-300 transition">
           Apply Now
         </button>
-        <button className="bg-white text-[#09254a] font-bold rounded-full px-6 py-3 text-base shadow-md hover:bg-gray-100 border border-gray-200 transition">
+        <button className="bg-white text-[#09254a] font-bold rounded-full  md:px-6 md:py-3 py-2 px-2 text-base shadow-md hover:bg-gray-100 border border-gray-200 transition">
           Take Scholarship Test
         </button>
       </div>
