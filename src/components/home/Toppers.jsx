@@ -28,7 +28,7 @@ const Toppers = () => (
   <section className="w-full bg-white py-16 sm:py-20 lg:py-28 flex items-center justify-center">
     <div className="flex flex-col items-center justify-center w-full">
       <h2 className="text-[48px] font-bold text-center mb-12 mt-[-4px]">Toppers</h2>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
         {toppers.map((topper, idx) => (
           <div
             key={idx}
