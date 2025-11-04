@@ -8,7 +8,7 @@ const campusImages = [
 ];
 
 const GridItem = ({ img, large }) => (
-  <div className="group relative w-full min-w-0 h-[414px] md:h-[280px] xl:h-[414px] rounded-lg overflow-hidden bg-gray-200">
+  <div className="group relative w-full min-w-0 h-[340px] md:h-[280px] xl:h-[414px] rounded-lg overflow-hidden bg-gray-200">
     <img
       src={img.src}
       alt={img.alt}
