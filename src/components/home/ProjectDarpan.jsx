@@ -24,7 +24,7 @@ const ProjectDarpan = () => {
           {/* Top (mobile/tablet) / Left (desktop): Project image/collage */}
           <div className="w-full h-auto lg:w-[530px] lg:h-[520px] xl:w-[550px] xl:h-[540px] p-0 sm:p-4 flex items-center justify-center mb-6 lg:mb-0">
             <Image
-              src="/assets/home/project-darpan.svg"
+              src="/assets/home/darpan/project-darpan.svg"
               alt="Project Darpan"
               width={420}
               height={320}
@@ -46,18 +46,20 @@ const ProjectDarpan = () => {
             <p className="text-[#777777] text-[15px] sm:text-base xl:w-[837px] mb-4 sm:mb-6 tracking-wide">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempos leu eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
             </p>
-            {/* <Link href="/project-darpan">
-              <a className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 border border-gray-400 rounded-md text-[#333333] font-medium transition hover:bg-gray-100 justify-center">
-                Know More
-                <Image
-                  src="/assets/home/know-more-btn.svg"
-                  alt="External Link Icon"
-                  width={22}
-                  height={22}
-                  className="ml-2"
-                />
-              </a>
-            </Link> */}
+            {/* Updated Link component */}
+            <Link
+              href="/project-darpan"
+              className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 border border-gray-400 rounded-md text-[#333333] font-medium transition hover:bg-gray-100 justify-center"
+            >
+              Know More
+              <Image
+                src="/assets/home/darpan/know-more-btn.svg"
+                alt="External Link Icon"
+                width={22}
+                height={22}
+                className="ml-2"
+              />
+            </Link>
           </div>
         </div>
       </div>

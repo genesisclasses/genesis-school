@@ -1,0 +1,155 @@
+/* GenesisPathResponsive.module.css */
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+.heading h2 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #F8B535;
+  font-weight: 700;
+}
+
+.heading p {
+  margin-top: 0.5rem;
+  color: #777777;
+  font-size: 16px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 431px) {
+  .cards {
+    flex-direction: row;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+  max-width: 90vw;
+  margin-top: -3.5rem;
+}
+
+@media (min-width: 431px) {
+  .card {
+    min-width: 320px;
+    max-width: 269px;
+    scroll-snap-align: start;
+    flex: none;
+    padding: 1.25rem;
+  }
+}
+
+.imagesRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.numberImg {
+  margin-top: 6rem; /* mt-24 */
+  margin-right: 0px; /* md:mr-5 = 20px */
+}
+
+.cardContent {
+  margin-top: -5rem;
+}
+
+.cardContent h3 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #777777;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 16px;
+  color: #777777;
+}
+
+/* Margin-right adjustments for specific exact widths */
+
+
+
+
+@media (width: 430px) {
+  .numberImg {
+    margin-right: 120px !important;
+  }
+}
+
+@media (width: 425px) {
+  .numberImg {
+    margin-right: 110px !important;
+  }
+}
+
+@media (width: 414px) {
+  .numberImg {
+    margin-right: 100px !important;
+  }
+}
+
+@media (width: 412px) {
+  .numberImg {
+    margin-right: 100px !important;
+  }
+}
+
+@media (width: 390px) {
+  .numberImg {
+    margin-right: 80px !important;
+  }
+}
+
+@media (width: 375px) {
+  .numberImg {
+    margin-right: 60px !important;
+  }
+}
+
+@media (width: 360px) {
+  .numberImg {
+    margin-right: 60px !important;
+  }
+}
+
+@media (width: 344px) {
+  .numberImg {
+    margin-right: 30px !important;
+  }
+}
+
+@media (width: 320px) {
+  .numberImg {
+    margin-right: 11px !important;
+  }
+}
