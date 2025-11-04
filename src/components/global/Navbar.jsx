@@ -44,7 +44,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex items-center h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo: always visible */}
           <div className="flex items-center mr-auto">
-            <Link href="/" className="flex-shrink-0">
+            <Link href="/" className="shrink-0">
               <Image
                 className="h-12 w-auto"
                 src='/assets/logo.svg'

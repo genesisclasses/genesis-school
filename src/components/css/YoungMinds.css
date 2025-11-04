@@ -57,7 +57,7 @@
   .youngminds-desc { font-size: 13px; }
   .glass-card {
     max-width: 100% !important;
-    height: 170px !important;
+    height: 140px !important;
   }
 }
 @media (max-width: 360px) {
@@ -65,7 +65,7 @@
   .youngminds-desc { font-size: 12px; }
   .glass-card {
     max-width: 100% !important;
-    height: 170px !important;
+    height: 140px !important;
   }
 }
 @media (max-width: 320px) {
@@ -73,33 +73,29 @@
   .youngminds-desc { font-size: 11px; }
   .glass-card {
     max-width: 100% !important;
-    height: 170px !important;
+    height: 140px !important;
   }
 }
 
-/* Default (ABOVE 768px): Desktop/tablet gets normal desktop SVG and card styles */
-.youngminds-container {
-  background-image: url('/assets/home/young-minds/young-mind-bg.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-@media (max-width: 768px) {
+@media (min-width: 700px) and (max-width: 1023px) {
   .youngminds-container {
-    background-image: url('/assets/home/young-minds/young-mind-bg-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: 95% 50%;              /* Try 100% auto or contain for bigger/smaller */
-    background-position: 235% 102%;           /* Tweak to move the SVG right/left/up/down */
+    background-size: 100% 740px !important; /* decrease the vertical bg height */
+    /* You can further tweak the value 340px as needed for your design */
+    background-repeat: no-repeat !important;
+   background-position: 70px bottom !important; 
   }
 }
 
-@media (max-width: 425px) {
+@media (min-width: 1950px) {
   .youngminds-container {
-    background-image: url('/assets/home/young-minds/young-mind-bg-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: 95% 56%;              /* Try 100% auto or contain for bigger/smaller */
-    background-position: 235% 125%;           /* Tweak to move the SVG right/left/up/down */
+    /* Set background-size with fixed width and height (e.g. 980px wide, 800px tall) */
+    background-size: 1718px 900px !important;   /* adjust these values as needed for your SVG aspect ratio */
+    background-repeat: no-repeat !important;
+    background-position: left bottom !important; /* Or center, or top, as your design needs */
   }
 }
+
+
+
 
