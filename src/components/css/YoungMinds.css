@@ -78,4 +78,24 @@
 }
 
 
+@media (min-width: 700px) and (max-width: 1023px) {
+  .youngminds-container {
+    background-size: 100% 740px !important; /* decrease the vertical bg height */
+    /* You can further tweak the value 340px as needed for your design */
+    background-repeat: no-repeat !important;
+   background-position: 70px bottom !important; 
+  }
+}
+
+@media (min-width: 1950px) {
+  .youngminds-container {
+    /* Set background-size with fixed width and height (e.g. 980px wide, 800px tall) */
+    background-size: 1718px 900px !important;   /* adjust these values as needed for your SVG aspect ratio */
+    background-repeat: no-repeat !important;
+    background-position: left bottom !important; /* Or center, or top, as your design needs */
+  }
+}
+
+
+
 

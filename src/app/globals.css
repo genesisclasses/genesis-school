@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
-/* Default font for everything except h1 and h2 */
-body, div, a, p,  ul, li, h3, h4, h5, h6, button, input, label {
+/* Default font except h1/h2 */
+body, div, a, p, ul, li, h3, h4, h5, h6, button, input, label {
   font-family: 'Lato', sans-serif;
 }
 
-h1, h2 ,span {
+/* Headings and span */
+h1, h2, span {
   font-family: 'Kameron', serif;
 }
+
+/* Hide and style scrollbars */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+}

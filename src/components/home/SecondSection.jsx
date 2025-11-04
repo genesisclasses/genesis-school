@@ -29,7 +29,7 @@ const statsData = [
 
 const SecondSection = () => {
   return (
-    <div className="w-full flex justify-center py-10 md:border-b md:border-t border-[#DDDDDD]">
+    <div className="w-full flex justify-center py-10 lg:border-b lg:border-t border-[#DDDDDD]">
       <div className="max-w-[1340px] w-full px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-x-10 lg:gap-x-10 xl:gap-x-20 gap-y-10">
           {statsData.map((item, idx) => (
