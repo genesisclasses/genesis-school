@@ -2,35 +2,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function PillarsOfGenesis() {
-  const pillars = [
-    { number: "01", title: "Enhancement of life skills" },
-    { number: "02", title: "Creative self-expression" },
-    { number: "03", title: "E-Projects and audio–visual interactions" },
-    { number: "04", title: "Soft Skills and Effective Communication" },
-  ];
+const pillars = [
+  { number: "01", title: "Enhancement of life skills" },
+  { number: "02", title: "Creative self-expression" },
+  { number: "03", title: "E-Projects and audio–visual interactions" },
+  { number: "04", title: "Soft Skills and Effective Communication" },
+];
 
+export default function PillarsOfGenesis() {
   return (
     <section
       id="pillars"
-      className="max-w-[1340px] mx-auto px-6 py-20 flex flex-col items-center justify-center gap-10 overflow-hidden"
+      className="max-w-[1340px] mx-auto px-4 py-8 md:py-16 flex flex-col items-center justify-center gap-10 overflow-hidden"
     >
-      {/* Heading — always top on all screens */}
+      {/* MOBILE+MD+LG — Always on Top, Centered */}
       <motion.div
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.4 }}
-        className="text-center w-full"
+        viewport={{ once: true, amount: 0.3 }}
+        className="block xl:hidden text-center w-full"
       >
-        <h2 className="text-[32px] md:text-[36px] lg:text-[36px] xl:text-[40px] font-semibold leading-snug mb-12">
+        <h2 className="text-[32px] md:text-[42px] lg:text-[42px] xl:text-[48px] font-semibold leading-snug mb-12">
           <span className="text-[#002650]">Pillars of</span>
           <br />
           <span className="text-[#F8B535]">Genesis</span>
         </h2>
       </motion.div>
 
-      {/* MOBILE ONLY — Animated vertical stack */}
+      {/* MOBILE ONLY */}
       <div className="w-full sm:flex sm:flex-col justify-center items-center md:hidden block">
         {pillars.map((pillar, index) => (
           <motion.div
@@ -68,8 +68,8 @@ export default function PillarsOfGenesis() {
         ))}
       </div>
 
-      {/* iPad layout — 2x2 overlapping circles */}
-      <div className="hidden md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-10 lg:hidden  justify-center items-center">
+      {/* iPad MD — 2x2 grid */}
+      <div className="hidden md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-10 lg:grid lg:grid-cols-2 lg:gap-x-4 lg:gap-y-10 xl:hidden justify-center items-center">
         {pillars.map((pillar, index) => (
           <motion.div
             key={index}
@@ -95,9 +95,23 @@ export default function PillarsOfGenesis() {
           </motion.div>
         ))}
       </div>
-
-      {/* LG layout — keep heading like iPad/mobile (top center) */}
-      <div className="hidden lg:grid  lg:grid-cols-2  xl:grid xl:grid-cols-4  xl:px- mx-auto   justify-center items-center">
+      {/* XL — Heading left, pillars center */}
+      <div className="hidden xl:grid xl:grid-cols-5 xl:gap-x-0 xl:items-center xl:w-full xl:mx-auto">
+        {/* Heading in Left column, center vertically */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="flex flex-col justify-center items-start xl:h-full xl:col-span-1 xl:pr-6"
+        >
+          <h2 className="text-[40px] font-semibold leading-snug">
+            <span className="text-[#002650]">Pillars of</span>
+            <br />
+            <span className="text-[#F8B535]">Genesis</span>
+          </h2>
+        </motion.div>
+        {/* Pillars in columns 2-5, centered */}
         {pillars.map((pillar, index) => (
           <motion.div
             key={index}
@@ -105,15 +119,15 @@ export default function PillarsOfGenesis() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             transition={{
               duration: 0.8,
-              delay: 0.3 + index * 0.3,
+              delay: 0.3 + index * 0.2,
               ease: "easeOut",
             }}
             viewport={{ once: true, amount: 0.3 }}
             className="relative flex flex-col items-center xl:-mx-3 justify-center w-[280px] h-[280px] rounded-full border border-black bg-white/20 text-center shadow-md"
-            style={{
-              marginTop: index >= 2 ? "-40px" : "0",
-            }}
-          >
+            style={{
+              marginTop: index >= 2 ? "0" : "0",
+            }}
+          >
             <span className="text-[18px] text-[#333333] mb-1 font-bold">
               {pillar.number}
             </span>
@@ -123,9 +137,6 @@ export default function PillarsOfGenesis() {
           </motion.div>
         ))}
       </div>
-
-
-
     </section>
   );
 }

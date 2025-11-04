@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function DirectorMessage() {
   return (
-    <section className="max-w-[1340px] mx-auto px-4 py-10 lg:py-20">
+    <section className="max-w-[1340px] mx-auto px-4 py-8 md:py-16 lg:py-20">
       <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-16">
         {/* LEFT SIDE - IMAGE */}
         <div className="relative w-full lg:w-[45%]">
