@@ -58,7 +58,7 @@ export default function SchoolLife() {
         </h2>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-6">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-2  md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
         {cards.map((card) => {
           const flipped = card.text && hovered === card.id;
 
