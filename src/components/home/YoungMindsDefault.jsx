@@ -1,15 +1,9 @@
 'use client';
 import React from "react";
+
 import "@/components/css/YoungMinds.css";
 
-const glassBoxes = [
-  { icon: '🏆', title: 'Strong Academics', description: 'BSE curriculum with expert faculty and proven results.' },
-  { icon: '📘', title: 'Strong Academics', description: 'BSE curriculum with expert faculty and proven results.' },
-  { icon: '🎨', title: 'Holistic Growth', description: 'Sports, clubs, arts, and cultural activities.' },
-  { icon: '🌎', title: 'Future Ready Career', description: 'Counseling, global tie-ups, and college placements.' },
-  { icon: '🛡️', title: 'Safe & Nurturing Campus', description: 'Secure, supportive, and inclusive environment.' },
-  { icon: '🏆', title: 'Strong Academics', description: 'BSE curriculum with expert faculty and proven results.' },
-];
+import { glassBoxes } from '@/data/young-mind';
 
 const cardStyle = {
   boxSizing: 'border-box',
@@ -44,27 +38,35 @@ const YoungMindsDefault = () => (
   className={
     `youngminds-container w-full relative
     bg-no-repeat
-    bg-[url('/assets/home/young-minds/young-mind-bg-mobile.svg')] bg-contain bg-bottom
+    bg-[url('/assets/home/young-minds/young-mind-bg-480.svg')] bg-contain bg-bottom
     lg:bg-[url('/assets/home/young-minds/young-mind-bg.svg')] lg:bg-cover`
   }
 >
   <style jsx>{`
-    @media (min-width: 1024px) {
+  .youngminds-container {
+        background-position: center top -50px !important;
+      }
+      @media (max-width: 1440px) {
       .youngminds-container {
-        background-position: center top 50px !important;
+        background-position: center top 0px !important;
+      }
+    }
+    @media (max-width: 1024px) {
+      .youngminds-container {
+        background-position: center top 0px !important;
       }
     }
       @media (max-width: 425px) {
       .youngminds-container {
-        background-position: bottom -12px left 50px !important;
+        background-position: bottom -20px left 0px !important;
       }
     }
   `}</style>
-    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 py-10 lg:py-16 xl:mb-20 flex flex-col lg:flex-row items-stretch gap-12">
+    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 py-14 lg:py-16 xl:mb-20 flex flex-col lg:flex-row items-stretch gap-12">
       {/* Image block */}
       <div className="shrink-0 flex items-center justify-center min-h-[340px]">
         <img
-          src="/assets/home/young-minds/young-minds.png"
+          src="/assets/home/young-minds/young-mind.svg"
           alt="Young Minds Grid"
           className="w-[343px] sm:w-[260px] md:w-[400px] lg:w-[300px] xl:w-[450px] 2xl:w-[500px] h-auto"
           draggable={false}
@@ -95,8 +97,8 @@ const YoungMindsDefault = () => (
             >
               <div style={textBox}>
                 <span className="youngminds-icon">{box.icon}</span>
-                <div className="youngminds-title">{box.title}</div>
-                <div className="youngminds-desc">{box.description}</div>
+                <div className="youngminds-title text-[#333333] text-[18px]">{box.title}</div>
+                <div className="youngminds-desc text-[#777777] text-[14px]">{box.description}</div>
               </div>
             </div>
           ))}

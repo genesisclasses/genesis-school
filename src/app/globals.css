@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 /* Default font except h1/h2 */
-body, div, a, p, ul, li, h3, h4, h5, h6, button, input, label {
+body, div,  p, ul, li, h3, h4, h5, h6, button, input, label {
   font-family: 'Lato', sans-serif;
 }
 body {
   overflow-x: hidden;
 }
 /* Headings and span */
-h1, h2, span {
+h1, h2, span,a {
   font-family: 'Kameron', serif;
 }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -54,4 +54,7 @@ h1, h2, span {
 }
 .no-scrollbar {
   -webkit-overflow-scrolling: touch;
+}
+html {
+  scroll-behavior: smooth;
 }

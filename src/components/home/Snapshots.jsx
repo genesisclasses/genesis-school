@@ -51,13 +51,13 @@ const Snapshots = () => {
   };
 
   return (
-    <section className="pt-8 pb-8 box-border w-full bg-white">
+    <section className="pt-10 pb-10 box-border w-full bg-white">
       <div className="snapshots-container pl-6 xl:pl-0">
         <div className="w-full mb-5">
-          <h2 className="text-[28px] sm:text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold text-[#1b365d] m-0">
+          <h2 className="text-[32px] sm:text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold text-[#1b365d] m-0">
             Snapshots from Campus
           </h2>
-          <p className="text-gray-700 text-[18px] mt-2 mb-0">
+          <p className="text-gray-700 text-[16px] md:text-[18px] mt-2 mb-0">
             A glimpse into the activities, experiences, and community that make learning at Genesis dynamic and memorable.
           </p>
         </div>

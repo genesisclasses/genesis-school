@@ -44,6 +44,15 @@
   }
 }
 
+@media (max-width: 430px) {
+  .youngminds-title { font-size: 16px; }
+  .youngminds-desc { font-size: 14px; }
+  .glass-card {
+    max-width: 100% !important;
+    height: 170px !important;
+  }
+}
+
 @media (max-width: 425px) {
   .youngminds-title { font-size: 16px; }
   .youngminds-desc { font-size: 14px; }

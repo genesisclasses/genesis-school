@@ -51,9 +51,11 @@
   margin-top: -3.5rem;
 }
 
+
+
 @media (min-width: 431px) {
   .card {
-    min-width: 320px;
+    min-width: 310px;
     max-width: 269px;
     scroll-snap-align: start;
     flex: none;
@@ -69,7 +71,7 @@
 }
 
 .numberImg {
-  margin-top: 6rem; /* mt-24 */
+  margin-top: 8rem; /* mt-24 */
   margin-right: 0px; /* md:mr-5 = 20px */
 }
 
