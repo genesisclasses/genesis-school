@@ -68,11 +68,32 @@ const alumniData = [
 
 const OurAlumni = () => (
   <div className="w-full flex flex-col items-center py-10 bg-white px-4 md:px-10">
+    <style jsx>{`
+      @media (max-width: 480px) {
+        .fixed-mobile-height {
+          height: 540px !important;
+          min-height: 540px !important;
+          max-height: 540px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+          overflow: hidden;
+        }
+        .fixed-mobile-content-center {
+          flex: 1 0 auto;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+        }
+      }
+    `}</style>
     <div className="max-w-[1240px] w-full flex flex-col items-center">
       <h2 className="text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold mb-2 text-center text-[#002650]">
         What Our Alumni Say
       </h2>
-      <p className="mb-10 text-[#4A5565] text-center">
+      <p className="mb-10 text-[#4A5565] text-center text-[16px] md:text-[18px]">
         Hear from our students who've gone on to achieve great things
       </p>
       <div className="relative w-full max-w-[1072px] h-auto sm:h-[404px] flex items-center justify-center">
@@ -90,20 +111,20 @@ const OurAlumni = () => (
         >
           {alumniData.map((alum, i) => (
             <SwiperSlide key={i}>
-              <div className="bg-white rounded-2xl px-10 py-10 md:h-[404px] border border-[#DDDDDD] flex flex-col items-center relative w-full xl:max-w-[1072px] mx-auto">
+              <div className="bg-white rounded-2xl px-10 py-10 md:h-[404px] border border-[#DDDDDD] flex flex-col items-center relative w-full xl:max-w-[1072px] mx-auto fixed-mobile-height">
                 {/* Top Left Quote */}
                 <div className="absolute top-6 left-6">
                   <Image src={QuoteIcon} alt="Quote Icon" width={64} height={64} />
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center fixed-mobile-content-center">
                   <img
                     src={alum.img}
                     alt={alum.name}
                     className="w-24 h-24 rounded-full object-cover mb-4"
                   />
                   <div className="font-medium text-[#333333] text-[16px] lg:text-lg">{alum.name}</div>
-                  <div className="text-[#777777] text-[14px] lg:text-[16px] mb-4">{alum.batch}</div>
-                  <p className="italic xl:mt-5 xl:w-3xl text-[16px] lg:text-[20px] leading-relaxed text-center text-[#555555]">
+                  <div className="text-[#777777] text-[14px] lg:text-[16px] mb-2 md:mb-4">{alum.batch}</div>
+                  <p className="italic xl:mt-5 xl:w-3xl text-[16px] lg:text-[20px] leading-relaxed tracking-wide text-center text-[#555555]">
                     "{alum.description}"
                   </p>
                 </div>

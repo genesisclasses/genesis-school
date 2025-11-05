@@ -5,7 +5,7 @@ import Herocard from "@/components/home/Herocard";
 import OurAlumni from "@/components/home/OurAlumni";
 import SecondSection from "@/components/home/SecondSection";
 import Snapshots from "@/components/home/Snapshots";
-// import YoungMinds from "@/components/home/YoungMinds";
+import YoungMinds from "@/components/home/YoungMinds";
 import AdmissionsSection from "@/components/home/AdmissionsSection";
 import Toppers from "@/components/home/Toppers";
 import ContactUs from "@/components/home/ContactUs";
@@ -18,7 +18,7 @@ export default function Home() {
 <Hero />
 <Herocard />
 <SecondSection/>
-{/* <YoungMinds/> */}
+<YoungMinds/>
 <GenesisPath />
 <AdmissionsSection/>
 <Toppers/>
@@ -26,7 +26,7 @@ export default function Home() {
 <ProjectDarpan/>
 <Snapshots/>
 <SchoolLife/>
-<ContactUs/>
+{/* <ContactUs/> */}
    </>
   );
 }

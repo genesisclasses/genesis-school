@@ -1,5 +1,4 @@
 import React from 'react'
-
 import ProjectDarpanComponent from '@/components/projectdarpan/ProjectDarpanComponent'
 import DarpanStorySection from '@/components/projectdarpan/DarpanStorySection'
 import DarpanCards from '@/components/projectdarpan/DarpanCards'
@@ -7,7 +6,7 @@ import DarpanCards from '@/components/projectdarpan/DarpanCards'
 const ProjectDarpan = () => {
   return (
     <div
-      className="p-6 rounded-xl"
+      className=""
       style={{
         background: `linear-gradient(
           180deg,

@@ -2,14 +2,7 @@
 import React from "react";
 import "@/components/css/YoungMinds.css";
 
-const glassBoxes = [
-  { icon: '🏆', title: 'Strong Academics', description: 'BSE curriculum with expert faculty and proven results.' },
-  { icon: '📘', title: 'Strong Academics', description: 'BSE curriculum with expert faculty and proven results.' },
-  { icon: '🎨', title: 'Holistic Growth', description: 'Sports, clubs, arts, and cultural activities.' },
-  { icon: '🌎', title: 'Future Ready Career', description: 'Counseling, global tie-ups, and college placements.' },
-  { icon: '🛡️', title: 'Safe & Nurturing Campus', description: 'Secure, supportive, and inclusive environment.' },
-  { icon: '🏆', title: 'Strong Academics', description: 'BSE curriculum with expert faculty and proven results.' },
-];
+import { glassBoxes } from '@/data/young-mind';
 
 const cardStyle = {
   boxSizing: 'border-box',
@@ -40,14 +33,14 @@ const textBox = {
 };
 
 const YoungMinds768 = () => (
-  <div className="youngminds-container w-full relative bg-no-repeat bg-[url('/assets/home/young-minds/young-mind-bg-mobile.svg')] bg-contain bg-bottom">
-    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 py-16 xl:mb-20 flex flex-col gap-7">
+  <div className="youngminds-container w-full relative bg-no-repeat bg-[url('/assets/home/young-minds/young-mind-bg-768.svg')] bg-contain bg-bottom">
+    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] h-[880px] mx-auto px-4 md:px-6 py-16 xl:mb-20 flex flex-col gap-7">
       {/* Top: image + heading side by side */}
       <div className="flex flex-row gap-8 items-center">
         {/* Image */}
         <div className="shrink-0 flex items-center justify-center min-h-[340px]">
           <img
-            src="/assets/home/young-minds/young-minds.png"
+            src="/assets/home/young-minds/young-mind.svg"
             alt="Young Minds Grid"
             className="w-[280px] h-auto"
             draggable={false}
@@ -65,7 +58,7 @@ const YoungMinds768 = () => (
         </div>
       </div>
       {/* Grid, full width below */}
-      <div className="w-full mt-6">
+      <div className="w-full mt-0">
         <div className="grid grid-cols-3 gap-x-4 gap-y-4">
           {glassBoxes.map((box, i) => (
             <div
