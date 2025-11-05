@@ -3,6 +3,7 @@ import { Users, ListChecks } from 'lucide-react'
 
 const AdmissionsSection = () => (
   <section className="relative w-full h-[465px] flex items-center justify-center overflow-hidden mb-[30px]">
+    
     {/* Background image */}
     <Image
       src="/assets/banner.png"
@@ -11,49 +12,83 @@ const AdmissionsSection = () => (
       priority
       style={{ objectFit: 'cover', objectPosition: 'center', zIndex: 0 }}
     />
-    {/* Overlay for blue tint */}
+
+    {/* Blue overlay */}
     <div className="absolute inset-0 bg-[#09254a] opacity-70 z-10 pointer-events-none" />
 
     {/* Content */}
-    <div className="relative z-20 flex flex-col items-center justify-center w-full text-white text-center pt-12 sm:pt-16 px-2 sm:px-6">
-      {/* Yellow icon and label */}
-      <div className="flex gap-1 items-center mb-3">
-        <span className="text-amber-400 text-lg mb-1">
-         {/* Admission edu.svg icon */}
-        <Image
-          src="/assets/edu.svg" // If your actual path is /assets/edu.svg, use that path instead
-          alt="Admissions Open Icon"
-          width={28}
-          height={28}
-          className="mb-1"
-          priority
-        />
+    <div className="relative z-20 flex flex-col items-center md:items-center justify-center w-full text-white text-center md:text-center pt-9 sm:pt-1 px-0 sm:px-1">
+
+      {/* Label */}
+      <div className="flex gap-1 items-center mb-2 md:mb-3">
+        <Image src="/assets/edu.svg" alt="Admissions" width={26} height={26} className="mb-1" />
+        <span className="text-amber-400 text-[10px] sm:text-[11px] font-semibold tracking-wide uppercase">
+          ADMISSIONS OPEN
         </span>
-        <span className="text-amber-400 text-2xs font-semibold tracking-wide uppercase">ADMISSIONS OPEN</span>
       </div>
 
-      {/* Main Title */}
-      <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl mb-4 drop-shadow-lg">
-        Admissions for 2025-26 are now open!
+      {/* Title */}
+      <h1 className="
+        font-bold 
+        text-[22px] sm:text-2xl md:text-4xl 
+        leading-tight
+        mb-3 md:mb-4
+      ">
+        Admissions for <br className="md:hidden" />
+        2025-26 are now open!
       </h1>
 
-      {/* Features row */}
-      <div className="flex flex-row items-center justify-center md:gap-8 gap-2 mb-6 text-sm sm:text-base">
-        <div className="flex items-center gap-2 opacity-80">
-          <Users size={16} className="text-white" /> Limited seats per grade
+      {/* Features */}
+      <div className="
+        flex flex-col md:flex-row 
+        items-center justify-center
+        gap-1 md:gap-8 
+        mb-5 md:mb-6
+        text-[13px] sm:text-sm md:text-base
+        opacity-90
+      ">
+        <div className="flex items-center gap-2">
+          <Users size={16} /> Limited seats per grade
         </div>
-        <span className="text-white/50 text-xl">|</span>
-        <div className="flex items-center gap-2 opacity-80">
-          <ListChecks size={16} className="text-white" /> Easy 3-step process
+        
+        <span className="hidden md:block text-white/50 text-xl">|</span>
+
+        <div className="flex items-center gap-2">
+          <ListChecks size={16} /> Easy 3-step process
         </div>
       </div>
 
-      {/* Buttons row */}
-      <div className="flex flex-row items-center justify-center gap-4">
-        <button className="bg-amber-400 text-[#09254a] font-bold rounded-full md:px-6 md:py-3 py-2 px-2 text-base shadow-md hover:bg-amber-300 transition">
+      {/* Buttons */}
+      <div className="
+        flex flex-col md:flex-row 
+        gap-3 md:gap-4 
+        w-full md:w-auto 
+        px-5 md:px-0
+      ">
+        <button className="
+          bg-amber-400 text-[#09254a] font-bold
+          rounded-full
+          w-full md:w-auto
+          py-2.5 md:py-3
+          md:px-5
+          shadow-md hover:bg-amber-300
+          text-sm md:text-base
+          transition
+        ">
           Apply Now
         </button>
-        <button className="bg-white text-[#09254a] font-bold rounded-full  md:px-6 md:py-3 py-2 px-2 text-base shadow-md hover:bg-gray-100 border border-gray-200 transition">
+
+        <button className="
+          bg-white text-[#09254a] font-bold
+          rounded-full 
+          w-full md:w-auto
+          py-2.5 md:py-3
+          md:px-5
+          shadow-md hover:bg-gray-100 
+          border border-gray-200
+          text-sm md:text-base
+          transition
+        ">
           Take Scholarship Test
         </button>
       </div>
