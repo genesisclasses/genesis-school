@@ -6,7 +6,7 @@ import DarpanCards from '@/components/projectdarpan/DarpanCards'
 const ProjectDarpan = () => {
   return (
     <div
-      className="p-6 rounded-xl"
+      className=""
       style={{
         background: `linear-gradient(
           180deg,
