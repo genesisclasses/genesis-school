@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Hero from '@/components/home/Hero'
-import Toppers from '@/components/home/Toppers'
 import ProjectDarpanComponent from '@/components/projectdarpan/ProjectDarpanComponent'
 import DarpanStorySection from '@/components/projectdarpan/DarpanStorySection'
 import DarpanCards from '@/components/projectdarpan/DarpanCards'
