@@ -27,7 +27,7 @@ const cardMarginTops = [
 
 const GenesisPath = () => {
   return (
-    <div className="relative w-full overflow-x-hidden py-10 xl:min-h-[620px] px-4 lg:px-2">
+    <div className="relative w-full overflow-x-hidden py-10 xl:min-h-[620px] px-4 lg:px-2" id="academics-section">
       {/* Heading */}
       <div className="relative z-10 lg:pt-[-80px] xl:pt-12 2xl:pt-28 3xl:pt-0 xl:pl-32 2xl:pl-[205px] w-[328px] sm:w-[458px] md:w-[500px] lg:w-[500px] xl:w-[650px] 2xl:w-[750px]">
       <h2 className="text-[28px] sm:text-[32px] md:text-[35px] xl:text-[45px] 2xl:text-[48px] font-semibold leading-tight">
@@ -58,7 +58,7 @@ const GenesisPath = () => {
         `}
       </style>
 
-      
+
 
       {/* Cards Timeline using grid */}
       <div className="relative z-10 w-full xl:h-[510px] grid grid-cols-1 lg:grid-cols-3">

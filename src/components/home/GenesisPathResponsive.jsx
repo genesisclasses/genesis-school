@@ -28,7 +28,7 @@ const genesisCards = [
 const circleIcon = '/assets/home/genesis-path/circle-icon.svg';
 
 const GenesisPathResponsive = () => (
-  <div className={styles.container}>
+  <div className={styles.container} id='/#academics-section'>
     <div className={styles.heading}>
       <h2>
         The Genesis Path to <br />
