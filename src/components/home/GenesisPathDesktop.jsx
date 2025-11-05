@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const genesisCards = [
   {
     title: 'Dhruvshilla',
@@ -27,25 +26,23 @@ const cardMarginTops = [
 
 const GenesisPath = () => {
   return (
-    <div className="relative w-full overflow-x-hidden py-10 xl:min-h-[620px] px-4 lg:px-2">
+    <div className="genesis-path-section relative w-full overflow-x-hidden py-10 xl:min-h-[620px] px-4 lg:px-2">
       {/* Heading */}
       <div className="relative z-10 lg:pt-[-80px] xl:pt-12 2xl:pt-28 3xl:pt-0 xl:pl-32 2xl:pl-[205px] w-[328px] sm:w-[458px] md:w-[500px] lg:w-[500px] xl:w-[650px] 2xl:w-[750px]">
-      <h2 className="text-[28px] sm:text-[32px] md:text-[35px] xl:text-[45px] 2xl:text-[48px] font-semibold leading-tight">
-        The Genesis Path to <span className="text-[#EE9C00] font-bold">Academic Excellence</span>
-      </h2>
-
+        <h2 className="text-[28px] sm:text-[32px] md:text-[35px] xl:text-[45px] 2xl:text-[48px] font-semibold leading-tight">
+          The Genesis Path to <span className="text-[#EE9C00] font-bold">Academic Excellence</span>
+        </h2>
         <p className="mt-2 text-gray-600 text-[16px] sm:text-[18px]">
           Where every stage shapes character, wisdom, and purpose.
         </p>
       </div>
       {/* SVG Background */}
       <img
-  src= '/assets/home/genesis-path/genesis-path.svg'
-  alt="Genesis Path"
-  className="hidden lg:block w-full h-auto absolute top-0 left-0 z-0 pointer-events-none"
-  style={{ objectFit: 'contain', marginTop: '10px' }}
-/>
-
+        src='/assets/home/genesis-path/genesis-path.svg'
+        alt="Genesis Path"
+        className="hidden lg:block w-full h-auto absolute top-0 left-0 z-0 pointer-events-none"
+        style={{ objectFit: 'contain', marginTop: '10px' }}
+      />
 
       {/* Responsive X-Large Screen Styles */}
       <style>
@@ -58,10 +55,27 @@ const GenesisPath = () => {
         `}
       </style>
 
-      
+      {/* Responsive min-height for ultrawide screens */}
+      <style jsx>{`
+        @media (min-width: 1950px) {
+          .genesis-path-section {
+            min-height: 820px !important;
+          }
+        }
+        @media (min-width: 2200px) {
+          .genesis-path-section {
+            min-height: 920px !important;
+          }
+        }
+        @media (min-width: 2500px) {
+          .genesis-path-section {
+            min-height: 1050px !important;
+          }
+        }
+      `}</style>
 
       {/* Cards Timeline using grid */}
-      <div className="relative z-10 w-full xl:h-[510px] grid grid-cols-1 lg:grid-cols-3">
+      <div className="relative z-10 w-full xl:h-[480px] grid grid-cols-1 lg:grid-cols-3">
         {genesisCards.map((card, idx) => (
           <div
             key={idx}

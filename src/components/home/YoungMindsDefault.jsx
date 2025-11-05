@@ -60,7 +60,7 @@ const YoungMindsDefault = () => (
       }
     }
   `}</style>
-    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 py-10 lg:py-16 xl:mb-20 flex flex-col lg:flex-row items-stretch gap-12">
+    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 py-10 lg:py-16 xl:mb-10 flex flex-col lg:flex-row items-stretch gap-12">
       {/* Image block */}
       <div className="shrink-0 flex items-center justify-center min-h-[340px]">
         <img
