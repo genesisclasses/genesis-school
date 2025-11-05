@@ -17,11 +17,11 @@ const featureCards = [
 
 const Card = ({ title, iconPath }) => (
   <div className="
-    flex flex-col bg-white shadow-xl rounded-lg p-6
+    flex flex-col bg-white shadow-xl p-6
     transition duration-300 hover:shadow-2xl cursor-pointer
-    h-52 sm:h-56 lg:h-59
+    h-52 sm:h-56 lg:h-58 xl:h-59
     relative z-10
-    min-w-[240px] sm:min-w-[260px]
+    min-w-[240px] xl:min-w-[240px]  sm:min-w-[260px]
   ">
     <h1 className="xl:text-3xl lg:text-xl font-bold mb-1 text-gray-900">{title}</h1>
     <div className="flex-1 min-h-[3px]"></div>

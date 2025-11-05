@@ -39,9 +39,9 @@ const ContactUs = () => (
           <Image
             src="/assets/home/contactform.svg"
             alt="Contact Illustration"
-            width={700}
+            width={780}
             height={700}
-            className="w-[260px] h-[230px] sm:w-[350px] sm:h-[300px] lg:w-[400px] lg:h-[350px]"
+            className="w-[280px] h-[230px] sm:w-[350px] sm:h-[300px] lg:w-[400px] lg:h-[350px]"
             priority
           />
         </div>
