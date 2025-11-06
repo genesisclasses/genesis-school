@@ -392,7 +392,7 @@ const Navbar = () => {
                 </li>
                 <li className="w-full h-12 mb-7 mt-[15px]">
                   <Link
-                    href="/visit"
+                    href="/contact"
                     className="px-[30px] w-full text-black font-semibold py-[20px] rounded-full text-center"
                     style={{ backgroundColor: '#F8B535' }}
                     onClick={() => setMobileOpen(false)}

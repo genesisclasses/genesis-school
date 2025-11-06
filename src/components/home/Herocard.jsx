@@ -71,7 +71,7 @@ const Herocard = () => (
       "
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-5 sm:gap-6">
           {featureCards.map(card => (
             <Card key={card.title} title={card.title} iconPath={card.iconPath} />
           ))}
