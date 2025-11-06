@@ -5,7 +5,7 @@ const toppers = [
   {
     name: "NAME OF THE PERSON",
     batch: "Genesis School Class of 2018",
-    img: "/assets/home/topper.png"
+    img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401259/Arsh_Gandhi_tnfewi.webp"
   },
   {
     name: "NAME OF THE PERSON",
@@ -32,14 +32,14 @@ const Toppers = () => (
         {toppers.map((topper, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center "
           >
             <Image
               src={topper.img}
               alt={topper.name}
               width={334}
               height={432}
-              className="object-cover border border-gray-200"
+              className="object-cover border  border-gray-200"
               priority
             />
             <p className="text-[#ffc700] text-[16px] font-bold mt-6 mb-1 uppercase text-center">{topper.name}</p>
