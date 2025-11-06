@@ -4,6 +4,8 @@ import AboutSection from '@/components/about/Mission'
 import PillarsOfGenesis from '@/components/about/Pillarsofgenesis'
 
 import Whythegenesis from '@/components/about/Whythegenesis'
+import AdmissionsSection from '@/components/home/AdmissionsSection'
+import SchoolLife from '@/components/home/SchoolLife'
 import React from 'react'
 
 const page = () => {
@@ -14,7 +16,8 @@ const page = () => {
       <DirectorMessage/>
       <Whythegenesis/>
       <PillarsOfGenesis/>
-
+      <SchoolLife/>
+      <AdmissionsSection/>
     </div>
   )
 }

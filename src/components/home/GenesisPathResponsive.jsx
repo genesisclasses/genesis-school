@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '@/components/css/GenesisPathResponsive.module.css';
 import { genesisCards } from '@/data/genesis-path';
 
-const circleIcon = '/assets/home/genesis-path/circle-icon.svg';
+const circleIcon = 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762404091/circle-icon_z2ao0u.svg';
 
 // Margin configs per card for responsive design
 const numberImgMargins = [
@@ -33,11 +33,13 @@ const GenesisPathResponsive = () => (
                 alt={`number-${idx + 1}`}
                 width={74}
                 height={74}
+                priority 
                 className={styles.numberImg}
                 style={{
                   marginTop: numberImgMargins[idx].marginTop,
                   marginRight: numberImgMargins[idx].marginRight,
                 }}
+                
               />
             )}
           </div>

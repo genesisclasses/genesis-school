@@ -38,8 +38,8 @@ const YoungMindsDefault = () => (
   className={
     `youngminds-container w-full relative
     bg-no-repeat
-    bg-[url('/assets/home/young-minds/young-mind-bg-480.svg')] bg-contain bg-bottom
-    lg:bg-[url('/assets/home/young-minds/young-mind-bg.svg')] lg:bg-cover`
+    bg-[url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762405585/young-mind-bg-480_hepmhp.svg')] bg-contain bg-bottom
+    lg:bg-[url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762405585/young-mind-bg_jqlaka.svg')] lg:bg-cover`
   }
 >
   <style jsx>{`
@@ -66,10 +66,11 @@ const YoungMindsDefault = () => (
       {/* Image block */}
       <div className="shrink-0 flex items-center justify-center min-h-[340px]">
         <img
-          src="/assets/home/young-minds/young-mind.svg"
+          src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762401431/home-about_rdk9ld.webp"
           alt="Young Minds Grid"
           className="w-[343px] sm:w-[260px] md:w-[400px] lg:w-[300px] xl:w-[450px] 2xl:w-[500px] h-auto"
           draggable={false}
+          loading="eager" 
         />
       </div>
       {/* Content + Grid block */}

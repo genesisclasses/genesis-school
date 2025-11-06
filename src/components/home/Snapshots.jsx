@@ -3,18 +3,14 @@ import React, { useEffect, useState, useRef } from 'react';
 import Marquee from 'react-fast-marquee';
 
 const snapshotsData = [
-  { imageUrl: '/assets/home/snapshots/snap-1.png', alt: 'Art activity' },
-  { imageUrl: '/assets/home/snapshots/snap-2.png', alt: 'Student playing guitar' },
-  { imageUrl: '/assets/home/snapshots/snap-1.png', alt: 'Painting class' },
-  { imageUrl: '/assets/home/snapshots/snap-2.png', alt: 'Group event' },
-  { imageUrl: '/assets/home/snapshots/snap-1.png', alt: 'Workshop' },
-  { imageUrl: '/assets/home/snapshots/snap-2.png', alt: 'Science fair' },
-  { imageUrl: '/assets/home/snapshots/snap-1.png', alt: 'Music lesson' },
-  { imageUrl: '/assets/home/snapshots/snap-2.png', alt: 'Drama performance' },
-  { imageUrl: '/assets/home/snapshots/snap-1.png', alt: 'Tech project' },
-  { imageUrl: '/assets/home/snapshots/snap-2.png', alt: 'Sports activity' },
-  { imageUrl: '/assets/home/snapshots/snap-1.png', alt: 'Literature club' },
-  { imageUrl: '/assets/home/snapshots/snap-2.png', alt: 'Classroom fun' }
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401368/ey4rterrbopejqwvlw1v_v4psoc.webp', alt: 'Art activity' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401365/kagwelcco00jnxbwsrr7_jsw6un.webp', alt: 'Student playing guitar' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401365/jgfsc78ab2zx6flgcopz_hojk5e.webp', alt: 'Painting class' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401370/ryaa0kwf5kwda0cow7ap_zmazpy.webp', alt: 'Group event' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401365/tsiqub1k0aan3382lnha_giw7sc.webp', alt: 'Workshop' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401407/fr3hppfio0sn3q4trkbj_zunnjc.webp', alt: 'Science fair' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401364/ixtpr3likojugbelgkog_pw5uw4.webp', alt: 'Music lesson' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762403876/jm7fyfmhdi22zjohuix6_m64cvt.webp', alt: 'Drama performance' }
 ];
 
 const Snapshots = () => {
