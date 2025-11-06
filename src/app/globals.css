@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Default font except h1/h2 */
-body, div,  p, ul, li, h3, h4, h5, h6, button, input, label {
+body, div,  p, ul, li, h3, h4, h5, h6, button, input, label,Link {
   font-family: 'Lato', sans-serif;
 }
 body {

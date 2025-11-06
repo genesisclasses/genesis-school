@@ -26,11 +26,11 @@ const Hero = () => {
     >
       <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto">
         <Image
-          className="mx-auto h-16 sm:h-20 lg:h-24 w-auto mb-3 sm:mb-4 xl:h-30 xl:w-30 drop-shadow-lg"
+          className="mx-auto h-16 sm:h-20 lg:h-55 w-auto mb-3 sm:mb-4 xl:h-45 xl:w-120 drop-shadow-lg"
           src="/assets/logo.svg"
           alt="Genesis School Crest"
           width={96}
-          height={96}
+          height={126}
           priority
         />
 

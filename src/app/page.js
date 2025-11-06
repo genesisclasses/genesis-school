@@ -26,7 +26,7 @@ export default function Home() {
 <ProjectDarpan/>
 <Snapshots/>
 <SchoolLife/>
-{/* <ContactUs/> */}
+<ContactUs/>
    </>
   );
 }

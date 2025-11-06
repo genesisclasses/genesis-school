@@ -79,7 +79,7 @@ export default function DarpanCards() {
       {/* Mobile Description (always visible on mobile) */}
       <p 
         className="
-          text-[25px] lg:text-[25px] xl:text-[28px] font-medium
+          text-[25px] lg:text-[40px] xl:text-[40px] font-medium
           text-[#0C2738] lg:text-black 
           block lg:hidden leading-snug mt-[-58px]
         "
@@ -90,16 +90,17 @@ export default function DarpanCards() {
       {/* Desktop description popup */}
       <p 
         className="
-          hidden lg:block absolute bottom-0 left-0 w-full text-black
-          text-[16px] xl:text-[16px] font-medium p-6 
-          opacity-0 translate-y-6 
+          hidden lg:block absolute bottom-0 left-0  text-black
+          text-[25px] xl:text-[25px] font-medium p-6 
+          opacity-0 translate-x-6 
           group-hover:opacity-100 
-          group-hover:translate-y-0 
-          transition-all duration-100
+          group-hover:translate-x-0 
+          transition-all duration-50
+          w-[390px]
         "
       >
-        <span className="font-bold block mb-1">{item.title}</span>
-        <span className="opacity-90">{item.desc}</span>
+        <span className="w-[600px] font-bold block mb-1">{item.title}</span>
+        <span className=" w-[600px] opacity-90">{item.desc}</span>
       </p>
     </div>
   ))}
