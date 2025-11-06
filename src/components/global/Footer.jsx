@@ -26,9 +26,8 @@ export default function Footer() {
             className="w-[120px] h-auto"
             priority
           />
-          <p className="lg:w-[350px] xl:w-[450px] mt-3">From the first step in pre-primary to the final years of senior secondary, Genesis School guides each pupil with a world-class curriculum, expert faculty, focused enrichment and exam-readiness programmes, and pastoral support that secures success in higher education beyond.          </p>
+          <p className="lg:w-[350px] xl:w-[450px] mt-3">From the first step in pre-primary to the final years of senior secondary, Genesis School guides each pupil with a world-class curriculum, expert faculty, focused enrichment and exam-readiness programmes, and pastoral support that secures success in higher education beyond.</p>
         </div>
-
 
         {/* Right Side Content */}
         <div className="
@@ -45,33 +44,33 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-sm md:text-base">Quick Links</h4>
             <ul className="space-y-2 text-sm text-center md:text-left">
               <li>
-                <Link href="/" passHref legacyBehavior>
-                 Home
+                <Link href="/">
+                  <p>Home</p>
                 </Link>
               </li>
               <li>
-                <Link href="/academics" passHref legacyBehavior>
-                 Academics
+                <Link href="/academics">
+                  <p>Academics</p>
                 </Link>
               </li>
               <li>
-                <Link href="/about" passHref legacyBehavior>
-                  About
+                <Link href="/about">
+                  <p>About</p>
                 </Link>
               </li>
               <li>
-                <Link href="/project-darpan" passHref legacyBehavior>
-                  Project DARPAN
+                <Link href="/project-darpan">
+                  <p>Project DARPAN</p>
                 </Link>
               </li>
               <li>
-                <Link href="/co-curricular" passHref legacyBehavior>
-                  Co-Curricular
+                <Link href="/co-curricular">
+                  <p>Co-Curricular</p>
                 </Link>
               </li>
               <li>
-                <Link href="/blogs" passHref legacyBehavior>
-                 Blogs
+                <Link href="/blogs">
+                  <p>Blogs</p>
                 </Link>
               </li>
             </ul>
@@ -83,16 +82,18 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-center md:text-left">
               <li className="flex md:justify-start justify-center gap-2 items-start">
                 <MapPin size={16} />
-                Genesis School, Sector 45,<br />Karnal, Haryana – 122003
+                <p>Genesis School, Sector 45,<br />Karnal, Haryana – 122003</p>
               </li>
               <li className="flex md:justify-start  justify-center gap-2 items-center">
                 <Phone size={16} />
-                <a href="tel:+919876543210" className="hover:underline">+91 98765 43210</a>
+                <a href="tel:+919876543210" className="hover:underline">
+                  <p>+91 98765 43210</p>
+                </a>
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <Mail size={16} />
                 <a href="mailto:info@genesisschool.in" className="hover:underline">
-                  info@genesisschool.in
+                  <p>info@genesisschool.in</p>
                 </a>
               </li>
             </ul>
@@ -104,17 +105,17 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-                  <Instagram size={16} /> Instagram
+                  <Instagram size={16} /> <p>Instagram</p>
                 </a>
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-                  <Facebook size={16} /> Facebook
+                  <Facebook size={16} /> <p>Facebook</p>
                 </a>
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-                  <Youtube size={16} /> YouTube
+                  <Youtube size={16} /> <p>YouTube</p>
                 </a>
               </li>
             </ul>
