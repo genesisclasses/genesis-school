@@ -3,24 +3,24 @@ import Image from 'next/image';
 
 const toppers = [
   {
-    name: "NAME OF THE PERSON",
+    name: "Arsh Gandhi",
     batch: "Genesis School Class of 2018",
-    img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401259/Arsh_Gandhi_tnfewi.webp"
+    img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762409771/Frame_63_2_fvyqvx.png"
   },
   {
-    name: "NAME OF THE PERSON",
+    name: "Priyam Gupta",
     batch: "Genesis School Class of 2018",
-    img: "/assets/home/topper.png"
+    img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762424447/flkvv0z3vjxjvcusbh2t_zxepuz.webp"
   },
   {
-    name: "NAME OF THE PERSON",
+    name: "Ayush Arora",
     batch: "Genesis School Class of 2018",
-    img: "/assets/home/topper.png"
+    img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762424667/t3_pgmzeb.png"
   },
   {
-    name: "NAME OF THE PERSON",
+    name: "Rhythm Gupta",
     batch: "Genesis School Class of 2018",
-    img: "/assets/home/topper.png"
+    img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762424728/t4_es8vcc.png"
   }
 ];
 
@@ -39,7 +39,7 @@ const Toppers = () => (
               alt={topper.name}
               width={334}
               height={432}
-              className="object-cover border  border-gray-200"
+              className="object-cover border h-[360px] border-gray-200"
               priority
             />
             <p className="text-[#ffc700] text-[16px] font-bold mt-6 mb-1 uppercase text-center">{topper.name}</p>

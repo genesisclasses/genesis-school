@@ -4,43 +4,43 @@ import { useState, useEffect } from "react";
 
 export default function SchoolLife() {
   const cards = [
-    { id: 1, img: "/assets/cardsimage/Rectangle 15.png" },
-    { id: 2, img: "/assets/cardsimage/Rectangle 22.png" },
-    { id: 3, img: "/assets/cardsimage/Rectangle 15.png" },
+    { id: 1, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/kgrefuq5resjhmk8n77q_emawtn.webp" },
+    { id: 2, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401156/ovpnth6zb8aa7sp0ts1a_jplclm.webp" },
+    { id: 3, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uw2ij1pbxyelcq2gwo9a_iqernb.webp" },
     {
       id: 4,
       img: "/assets/cardsimage/Rectangle 15.png",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...",
+      text: "Our spacious, digitally equipped classrooms and state-of-the-art labs provide a comfortable and enriching academic environment.",
     },
-    { id: 5, img: "/assets/cardsimage/Rectangle 15.png" },
-    { id: 6, img: "/assets/cardsimage/Rectangle 22.png" },
+    { id: 5, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762425943/5c_qs640h.webp" },
+    { id: 6, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762425749/b9tq2ehdqjs28ngbji0t_roorcq.webp" },
     {
       id: 7,
       img: "/assets/cardsimage/Rectangle 15.png",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...",
+      text: "The Genesis campus is thoughtfully designed to inspire curiosity, collaboration, and confidence in every learner.",
     },
-    { id: 8, img: "/assets/cardsimage/Rectangle 15.png" },
-    { id: 9, img: "/assets/cardsimage/Rectangle 22.png" },
-    { id: 10, img: "/assets/cardsimage/Rectangle 15.png" },
+    { id: 8, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762426628/lltrnolwzot84zdsu6qh_a9hqcy.webp" },
+    { id: 9, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401155/vmv02rli8su7dh9g0eqt_tt0t1t.webp" },
+    { id: 10, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401155/ubqb5nl7bovgzvkhd6mj_xp7gfa.webp" },
     {
       id: 11,
       img: "/assets/cardsimage/Rectangle 15.png",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...",
+      text: "Smart classrooms and advanced laboratories create an engaging environment that promotes practical understanding daily.",
     },
-    { id: 12, img: "/assets/cardsimage/Rectangle 15.png" },
-    { id: 13, img: "/assets/cardsimage/Rectangle 15.png" },
-    { id: 14, img: "/assets/cardsimage/Rectangle 15.png" },
+    { id: 12, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/lnfdo4sr47pmy5bqbas0_mbgnlu.webp" },
+    { id: 13, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/ugtjzql1rli0glzhyhrd_dxusyc.webp" },
+    { id: 14, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762427203/14c_lnq8os.webp" },
     {
       id: 15,
       img: "/assets/cardsimage/Rectangle 15.png",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...",
+      text: "Expansive playgrounds encourage teamwork, physical fitness, and the spirit of healthy competition among young minds.",
     },
-    { id: 16, img: "/assets/cardsimage/Rectangle 15.png" },
-    { id: 17, img: "/assets/cardsimage/Rectangle 15.png" },
+    { id: 16, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401156/vu1cr1jyc5g6wxceo2aj_mrgbst.webp" },
+    { id: 17, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uackkd1d0n8olymp7dgi_c6ukhs.webp" },
     {
       id: 18,
-      img: "/assets/cardsimage/Rectangle 15.png",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...",
+      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uackkd1d0n8olymp7dgi_c6ukhs.webp",
+      text: "Music and art rooms nurture creativity, self-expression, and emotional growth through diverse cultural and artistic experiences.",
     },
   ];
 
@@ -99,7 +99,7 @@ export default function SchoolLife() {
                 {/* Back (Text) */}
                 {hasText && (
                   <div className="absolute inset-0 flex items-start justify-start p-4 md:p-5 bg-white text-[#09254A] text-left rounded-3xl rotate-y-180 flip-face leading-snug">
-                    <p className="text-xs sm:text-sm md:text-base lg:text-[17px]">
+                    <p className="text-xs sm:text-[12px] md:text-[12px] lg:text-[15px]  xl:text-[15px] italic text-[#777777]">
                       {card.text}
                     </p>
                   </div>
