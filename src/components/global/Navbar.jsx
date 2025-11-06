@@ -4,8 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link as ScrollLink } from 'react-scroll';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,22 +12,72 @@ const Navbar = () => {
   const navyDark = '#001f3f';
   const amberButton = '#ffb833';
   const pathname = usePathname();
+  const router = useRouter();
 
   const menuVariants = {
     hidden: { x: '100%' },
-    visible: { x: 0, transition: { type: 'spring', stiffness: 70, damping: 18 } },
-    exit: { x: '100%', transition: { duration: 0.35, ease: 'easeInOut' } },
+    visible: { x: 0, transition: { type: 'tween', ease: 'easeOut', duration: 0.3 } },
+    exit: { x: '100%', transition: { type: 'tween', ease: 'easeIn', duration: 0.3 } },
   };
 
+  // ---------- Helpers to eliminate delay ----------
+  const scrollToIdWithOffset = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return false;
+    const yOffset = -96;
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    setActiveSection(id);
+    return true;
+  };
+
+  // Wait until #id exists in DOM, then scroll immediately (no arbitrary timeout)
+  const waitAndScrollToId = (id) => {
+    // try right away (covers most cases)
+    if (scrollToIdWithOffset(id)) return;
+
+    let rafId = null;
+    const deadline = performance.now() + 2000; // give up after ~2s (safety)
+
+    const tryScroll = () => {
+      if (scrollToIdWithOffset(id)) {
+        if (observer) observer.disconnect();
+        return;
+      }
+      if (performance.now() > deadline) {
+        if (observer) observer.disconnect();
+        return; // give up quietly
+      }
+      rafId = requestAnimationFrame(tryScroll);
+    };
+
+    // Observe DOM mutations to detect when the section mounts
+    const observer = new MutationObserver(() => {
+      // queue a frame so layout is stable before measuring
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(tryScroll);
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    // also kick off a frame loop in case observer misses (rare)
+    rafId = requestAnimationFrame(tryScroll);
+  };
+  // ------------------------------------------------
+
+  // Track active section on home scroll
   useEffect(() => {
     if (pathname === '/') {
       const handleScroll = () => {
-        const sections = document.querySelectorAll('section[id]');
+        const sections = document.querySelectorAll('section[id], div[id]');
         const scrollPos = window.scrollY + 120;
         let current = '';
         sections.forEach((section) => {
-          if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
-            current = section.getAttribute('id');
+          if (
+            section instanceof HTMLElement &&
+            section.offsetTop <= scrollPos &&
+            section.offsetTop + section.offsetHeight > scrollPos
+          ) {
+            current = section.getAttribute('id') || '';
           }
         });
         setActiveSection(current);
@@ -38,25 +87,60 @@ const Navbar = () => {
     }
   }, [pathname]);
 
-  const handleMobileScroll = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      setMobileOpen(false);
-      setTimeout(() => {
-        const yOffset = -96;
-        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-        setActiveSection(id);
-      }, 300);
-    } else {
-      window.location.href = '/';
+  // Smooth scroll on direct hash visits
+  useEffect(() => {
+    if (pathname !== '/') return;
+
+    const scrollWithOffset = (hash) => {
+      const id = hash.replace('#', '');
+      if (!id) return;
+      // use the fast wait+scroll so it works even if section mounts slightly later
+      waitAndScrollToId(id);
+    };
+
+    if (typeof window !== 'undefined' && window.location.hash) {
+      scrollWithOffset(window.location.hash);
     }
+
+    const onHashChange = () => {
+      if (typeof window !== 'undefined') {
+        scrollWithOffset(window.location.hash);
+      }
+    };
+
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, [pathname]);
+
+  // Unified navigation for Desktop + Mobile
+  const handleNavigateToSection = (id) => {
+    // If not on home, navigate first and remember target
+    if (pathname !== '/') {
+      setMobileOpen(false);
+      sessionStorage.setItem('scrollTarget', id);
+      router.push(`/#${id}`);
+      return;
+    }
+
+    // Already on home
+    setMobileOpen(false);
+    waitAndScrollToId(id);
   };
 
-  const isActive = (linkPath, sectionId = '') => {
-    if (pathname === '/' && sectionId) {
-      return activeSection === sectionId;
+  // Scroll after route change completes (desktop fix without delay)
+  useEffect(() => {
+    if (pathname === '/') {
+      const target = sessionStorage.getItem('scrollTarget');
+      if (target) {
+        sessionStorage.removeItem('scrollTarget');
+        // try immediately; if not present yet, observer will catch it
+        waitAndScrollToId(target);
+      }
     }
+  }, [pathname]);
+
+  const isActive = (linkPath, sectionId = '') => {
+    if (pathname === '/' && sectionId) return activeSection === sectionId;
     return pathname === linkPath;
   };
 
@@ -106,34 +190,23 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              {pathname === '/' ? (
-                <li>
-                  <ScrollLink
-                    to="academics-section"
-                    smooth={true}
-                    duration={700}
-                    offset={-96}
-                    className={`cursor-pointer hover:text-amber-400 transition duration-150 ${
-                      activeSection === 'academics-section' ? 'border-b-2 border-amber-400' : ''
-                    }`}
-                  >
-                    Academics
-                  </ScrollLink>
-                </li>
-              ) : (
-                <li>
-                  <Link
-                    href="/#academics-section"
-                    className={`hover:text-amber-400 transition duration-150 ${
-                      pathname === '/#academics-section' || activeSection === 'academics-section'
-                        ? 'border-b-2 border-amber-400'
-                        : ''
-                    }`}
-                  >
-                    Academics
-                  </Link>
-                </li>
-              )}
+
+              {/* Academics (desktop) */}
+              <li>
+                <a
+                  href="/#academics-section"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigateToSection('academics-section');
+                  }}
+                  className={`cursor-pointer hover:text-amber-400 transition duration-150 ${
+                    activeSection === 'academics-section' ? 'border-b-2 border-amber-400' : ''
+                  }`}
+                >
+                  Academics
+                </a>
+              </li>
+
               <li>
                 <Link
                   href="/about"
@@ -233,7 +306,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Drawer Menu */}
+        {/* Mobile Drawer */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -257,15 +330,20 @@ const Navbar = () => {
                   </Link>
                 </li>
 
+                {/* Academics (mobile) */}
                 <li>
-                  <button
+                  <a
+                    href="/#academics-section"
                     className={`w-full py-1 transition-all duration-200 ${
                       activeSection === 'academics-section' ? 'border-b-2 border-amber-400 ' : ''
                     }`}
-                    onClick={() => handleMobileScroll('academics-section')}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigateToSection('academics-section');
+                    }}
                   >
                     Academics
-                  </button>
+                  </a>
                 </li>
 
                 <li>
@@ -293,7 +371,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/co-curricular"
-                    className={`w-full py-1 transition-all duration-200  ${
+                    className={`w-full py-1 transition-all duration-200 ${
                       isActive('/co-curricular') ? 'border-b-2 border-amber-400 ' : ''
                     }`}
                     onClick={() => setMobileOpen(false)}
@@ -325,7 +403,7 @@ const Navbar = () => {
                 <li className="w-full h-12">
                   <Link
                     href="/contact"
-                    className="w-full bg-black text-white font-semibold py-[20px] px-[30px] text-center rounded-full"
+                    className="w-full bg-black text-white font-semibold py-[20px] px-[30px] text-center"
                     onClick={() => setMobileOpen(false)}
                   >
                     Get in touch

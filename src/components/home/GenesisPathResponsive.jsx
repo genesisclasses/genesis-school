@@ -14,7 +14,7 @@ const numberImgMargins = [
 ];
 
 const GenesisPathResponsive = () => (
-  <div className={styles.container} id='/#academics-section'>
+  <div className={styles.container} id="academics-section">
     <div className={styles.heading}>
       <h2>
         The Genesis Path to <br />

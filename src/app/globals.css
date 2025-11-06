@@ -7,13 +7,18 @@ body, div,  p, ul, li, h3, h4, h5, h6, button, input, label {
 body {
   overflow-x: hidden;
 }
-/* Headings and span */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 h1, h2, span,a {
   font-family: 'Kameron', serif;
 }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-/* Add to globals.css or a dedicated stylesheet */
+
 
 /* Shimmer animation for loading placeholders in blogs */
 @keyframes shimmer {
