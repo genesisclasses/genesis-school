@@ -20,8 +20,8 @@ const Card = ({ title, iconPath }) => (
     flex flex-col bg-white shadow-xl p-6
     transition duration-300 hover:shadow-2xl cursor-pointer
     h-52 sm:h-56 lg:h-58 xl:h-59
-    relative z-10
-    min-w-[240px] xl:min-w-[240px]  sm:min-w-[260px]
+    relative z-10 min-w-[260px]
+    lg:min-w-[20px] xl:min-w-[240px]  
   ">
     <h1 className="xl:text-3xl lg:text-xl font-bold mb-1 text-gray-900">{title}</h1>
     <div className="flex-1 min-h-[3px]"></div>
