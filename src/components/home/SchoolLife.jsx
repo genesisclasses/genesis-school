@@ -47,7 +47,6 @@ export default function SchoolLife() {
   const [hoveredId, setHoveredId] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // ✅ Disable animation on mobile
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth <= 1024);
     checkScreen();
@@ -66,8 +65,8 @@ export default function SchoolLife() {
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
         {cards.map((card) => {
           const hasText = !!card.text;
-
-          // ✅ Text cards show text by default, flip to image on hover
+          // ✅ Default: text side visible (rotate 180)
+          // ✅ Hover: flip back to image side (rotate 0)
           const isFlipped = !isMobile && hasText && hoveredId === card.id;
 
           return (
@@ -80,25 +79,24 @@ export default function SchoolLife() {
             >
               <div
                 className={`relative w-full h-full transition-transform duration-500 ${
-                  isFlipped ? "rotate-y-180" : hasText ? "rotate-y-180" : ""
+                  hasText ? (isFlipped ? "rotate-y-0" : "rotate-y-180") : ""
                 }`}
                 style={{
                   transformStyle: "preserve-3d",
-                  transition: isMobile ? "none" : "transform 0.5s",
+                  transition: isMobile ? "none" : "transform 0.6s ease",
                 }}
               >
-                {/* Front (Image side) */}
+                {/* Front (Image) */}
                 <div className="absolute inset-0 rounded-3xl flip-face">
                   <Image
                     src={card.img}
                     alt="School Image"
                     fill
-                    sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 25vw"
                     className="object-cover w-full h-full rounded-3xl"
                   />
                 </div>
 
-                {/* Back (Text side) */}
+                {/* Back (Text) */}
                 {hasText && (
                   <div className="absolute inset-0 flex items-start justify-start p-4 md:p-5 bg-white text-[#09254A] text-left rounded-3xl rotate-y-180 flip-face leading-snug">
                     <p className="text-xs sm:text-sm md:text-base lg:text-[17px]">
@@ -119,6 +117,9 @@ export default function SchoolLife() {
         }
         .rotate-y-180 {
           transform: rotateY(180deg);
+        }
+        .rotate-y-0 {
+          transform: rotateY(0deg);
         }
       `}</style>
     </section>
