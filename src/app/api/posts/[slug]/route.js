@@ -1,6 +1,6 @@
+// app/api/posts/[slug]/route.js
 import { createClient } from '@/lib/supabase/server';
 import { NextResponse } from 'next/server';
-import { calculateReadTime } from '@/lib/utils/readTime';
 import { createSlug } from '@/lib/utils/slugify';
 
 // ✅ GET - Fetch by slug
@@ -48,10 +48,12 @@ export async function PUT(request, { params }) {
     const title = formData.get('title');
     const content = formData.get('content');
     const tagsJson = formData.get('tags');
+    const readTimeFromForm = formData.get('readTime'); // ✅ Get read time from form
     const featuredImage = formData.get('featuredImage');
     const existingImageUrl = formData.get('existingImageUrl');
 
     console.log('📝 Updating post by slug:', slug);
+    console.log('📖 Received read time:', readTimeFromForm);
 
     if (!title || !content) {
       return NextResponse.json(
@@ -74,12 +76,22 @@ export async function PUT(request, { params }) {
     }
 
     const postId = post.id;
-    const readTime = calculateReadTime(content);
-    let featuredImageUrl = existingImageUrl || null;
+
+    // ✅ Use read time from form (already calculated in frontend)
+    const readTime = readTimeFromForm ? parseInt(readTimeFromForm) : 1;
+
+    let featured_image_path = post.featured_image_path; // Keep existing path by default
 
     // Upload image if provided
     if (featuredImage && featuredImage.size > 0) {
       try {
+        // Delete old image if it exists
+        if (post.featured_image_path) {
+          await supabase.storage
+            .from('blog')
+            .remove([post.featured_image_path]);
+        }
+
         const fileName = `${Date.now()}_${featuredImage.name}`;
         const { data, error: uploadError } = await supabase.storage
           .from('blog')
@@ -87,11 +99,7 @@ export async function PUT(request, { params }) {
 
         if (uploadError) throw uploadError;
 
-        const { data: urlData } = supabase.storage
-          .from('blog')
-          .getPublicUrl(data.path);
-
-        featuredImageUrl = urlData.publicUrl;
+        featured_image_path = data.path; // ✅ Store the path, not the full URL
       } catch (error) {
         console.error('❌ Image upload failed:', error);
         return NextResponse.json(
@@ -109,15 +117,16 @@ export async function PUT(request, { params }) {
       tagsArray = [];
     }
 
-    // Update post by ID (we found it by slug)
+    // ✅ Update post by ID with read_time from frontend calculation
     const { data, error } = await supabase
       .from('posts')
       .update({
         title,
         content,
-        featured_image_url: featuredImageUrl,
+        featured_image_path, // ✅ Store path instead of full URL
         tags: tagsArray,
-        read_time: readTime,
+        read_time: readTime, // ✅ Store calculated read time
+        updated_at: new Date().toISOString(),
       })
       .eq('id', postId)
       .select();
@@ -127,10 +136,24 @@ export async function PUT(request, { params }) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    console.log('✅ Post updated:', data[0].title);
+    // ✅ Get public URL if image exists
+    let featured_image_url = null;
+    if (data[0].featured_image_path) {
+      const { data: publicUrlData } = supabase.storage
+        .from('blog')
+        .getPublicUrl(data[0].featured_image_path);
+      featured_image_url = publicUrlData.publicUrl;
+    }
+
+    const updatedPost = {
+      ...data[0],
+      featured_image_url, // ✅ Include public URL in response
+    };
+
+    console.log('✅ Post updated:', data[0].title, 'Read time:', readTime);
     return NextResponse.json({
       success: true,
-      post: data[0],
+      post: updatedPost,
       readTime,
     });
   } catch (error) {
@@ -161,7 +184,19 @@ export async function DELETE(request, { params }) {
       return NextResponse.json({ error: 'Post not found' }, { status: 404 });
     }
 
-    // Delete by ID
+    // Delete featured image if it exists
+    if (post.featured_image_path) {
+      try {
+        await supabase.storage
+          .from('blog')
+          .remove([post.featured_image_path]);
+      } catch (error) {
+        console.warn('⚠️  Could not delete image:', error);
+        // Don't fail the delete if image removal fails
+      }
+    }
+
+    // Delete post by ID
     const { error } = await supabase
       .from('posts')
       .delete()

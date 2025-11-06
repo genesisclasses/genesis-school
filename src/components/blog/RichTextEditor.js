@@ -12,7 +12,6 @@ import Placeholder from '@tiptap/extension-placeholder';
 import CharacterCount from '@tiptap/extension-character-count';
 import { Color } from '@tiptap/extension-color';
 import { TextStyle } from '@tiptap/extension-text-style';
-// ✅ CORRECT: Use TableKit instead of individual imports
 import { TableKit } from '@tiptap/extension-table';
 import { common, createLowlight } from 'lowlight';
 import { useCallback, useRef, useState } from 'react';
@@ -20,7 +19,110 @@ import './editor-styles.css';
 
 const lowlight = createLowlight(common);
 
-const MenuBar = ({ editor, onImageUpload }) => {
+// ✅ Calculate read time from Tiptap JSON
+function calculateReadTimeFromJSON(json) {
+  if (!json || !json.content || !Array.isArray(json.content)) {
+    return 1;
+  }
+
+  let totalText = '';
+
+  const extractText = (node) => {
+    if (!node) return;
+
+    // Paragraph
+    if (node.type === 'paragraph' && node.content && Array.isArray(node.content)) {
+      node.content.forEach((item) => {
+        if (item.text) totalText += item.text + ' ';
+      });
+    }
+    // Heading
+    else if (node.type === 'heading' && node.content && Array.isArray(node.content)) {
+      node.content.forEach((item) => {
+        if (item.text) totalText += item.text + ' ';
+      });
+    }
+    // Blockquote
+    else if (node.type === 'blockquote' && node.content && Array.isArray(node.content)) {
+      node.content.forEach((item) => {
+        if (item.content && Array.isArray(item.content)) {
+          item.content.forEach((subItem) => {
+            if (subItem.text) totalText += subItem.text + ' ';
+          });
+        }
+      });
+    }
+    // Code block
+    else if (node.type === 'codeBlock' && node.content && Array.isArray(node.content)) {
+      node.content.forEach((item) => {
+        if (item.text) totalText += item.text + ' ';
+      });
+    }
+    // Bullet list
+    else if (node.type === 'bulletList' && node.content && Array.isArray(node.content)) {
+      node.content.forEach((listItem) => {
+        if (listItem.content && Array.isArray(listItem.content)) {
+          listItem.content.forEach((paragraphNode) => {
+            if (paragraphNode.content && Array.isArray(paragraphNode.content)) {
+              paragraphNode.content.forEach((item) => {
+                if (item.text) totalText += item.text + ' ';
+              });
+            }
+          });
+        }
+      });
+    }
+    // Ordered list
+    else if (node.type === 'orderedList' && node.content && Array.isArray(node.content)) {
+      node.content.forEach((listItem) => {
+        if (listItem.content && Array.isArray(listItem.content)) {
+          listItem.content.forEach((paragraphNode) => {
+            if (paragraphNode.content && Array.isArray(paragraphNode.content)) {
+              paragraphNode.content.forEach((item) => {
+                if (item.text) totalText += item.text + ' ';
+              });
+            }
+          });
+        }
+      });
+    }
+    // Table
+    else if (node.type === 'table' && node.content && Array.isArray(node.content)) {
+      node.content.forEach((row) => {
+        if (row.content && Array.isArray(row.content)) {
+          row.content.forEach((cell) => {
+            if (cell.content && Array.isArray(cell.content)) {
+              cell.content.forEach((item) => {
+                if (item.content && Array.isArray(item.content)) {
+                  item.content.forEach((subItem) => {
+                    if (subItem.text) totalText += subItem.text + ' ';
+                  });
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  };
+
+  // Extract text from all nodes
+  json.content.forEach(extractText);
+
+  // Calculate read time: 200 words per minute
+  const wordCount = totalText.trim().split(/\s+/).length;
+  const readTime = Math.max(1, Math.ceil(wordCount / 200));
+
+  console.log('📊 Read Time Calculation:', {
+    totalText: totalText.substring(0, 100) + '...',
+    wordCount,
+    readTime,
+  });
+
+  return readTime;
+}
+
+const MenuBar = ({ editor, onImageUpload, readTime }) => {
   const fileInputRef = useRef(null);
   const [isUploading, setIsUploading] = useState(false);
   const [linkUrl, setLinkUrl] = useState('');
@@ -29,13 +131,11 @@ const MenuBar = ({ editor, onImageUpload }) => {
   const addImage = useCallback(async (file) => {
     if (!file) return;
 
-    // Validate file type
     if (!file.type.startsWith('image/')) {
       alert('Please select a valid image file');
       return;
     }
 
-    // Validate file size (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
       alert('Image size must be less than 5MB');
       return;
@@ -69,7 +169,6 @@ const MenuBar = ({ editor, onImageUpload }) => {
       return;
     }
 
-    // Add https:// if no protocol specified
     const url =
       linkUrl.startsWith('http://') || linkUrl.startsWith('https://')
         ? linkUrl
@@ -81,7 +180,6 @@ const MenuBar = ({ editor, onImageUpload }) => {
   }, [editor, linkUrl]);
 
   const addTable = useCallback(() => {
-    // ✅ CORRECT: TableKit includes all necessary table functionality
     editor
       .chain()
       .focus()
@@ -367,6 +465,28 @@ const MenuBar = ({ editor, onImageUpload }) => {
         </button>
       </div>
 
+      {/* ✅ Read Time Display */}
+      <div className="divider"></div>
+      <div className="menu-section read-time-section" style={{ marginLeft: 'auto' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '8px 12px',
+            backgroundColor: '#f0f4ff',
+            borderRadius: '6px',
+            fontSize: '14px',
+            fontWeight: '500',
+            color: '#0055cc',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          <span>📖</span>
+          <span>{readTime} min read</span>
+        </div>
+      </div>
+
       {/* Link Input Modal */}
       {showLinkInput && (
         <div className="link-input-container">
@@ -410,12 +530,12 @@ const MenuBar = ({ editor, onImageUpload }) => {
 
 const RichTextEditor = ({ onContentChange, initialContent = null }) => {
   const [uploadProgress, setUploadProgress] = useState(null);
+  const [readTime, setReadTime] = useState(1);
 
   const handleImageUpload = useCallback(async (file) => {
     try {
       setUploadProgress(0);
 
-      // Import Supabase client dynamically
       const { createClient } = await import('@/lib/supabase/client');
       const supabase = createClient();
 
@@ -452,7 +572,7 @@ const RichTextEditor = ({ onContentChange, initialContent = null }) => {
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        codeBlock: false, // We're using CodeBlockLowlight instead
+        codeBlock: false,
       }),
       Underline,
       Image.configure({
@@ -479,7 +599,6 @@ const RichTextEditor = ({ onContentChange, initialContent = null }) => {
           target: '_blank',
         },
       }),
-      // ✅ CORRECT: Use TableKit which bundles all table extensions
       TableKit.configure({
         resizable: true,
         HTMLAttributes: {
@@ -504,7 +623,13 @@ const RichTextEditor = ({ onContentChange, initialContent = null }) => {
     onUpdate: ({ editor }) => {
       const json = editor.getJSON();
       const html = editor.getHTML();
-      onContentChange({ json, html });
+
+      // ✅ Calculate read time from JSON
+      const calculatedReadTime = calculateReadTimeFromJSON(json);
+      setReadTime(calculatedReadTime);
+
+      // Pass both json and html, plus the calculated read time
+      onContentChange({ json, html, readTime: calculatedReadTime });
     },
     editorProps: {
       attributes: {
@@ -525,7 +650,7 @@ const RichTextEditor = ({ onContentChange, initialContent = null }) => {
           />
         </div>
       )}
-      <MenuBar editor={editor} onImageUpload={handleImageUpload} />
+      <MenuBar editor={editor} onImageUpload={handleImageUpload} readTime={readTime} />
       <EditorContent editor={editor} />
       {editor && (
         <div className="editor-footer">
@@ -535,6 +660,9 @@ const RichTextEditor = ({ onContentChange, initialContent = null }) => {
           <span className="word-count">
             {editor.storage.characterCount.words()} words
           </span>
+          <span className="read-time-footer">
+            📖 {readTime} min read
+          </span>
         </div>
       )}
     </div>
@@ -542,3 +670,4 @@ const RichTextEditor = ({ onContentChange, initialContent = null }) => {
 };
 
 export default RichTextEditor;
+ 
