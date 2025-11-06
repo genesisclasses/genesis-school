@@ -1,77 +1,50 @@
+// app/api/posts/create/route.js
 import { createClient } from '@/lib/supabase/server';
 import { NextResponse } from 'next/server';
 import { calculateReadTime } from '@/lib/utils/readTime';
 
 export async function POST(request) {
   try {
+    const supabase = await createClient();
+
     const formData = await request.formData();
     const title = formData.get('title');
     const content = formData.get('content');
-    const tagsJson = formData.get('tags');
+    const tags = JSON.parse(formData.get('tags') || '[]');
     const featuredImage = formData.get('featuredImage');
-
-    if (!title || !content) {
-      return NextResponse.json(
-        { error: 'Title and content are required' },
-        { status: 400 }
-      );
-    }
-
-    const supabase = await createClient();
 
     // ✅ Calculate read time from content
     const readTime = calculateReadTime(content);
 
-    let featuredImageUrl = null;
+    let featured_image_path = null;
 
     // Upload featured image if provided
-    if (featuredImage && featuredImage.size > 0) {
-      try {
-        const fileName = `${Date.now()}_${featuredImage.name}`;
-        const { data, error } = await supabase.storage
-          .from('blog')
-          .upload(`featured-images/${fileName}`, featuredImage);
+    if (featuredImage) {
+      const fileName = `${Date.now()}_${featuredImage.name}`;
+      const { error: uploadError } = await supabase.storage
+        .from('blog')
+        .upload(`featured-images/${fileName}`, featuredImage);
 
-        if (error) throw error;
-
-        const { data: urlData } = supabase.storage
-          .from('blog')
-          .getPublicUrl(data.path);
-
-        featuredImageUrl = urlData.publicUrl;
-      } catch (error) {
-        console.error('Image upload error:', error);
+      if (uploadError) {
         return NextResponse.json(
-          { error: 'Failed to upload image' },
+          { error: 'Image upload failed' },
           { status: 500 }
         );
       }
+
+      featured_image_path = `featured-images/${fileName}`;
     }
 
-    // Parse tags - handle both JSON array and comma-separated strings
-    let tagsArray = [];
-    if (tagsJson) {
-      try {
-        tagsArray = JSON.parse(tagsJson);
-      } catch {
-        tagsArray = tagsJson
-          .split(',')
-          .map((tag) => tag.trim())
-          .filter((tag) => tag);
-      }
-    }
-
-    // Insert post with read_time
+    // ✅ Insert post with read_time
     const { data, error } = await supabase
       .from('posts')
       .insert([
         {
           title,
           content,
-          featured_image_url: featuredImageUrl,
-          tags: tagsArray,
-          read_time: readTime,
-          created_at: new Date().toISOString(),
+          tags,
+          featured_image_path,
+          read_time: readTime, // Store calculated read time
         },
       ])
       .select();
@@ -85,9 +58,8 @@ export async function POST(request) {
     }
 
     return NextResponse.json({
-      success: true,
+      message: 'Post created successfully!',
       post: data[0],
-      readTime,
     });
   } catch (error) {
     console.error('Create post error:', error);
