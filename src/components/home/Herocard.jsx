@@ -1,11 +1,11 @@
 import React from 'react';
 
 const placeholderIcons = {
-  academics: '/assets/1.svg',
-  athletics: '/assets/2.svg',
-  artsCulture: '/assets/3.svg',
-  campusLife: '/assets/4.svg',
-  arrow: '/assets/arrow.svg',
+  academics: '/assets/home/herocards/1.svg',
+  athletics: '/assets/home/herocards/2.svg',
+  artsCulture: '/assets/home/herocards/3.svg',
+  campusLife: '/assets/home/herocards/4.svg',
+  arrow: '/assets/home/herocards/arrow.svg',
 };
 
 const featureCards = [

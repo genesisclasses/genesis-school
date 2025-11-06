@@ -21,7 +21,7 @@ const AdmissionsSection = () => (
 
       {/* Label */}
       <div className="flex gap-1 items-center mb-2 md:mb-3">
-        <Image src="/assets/edu.svg" alt="Admissions" width={26} height={26} className="mb-1" />
+        <Image  alt="Admissions" width={26} height={26} className="mb-1" src="/assets/home/edu.svg" />
         <span className="text-amber-400 text-[10px] sm:text-[11px] font-semibold tracking-wide uppercase">
           ADMISSIONS OPEN
         </span>

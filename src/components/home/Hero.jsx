@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 // import bannerImage from '../../../../public/assets/banner.png'
-import bannerImage from '../../../public/assets/banner.png'
+import bannerImage from '../../../public/assets/home/banner.png'
 
 
 const Hero = () => {

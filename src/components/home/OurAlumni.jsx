@@ -9,56 +9,56 @@ import QuoteIcon from "../../../public/assets/home/quote-icon.svg"; // adjust pa
 
 const alumniData = [
   {
-    img: "/assets/alumni1.png",
+    img: "/assets/home/alumni1.png",
     name: "Priya Sharma",
     batch: "Batch of 2023",
     description:
       "The faculty here truly cares about each student's success. The personalized attention and rigorous curriculum prepared me exceptionally well for university. I'm grateful for the foundation I received.",
   },
   {
-    img: "/assets/alumni1.png",
+    img: "/assets/home/alumni1.png",
     name: "Rohit Singh",
     batch: "Batch of 2022",
     description:
       "The environment at this university allowed me to grow both academically and personally. Every teacher inspired us to aim higher each day.",
   },
   {
-    img: "/assets/alumni1.png",
+    img: "/assets/home/alumni1.png",
     name: "Anita Verma",
     batch: "Batch of 2021",
     description:
       "I found lifelong friends and mentors here. The advanced courses and practical workshops gave me a head start in my career.",
   },
   {
-    img: "/assets/alumni1.png",
+    img: "/assets/home/alumni1.png",
     name: "Sameer Khan",
     batch: "Batch of 2023",
     description:
       "Supportive faculty and excellent resources made my learning journey enjoyable and fruitful. The alumni network is a great advantage.",
   },
   {
-    img: "/assets/alumni1.png",
+    img: "/assets/home/alumni1.png",
     name: "Sneha Patel",
     batch: "Batch of 2020",
     description:
       "The focus on holistic development helped me gain confidence. Extracurricular activities balanced our studies well.",
   },
   {
-    img: "/assets/alumni1.png",
+    img: "/assets/home/alumni1.png",
     name: "Harsh Vora",
     batch: "Batch of 2022",
     description:
       "Career guidance and placement support were fantastic. I felt prepared for industry challenges thanks to my experiences here.",
   },
   {
-    img: "/assets/alumni1.png",
+    img: "/assets/home/alumni1.png",
     name: "Vikram Mehta",
     batch: "Batch of 2021",
     description:
       "From fascinating lectures to group projects, every aspect of college life motivated me to push my limits.",
   },
   {
-    img: "/assets/alumni1.png",
+    img: "/assets/home/alumni1.png",
     name: "Ruchi Agarwal",
     batch: "Batch of 2020",
     description:

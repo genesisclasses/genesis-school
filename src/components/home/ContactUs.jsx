@@ -4,7 +4,7 @@ const ContactUs = () => (
   <section
     className="relative w-full bg-[#fafbfb] py-12 sm:py-16 px-3 sm:px-6 flex justify-center items-center"
     style={{
-      backgroundImage: 'url(/assets/home/contactbg.svg)',
+      backgroundImage: 'url(/assets/contact/contactbg.svg)',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -37,7 +37,7 @@ const ContactUs = () => (
         {/* Image center on tablet, left on desktop */}
         <div className="w-full flex justify-start md:justify-center lg:justify-start mt-2">
           <Image
-            src="/assets/home/contactform.svg"
+            src="/assets/contact/contactform.svg"
             alt="Contact Illustration"
             width={780}
             height={700}

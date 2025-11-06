@@ -52,7 +52,7 @@ const ProjectDarpan = () => {
         <div className="relative z-10 flex flex-col lg:flex-row w-full items-center">
           <div className="w-full h-auto lg:w-[530px] lg:h-[450px] xl:w-[550px] xl:h-[540px] p-0 sm:p-4 flex items-center justify-center mb-0 lg:mb-0">
             <Image
-              src="/assets/home/darpan/project-darpan.svg"
+              src="/assets/projectdarpan/darpan/project-darpan.svg"
               alt="Project Darpan"
               width={420}
               height={320}
@@ -78,7 +78,7 @@ const ProjectDarpan = () => {
             >
               <p>Know More</p>
               <Image
-                src="/assets/home/darpan/know-more-btn.svg"
+                src="/assets/projectdarpan/darpan/know-more-btn.svg"
                 alt="External Link Icon"
                 width={22}
                 height={22}
