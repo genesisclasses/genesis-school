@@ -19,7 +19,7 @@ function useScreenRange(min, max) {
   return match;
 }
 
-export default function AboutSection() {
+export default function Mission() {
   // ✅ Conditional screen detection
   const isTabletOrMobile = useScreenRange(0, 1023);
   const isDesktop = useScreenRange(1024, 9999);
@@ -129,6 +129,7 @@ export default function AboutSection() {
               width={800}
               height={700}
               className="object-cover w-full h-full mt-5 md:mt-32 lg:mt-0"
+              priority
             />
           </div>
 
