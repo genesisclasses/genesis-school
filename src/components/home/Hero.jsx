@@ -21,7 +21,7 @@ const Hero = () => {
         pt-20 sm:pt-28 lg:pt-40
         pb-14 sm:pb-24 lg:pb-28
         min-h-[70vh] lg:h-[90vh]
-        mt-[-70px] lg:mt-[-80px]
+        mt-[-70px] lg:-mt-20
       "
     >
       <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto">
@@ -41,15 +41,15 @@ const Hero = () => {
 
         {/* Description */}
         <p className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto text-xs sm:text-sm lg:text-base mb-6 sm:mb-7 font-light leading-relaxed px-1">
-          From the first step in pre-primary to the final years of senior secondary, we guide every learner 
-          with a world-class curriculum, expert faculty, Olympiad and competitive exam training, and holistic 
+          From the first step in pre-primary to the final years of senior secondary, we guide every learner
+          with a world-class curriculum, expert faculty, Olympiad and competitive exam training, and holistic
           support that ensures success in higher education and beyond.
         </p>
 
         {/* Action Button */}
         <button
           className="
-            bg-white text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4 
+            bg-white text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4
             rounded-4xl text-sm sm:text-base
             hover:bg-amber-400 transition duration-200 shadow-lg
           "
