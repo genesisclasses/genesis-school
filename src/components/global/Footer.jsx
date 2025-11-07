@@ -122,7 +122,7 @@ export default function Footer() {
             className="w-[120px] h-auto"
             priority
           />
-          <p className=" md:hidden lg:block lg:text-[14px] xl:text-[15px] lg:w-[300px] xl:w-[450px] mt-3">From the first step in pre-primary to the final years of senior secondary, Genesis School guides each pupil with a world-class curriculum, expert faculty, focused enrichment and exam-readiness programmes, and pastoral support that secures success in higher education beyond.</p>
+          <p className=" hidden lg:block lg:text-[14px] xl:text-[15px] lg:w-[300px] xl:w-[450px] mt-3">From the first step in pre-primary to the final years of senior secondary, Genesis School guides each pupil with a world-class curriculum, expert faculty, focused enrichment and exam-readiness programmes, and pastoral support that secures success in higher education beyond.</p>
         </div>
 
         {/* Right Side Content */}

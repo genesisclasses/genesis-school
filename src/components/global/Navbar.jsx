@@ -14,12 +14,15 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // ✅ Detect Hero + HeroCards visibility for Glass Blur
+  // ✅ FIX: Re-run observer whenever pathname changes
   useEffect(() => {
+    if (pathname !== '/') {
+      setIsHeroVisible(false);
+      return;
+    }
+
     const hero = document.getElementById('hero-section');
     const herocards = document.getElementById('herocards-section');
-
-    if (!hero && !herocards) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,19 +36,17 @@ export default function Navbar() {
     if (herocards) observer.observe(herocards);
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
-  // ✅ Smooth scroll offset
   const scrollToId = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
 
-    const yOffset = -96; 
+    const yOffset = -96;
     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({ top: y, behavior: 'smooth' });
   };
 
-  // ✅ Navigation to sections from other pages
   const handleNavigateToSection = (id) => {
     setMobileOpen(false);
 
@@ -57,7 +58,6 @@ export default function Navbar() {
     scrollToId(id);
   };
 
-  // ✅ Scroll to saved section after route loads
   useEffect(() => {
     if (pathname === '/') {
       const target = sessionStorage.getItem('scrollTarget');
@@ -68,7 +68,6 @@ export default function Navbar() {
     }
   }, [pathname]);
 
-  // ✅ Detect active homepage section on scroll
   useEffect(() => {
     if (pathname !== '/') return;
 
@@ -93,7 +92,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [pathname]);
 
-  // ✅ Active underline logic
   const isActive = (path, sectionId = '') => {
     if (pathname === path) return true;
     if (pathname === '/' && sectionId && activeSection === sectionId) return true;
@@ -116,19 +114,18 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ✅ NAVBAR */}
+      {/* ✅ NAVBAR + GLASS BLUR */}
       <nav
         className={`
           transition-all duration-300 border-b
           ${isHeroVisible
             ? "bg-white/20 backdrop-blur-md border-transparent shadow-none"
-            : "bg-white border-gray-200 shadow-md"
-          }
+            : "bg-white border-gray-200 shadow-md"}
         `}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
 
-          {/* ✅ Logo */}
+          {/* ✅ LOGO */}
           <Link href="/" className="flex items-center">
             <Image
               src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762494438/logo_offgkb.svg"
@@ -142,22 +139,17 @@ export default function Navbar() {
 
           {/* ✅ DESKTOP MENU */}
           <div className="hidden lg:flex items-center space-x-7">
-
             <ul className="flex space-x-7 text-gray-900 text-sm font-medium">
 
-              {/* HOME */}
               <li>
                 <Link
                   href="/"
-                  className={`pb-1 transition ${
-                    isActive("/") ? "border-b-2 border-amber-400" : ""
-                  }`}
+                  className={`pb-1 ${isActive("/") ? "border-b-2 border-amber-400" : ""}`}
                 >
                   Home
                 </Link>
               </li>
 
-              {/* ACADEMICS */}
               <li>
                 <a
                   href="/#academics-section"
@@ -165,15 +157,12 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavigateToSection("academics-section");
                   }}
-                  className={`pb-1 cursor-pointer ${
-                    isActive("/", "academics-section")
-                        }`}
+                  className={`pb-1 cursor-pointer ${isActive("/", "academics-section") ? "border-b-2 border-amber-400" : ""}`}
                 >
                   Academics
                 </a>
               </li>
 
-              {/* OTHER LINKS */}
               <li>
                 <Link
                   href="/about"
@@ -211,18 +200,11 @@ export default function Navbar() {
               </li>
             </ul>
 
-            {/* ✅ Buttons */}
             <div className="flex text-sm font-semibold ml-4">
-              <Link
-                href="/contact"
-                className="text-black bg-[#ffb833] px-4 py-2 rounded-l-full"
-              >
+              <Link href="/contact" className="text-black bg-[#ffb833] px-4 py-2 rounded-l-full">
                 Schedule a Visit
               </Link>
-              <Link
-                href="/contact"
-                className="bg-black text-white px-4 py-2 rounded-r-full"
-              >
+              <Link href="/contact" className="bg-black text-white px-4 py-2 rounded-r-full">
                 Get in touch
               </Link>
             </div>
@@ -234,7 +216,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ✅ MOBILE MENU */}
+        {/* ✅ ✅ ✅ MOBILE DRAWER — RESTORED ✅ ✅ ✅ */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -259,11 +241,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href="/#academics-section"
-                    className={`pb-1 ${
-                      isActive("/", "academics-section")
-                        ? "border-b-2 border-amber-400"
-                        : ""
-                    }`}
+                    className={`pb-1 ${isActive("/", "academics-section") ? "border-b-2 border-amber-400" : ""}`}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavigateToSection("academics-section");
@@ -274,41 +252,25 @@ export default function Navbar() {
                 </li>
 
                 <li>
-                  <Link
-                    href="/about"
-                    onClick={() => setMobileOpen(false)}
-                    className={`pb-1 ${isActive("/about") }`}
-                  >
+                  <Link href="/about" onClick={() => setMobileOpen(false)}>
                     About
                   </Link>
                 </li>
 
                 <li>
-                  <Link
-                    href="/project-darpan"
-                    onClick={() => setMobileOpen(false)}
-                    className={`pb-1 ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}
-                  >
+                  <Link href="/project-darpan" onClick={() => setMobileOpen(false)}>
                     Project DARPAN
                   </Link>
                 </li>
 
                 <li>
-                  <Link
-                    href="/co-curricular"
-                    onClick={() => setMobileOpen(false)}
-                    className={`pb-1 ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}
-                  >
+                  <Link href="/co-curricular" onClick={() => setMobileOpen(false)}>
                     Co-Curricular
                   </Link>
                 </li>
 
                 <li>
-                  <Link
-                    href="/blogs"
-                    onClick={() => setMobileOpen(false)}
-                    className={`pb-1 ${isActive("/blogs") ? "border-b-2 border-amber-400" : ""}`}
-                  >
+                  <Link href="/blogs" onClick={() => setMobileOpen(false)}>
                     Blogs
                   </Link>
                 </li>
