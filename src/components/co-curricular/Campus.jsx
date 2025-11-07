@@ -1,10 +1,10 @@
 import React from 'react';
 
 const campusImages = [
-  { src: "/assets/co-curricular/campus-1.png", alt: "Classroom", title: "Modern Science & Computer Labs", description: "Bright classrooms, modern labs, a quiet library, and open green spaces — all come together to create a safe, inspiring environment ." },
-  { src: "/assets/co-curricular/campus-2.png", alt: "Library", title: "Modern Science & Computer Labs", description: "Bright classrooms, modern labs, a quiet library, and open green spaces — all come together to create a safe, inspiring environment ." },
-  { src: "/assets/co-curricular/campus-3.png", alt: "Lab", title: "Modern Science & Computer Labs", description: "Bright classrooms, modern labs, a quiet library, and open green spaces — all come together to create a safe, inspiring environment ." },
-  { src: "/assets/co-curricular/campus-4.png", alt: "Aerial", title: "Modern Science & Computer Labs", description: "Bright classrooms, modern labs, a quiet library, and open green spaces — all come together to create a safe, inspiring environment ." },
+  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762410353/campus-1_uzacv2.webp", alt: "Classroom", title: "Modern Science & Computer Labs", description: "Advanced, well-equipped labs encourage exploration, experimentation, and innovation, helping students connect scientific concepts with real-world applications effectively." },
+  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762410354/campus-2_undinh.webp", alt: "Library", title: "Sports & Activity Zones", description: "Expansive, safe sports areas encourage teamwork, discipline, and resilience,  building confident, active learners with balanced minds and healthy lifestyles." },
+  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762410353/campus-3_ef20ky.webp", alt: "Lab", title: "Smart & Spacious Classrooms", description: "Technology-enabled, airy classrooms promote engagement, collaboration, and focus; creating an environment where learning feels inspiring, interactive, and meaningful daily." },
+  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762410353/campus-4_vjevwa.webp", alt: "Aerial", title: "Library & Reading Hubs", description: "A peaceful reading space filled with knowledge, creativity, and inspiration; cultivating curiosity, imagination, and a lifelong passion for learning." },
 ];
 
 const GridItem = ({ img, large }) => (
@@ -14,12 +14,8 @@ const GridItem = ({ img, large }) => (
       alt={img.alt}
       className="w-full h-full object-cover"
     />
-    
-    {/* Gradient overlay */}
-    <div className="absolute left-0 right-0 bottom-0 h-[80%] lg:h-[40%] bg-gradient-to-t from-black/70 via-black/60 to-transparent pointer-events-none opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"></div>
-    
-    {/* Text content */}
-    <div className="absolute inset-0 flex flex-col justify-end px-4 lg:px-6 pb-4 lg:pb-12 text-white opacity-100 lg:opacity-0 lg:group-hover:opacity-100 translate-y-0 lg:translate-y-8 lg:group-hover:translate-y-0 transition-all duration-300">
+    {/* Text is always visible, gradient/fade removed */}
+    <div className="absolute inset-0 flex flex-col justify-end px-4 lg:px-6 pb-4 lg:pb-12 text-white">
       <div className="text-[16px] lg:text-lg font-medium mb-2 tracking-wide">{img.title}</div>
       <div className="text-[14px] lg:text-[16px] tracking-wide">{img.description}</div>
     </div>
@@ -33,12 +29,10 @@ const Campus = () => (
       <h2 className="text-[32px] sm:text-[32px] md:text-[36px] xl:text-[48px] font-semibold text-[#002650] mb-4 md:mb-6 text-center">
         A Campus That Inspires Learning
       </h2>
-      
       {/* Description */}
       <p className="text-[#777777] text-[15px] md:text-[16px] max-w-[400px] md:max-w-[1313px] tracking-wide mb-6 md:mb-10 text-center">
-        The Genesis School blends technology with real-life spaces. Classrooms, labs and studios allow all children to explore big ideas, as do dedicated libraries and collaborative project areas, providing the ideal blend of the old and new, with excellent access, resources and support from our expert teachers.
+        The Genesis School blends modern design with academic purpose. Interactive smart boards, state-of-the-art science and computer labs, and multimedia-enabled classrooms ensure our students are ready for the digital age. With secure, green, and well-monitored premises, every detail supports focused, joyful learning.
       </p>
-      
       {/* Grid Container */}
       <div className="w-full flex flex-col gap-4">
         {/* First row - Large left, Small right */}
@@ -50,7 +44,6 @@ const Campus = () => (
             <GridItem img={campusImages[1]} />
           </div>
         </div>
-        
         {/* Second row - Small left, Large right */}
         <div className="w-full flex flex-col md:flex-row gap-4">
           <div className="w-full md:flex-[1]">

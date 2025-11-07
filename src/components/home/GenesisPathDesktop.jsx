@@ -22,10 +22,11 @@ const GenesisPath = () => {
       </div>
       {/* SVG Background */}
       <img
-        src="/assets/home/genesis-path/genesis-path-bg.svg"
+        src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762404042/genesis-path-bg_mtsb6x.svg"
         alt="Genesis Path"
         className="hidden lg:block w-full h-auto absolute top-0 left-0 z-0 pointer-events-none"
         style={{ objectFit: 'contain', marginTop: '10px' }}
+        loading="eager" 
       />
 
       {/* Responsive X-Large Screen Styles */}

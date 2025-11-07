@@ -1,6 +1,6 @@
-// components/CocurricularBanner.js
 import Image from 'next/image'
-import bannerImg from '../../../public/assets/co-curricular/co-curricular-banner.png' // Move 'image.jpg' to the /public folder
+
+const bannerImg = 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401405/dmyx5uktdglunds3p94m_v7oi4q.webp'
 
 const CocurricularBanner = () => {
   return (

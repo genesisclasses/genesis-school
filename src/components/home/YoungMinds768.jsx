@@ -33,17 +33,18 @@ const textBox = {
 };
 
 const YoungMinds768 = () => (
-  <div className="youngminds-container w-full relative bg-no-repeat bg-[url('/assets/home/young-minds/young-mind-bg-768.svg')] bg-contain bg-bottom">
+  <div className="youngminds-container w-full relative bg-no-repeat bg-[url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762405678/young-mind-bg-768_njjqt9.svg')] bg-contain bg-bottom">
     <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] h-[880px] mx-auto px-4 md:px-6 py-16 xl:mb-20 flex flex-col gap-7">
       {/* Top: image + heading side by side */}
       <div className="flex flex-row gap-8 items-center">
         {/* Image */}
         <div className="shrink-0 flex items-center justify-center min-h-[340px]">
           <img
-            src="/assets/home/young-minds/young-mind.svg"
+            src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762405534/home-about_rdk9ld_mbmj8n.webp"
             alt="Young Minds Grid"
             className="w-[280px] h-auto"
             draggable={false}
+            loading="eager" 
           />
         </div>
         {/* Heading + desc */}
