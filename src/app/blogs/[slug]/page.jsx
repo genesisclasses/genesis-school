@@ -1,15 +1,15 @@
 // app/blogs/[slug]/page.jsx
 import { createClient } from '@/lib/supabase/server';
+import { createStaticClient } from '@/lib/supabase/client'; // ✅ New import
 import { notFound } from 'next/navigation';
 import { createSlug } from '@/lib/utils/slugify';
 import ShareSidebar from '@/components/blog/ShareSidebar';
 
-// ✅ Fetch directly from Supabase instead of API routes
+// ✅ Use static client for build-time data fetching
 async function getBlogPostBySlug(slug) {
   try {
     const supabase = await createClient();
 
-    // Get all posts and find by slug
     const { data: posts, error } = await supabase
       .from('posts')
       .select('*')
@@ -20,7 +20,6 @@ async function getBlogPostBySlug(slug) {
       return null;
     }
 
-    // Find post matching the slug
     const post = posts.find(p => createSlug(p.title) === slug);
     return post || null;
   } catch (error) {
@@ -29,10 +28,10 @@ async function getBlogPostBySlug(slug) {
   }
 }
 
-// ✅ Generate static params directly from Supabase
+// ✅ Use createStaticClient() instead of createClient() here
 export async function generateStaticParams() {
   try {
-    const supabase = await createClient();
+    const supabase = createStaticClient(); // ✅ No await, no cookies
 
     const { data: posts, error } = await supabase
       .from('posts')
@@ -43,6 +42,8 @@ export async function generateStaticParams() {
       console.error('Error generating static params:', error);
       return [];
     }
+
+    console.log('✅ Generated static params for', posts.length, 'posts');
 
     return posts.map((post) => ({
       slug: createSlug(post.title),
@@ -158,3 +159,4 @@ export default async function BlogDetailPage({ params }) {
 }
 
 export const revalidate = 60;
+export const dynamicParams = true; // ✅ Allow fallback for new posts
