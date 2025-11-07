@@ -1,28 +1,55 @@
+// app/blogs/[slug]/page.jsx
+import { createClient } from '@/lib/supabase/server';
+import { createStaticClient } from '@/lib/supabase/client'; // ✅ New import
 import { notFound } from 'next/navigation';
 import { createSlug } from '@/lib/utils/slugify';
 import ShareSidebar from '@/components/blog/ShareSidebar';
 
+// ✅ Use static client for build-time data fetching
 async function getBlogPostBySlug(slug) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-    const response = await fetch(`${baseUrl}/api/posts/${slug}`, { next: { revalidate: 60 } });
-    if (!response.ok) return null;
-    const data = await response.json();
-    return data.post || null;
+    const supabase = await createClient();
+
+    const { data: posts, error } = await supabase
+      .from('posts')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error || !posts) {
+      console.error('Supabase error:', error);
+      return null;
+    }
+
+    const post = posts.find(p => createSlug(p.title) === slug);
+    return post || null;
   } catch (error) {
     console.error('Error fetching post:', error);
     return null;
   }
 }
 
+// ✅ Use createStaticClient() instead of createClient() here
 export async function generateStaticParams() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-    const response = await fetch(`${baseUrl}/api/posts/list`, { next: { revalidate: 60 } });
-    if (!response.ok) return [];
-    const data = await response.json();
-    return (data.posts || []).map((post) => ({ slug: createSlug(post.title) }));
+    const supabase = createStaticClient(); // ✅ No await, no cookies
+
+    const { data: posts, error } = await supabase
+      .from('posts')
+      .select('id, title')
+      .order('created_at', { ascending: false });
+
+    if (error || !posts) {
+      console.error('Error generating static params:', error);
+      return [];
+    }
+
+    console.log('✅ Generated static params for', posts.length, 'posts');
+
+    return posts.map((post) => ({
+      slug: createSlug(post.title),
+    }));
   } catch (error) {
+    console.error('Error in generateStaticParams:', error);
     return [];
   }
 }
@@ -89,9 +116,6 @@ export default async function BlogDetailPage({ params }) {
 
   return (
     <div className="bg-white min-h-screen">
-
-            {/* ✅ Full-width image with 373px height */}
-            {/* ✅ Image with title overlay */}
       <div className="relative w-full h-[373px]">
         {post.featured_image_url && (
           <img
@@ -100,8 +124,6 @@ export default async function BlogDetailPage({ params }) {
             className="w-full h-full object-cover"
           />
         )}
-
-        {/* ✅ Title overlay - centered on image */}
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="text-5xl font-bold text-white text-center px-8">
             {post.title}
@@ -109,8 +131,6 @@ export default async function BlogDetailPage({ params }) {
         </div>
       </div>
 
-
-      {/* Main Content */}
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="flex gap-12">
           <ShareSidebar post={post} readTime={post.read_time} />
@@ -139,3 +159,4 @@ export default async function BlogDetailPage({ params }) {
 }
 
 export const revalidate = 60;
+export const dynamicParams = true; // ✅ Allow fallback for new posts
