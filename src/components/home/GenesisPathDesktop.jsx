@@ -10,7 +10,10 @@ const cardMarginTops = [
 
 const GenesisPath = () => {
   return (
-    <div className="relative w-full overflow-x-hidden py-10 xl:min-h-[620px] px-4 lg:px-2" id="academics-section">
+    <div
+      className="relative w-full overflow-x-hidden py-10 xl:min-h-[620px] px-4 lg:px-2"
+      id="academics-section"
+    >
       {/* Heading */}
       <div className="relative z-10 lg:pt-[-80px] xl:pt-12 2xl:pt-28 3xl:pt-0 xl:pl-32 2xl:pl-[205px] w-[328px] sm:w-[458px] md:w-[500px] lg:w-[500px] xl:w-[650px] 2xl:w-[750px]">
         <h2 className="text-[28px] sm:text-[32px] md:text-[35px] xl:text-[45px] 2xl:text-[48px] font-semibold leading-tight">
@@ -20,16 +23,17 @@ const GenesisPath = () => {
           Where every stage shapes character, wisdom, and purpose.
         </p>
       </div>
+
       {/* SVG Background */}
       <img
         src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762404042/genesis-path-bg_mtsb6x.svg"
         alt="Genesis Path"
         className="hidden lg:block w-full h-auto absolute top-0 left-0 z-0 pointer-events-none"
         style={{ objectFit: 'contain', marginTop: '10px' }}
-        loading="eager" 
+        loading="eager"
       />
 
-      {/* Responsive X-Large Screen Styles */}
+      {/* Internal Styles */}
       <style>
         {`
           @media (min-width: 2346px) {
@@ -37,29 +41,50 @@ const GenesisPath = () => {
             .card-xl-2 { position: relative; top: 150px; left: 70px; }
             .card-xl-3 { position: relative; top: 60px; left: 30px; }
           }
+
+          /* ✅ Fix for 2560px and larger screens */
+          @media (min-width: 2560px) {
+            #academics-section {
+              min-height: 1180px !important; /* increased height for full visibility */
+              padding-top: 80px !important;
+              padding-bottom: 80px !important;
+            }
+
+            /* Adjust SVG positioning for ultra-wide screens */
+            img[alt="Genesis Path"] {
+              top: 20px !important;
+              height: auto !important;
+            }
+
+            /* Optional: small vertical lift for cards */
+            .card-xl-1 { top: 220px !important; left: 180px !important; }
+            .card-xl-2 { top: 190px !important; left: 110px !important; }
+            .card-xl-3 { top: 100px !important; left: 60px !important; }
+          }
         `}
       </style>
 
-
-
-      {/* Cards Timeline using grid */}
+      {/* Cards */}
       <div className="relative z-10 w-full xl:h-[550px] grid grid-cols-1 lg:grid-cols-3">
         {genesisCards.map((card, idx) => (
           <div
             key={idx}
             className={`flex flex-col items-start lg:p-6 w-full lg:w-[250px] xl:w-[300px] ${cardMarginTops[idx]} card-xl-${idx + 1}`}
           >
-            <h3 className="text-[22px] sm:text-[25px] xl:text-[32px] font-semibold text-left">{card.title}</h3>
-            <div className="text-[16px] xl:text-[20px] font-medium text-[#777777] text-left">{card.subtitle}</div>
-            {card.hindiText && (
-            <div className="text-[16px] xl:text-[16px] font-semibold text-[#777777] mb-0">
-              {card.hindiText}
+            <h3 className="text-[22px] sm:text-[25px] xl:text-[32px] font-semibold text-left">
+              {card.title}
+            </h3>
+            <div className="text-[16px] xl:text-[20px] font-medium text-[#777777] text-left">
+              {card.subtitle}
             </div>
-          )}
-          <div className="text-[14px] xl:text-[16px] text-[#777777] whitespace-pre-line">
-            {card.description}
-          </div>
-
+            {card.hindiText && (
+              <div className="text-[16px] xl:text-[16px] font-semibold text-[#777777] mb-0">
+                {card.hindiText}
+              </div>
+            )}
+            <div className="text-[14px] xl:text-[16px] text-[#777777] whitespace-pre-line">
+              {card.description}
+            </div>
           </div>
         ))}
       </div>

@@ -1,38 +1,40 @@
 'use client';
 import React, { useRef, useState, useEffect } from "react";
 
+// Card data
 const cards = [
-  {
-    number: 1,
-    title: "Future-Ready Curriculum",
-    desc: "Genesis School is committed to providing a nurturing and innovative learning environment where every child feels valued and inspired."
-  },
-  {
-    number: 2,
-    title: "Innovative Teaching Methods",
-    desc: "Genesis School is committed to providing a nurturing and innovative learning environment where every child feels valued and inspired."
-  },
-  {
-    number: 3,
-    title: "Holistic Development",
-    desc: "Genesis School is committed to providing a nurturing and innovative learning environment where every child feels valued and inspired."
-  },
-  {
-    number: 4,
-    title: "Expert Faculty",
-    desc: "Genesis School is committed to providing a nurturing and innovative learning environment where every child feels valued and inspired."
-  },
-  {
-    number: 5,
-    title: "Modern Infrastructure",
-    desc: "Genesis School is committed to providing a nurturing and innovative learning environment where every child feels valued and inspired."
-  },
-  {
-    number: 6,
-    title: "Community Focus",
-    desc: "Genesis School is committed to providing a nurturing and innovative learning environment where every child feels valued and inspired."
-  }
+  { number: 1, title: "Future-Ready Curriculum", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
+  { number: 2, title: "Innovative Teaching Methods", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
+  { number: 3, title: "Holistic Development", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
+  { number: 4, title: "Expert Faculty", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
+  { number: 5, title: "Modern Infrastructure", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
+  { number: 6, title: "Community Focus", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." }
 ];
+
+// Card styles with responsive width/height
+const cardBase =
+  "flex-shrink-0 snap-center rounded-xl shadow-md border-l-4 px-6 py-6 relative transition-all duration-300 hover:shadow-lg flex flex-col items-start justify-center text-left";
+const cardColors = (idx) =>
+  idx % 2 === 1
+    ? "bg-yellow-50 border-[#F8B535]"
+    : "bg-gray-100 border-[#002650]";
+const cardSize =
+  "w-[302px] h-[300px] md:w-[320px] md:h-[340px] lg:w-[352px] lg:h-[350px]";
+
+// Card component
+function WhyGenesisCard({ card, idx }) {
+  return (
+    <div className={`${cardBase} ${cardColors(idx)} ${cardSize} pointer-events-none`}>
+      <div className="mb-4">
+        <div className="rounded-full bg-white shadow-md flex items-center justify-center w-10 h-10 font-semibold text-gray-800">
+          {card.number}
+        </div>
+      </div>
+      <h2 className="mb-3 font-semibold text-[22px] text-[#333333]">{card.title}</h2>
+      <p className="text-gray-600 text-sm">{card.desc}</p>
+    </div>
+  );
+}
 
 export default function Whythegenesis() {
   const scrollRef = useRef(null);
@@ -69,8 +71,7 @@ export default function Whythegenesis() {
 
   // Keyboard navigation
   const handleKeyDown = (e) => {
-    const cardWidth = 270 + 24; // card width + gap
-
+    const cardWidth = 352 + 24; // match lg:w-[352px] + gap-6(~24px)
     if (e.key === 'ArrowRight') {
       e.preventDefault();
       scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
@@ -89,15 +90,15 @@ export default function Whythegenesis() {
   // Track active card
   const handleScroll = () => {
     if (!scrollRef.current) return;
-    const cardWidth = 270 + 24;
+    const cardWidth = 352 + 24; // sync with lg:w-[352px]
     const currentScroll = scrollRef.current.scrollLeft;
     const currentCard = Math.round(currentScroll / cardWidth);
     setActiveCard(currentCard);
   };
 
-  // Navigation buttons
+  // Navigation buttons (for future use if needed)
   const scrollToCard = (index) => {
-    const cardWidth = 270 + 24;
+    const cardWidth = 352 + 24;
     scrollRef.current.scrollTo({
       left: index * cardWidth,
       behavior: 'smooth'
@@ -123,11 +124,11 @@ export default function Whythegenesis() {
   }, []);
 
   return (
-    <section className="w-full flex flex-col items-center bg-white px-0 py-8 md:py-16">
-      <div className="max-w-[1340px] w-full px-3">
+    <section className="flex flex-col items-center bg-white px-0 py-10 md:py-16">
+      <div className="max-w-[1417px] w-full px-4 md:px-[24px] xl:px-[54px]">
         <div className="flex items-center justify-between mb-10">
           <h1 className="text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold ">
-            <span className="text-[#002650] mr-3 "> Why</span>
+            <span className="text-[#002650] mr-3">Why</span>
             <span className="text-[#F8B535]">The Genesis School?</span>
           </h1>
         </div>
@@ -155,39 +156,7 @@ export default function Whythegenesis() {
           }}
         >
           {cards.map((card, idx) => (
-            <div
-              key={idx}
-              className={`
-                flex-shrink-0
-                snap-center
-                w-[280px]
-                max-w-xs h-[280px]
-                md:max-w-sm
-                rounded-xl
-                shadow-md
-                border-l-4
-                ${idx % 2 === 1
-                  ? "bg-yellow-50 border-[#F8B535] "
-                  : "bg-gray-100 border-[#002650]"}
-                px-6 py-6
-                relative
-                transition-all duration-300
-                hover:shadow-lg
-                pointer-events-none
-                flex flex-col items-start justify-center
-                text-left
-              `}
-            >
-              <div className="mb-4">
-                <div className="rounded-full bg-white shadow-md flex items-center  justify-center w-10 h-10 font-semibold text-gray-800">
-                  {card.number}
-                </div>
-              </div>
-              <h3 className="mb-3 font-bold text-lg text-gray-800">
-                {card.title}
-              </h3>
-              <p className="text-gray-600 text-sm">{card.desc}</p>
-            </div>
+            <WhyGenesisCard key={card.number} card={card} idx={idx} />
           ))}
         </div>
       </div>

@@ -84,7 +84,7 @@ const Events = () => (
               
             `}
           >
-            <h2 className="text-[32px] sm:text-[32px] md:text-[35px] xl:text-[45px] 2xl:text-[48px] font-semibold text-[#002650] mb-2 ">
+            <h2 className="text-[32px] md:text-[40px] xl:text-[48px] font-semibold text-[#002650] mb-2 ">
               {event.title}
             </h2>
             {event.description.map((para, idx) => (

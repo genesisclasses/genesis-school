@@ -49,7 +49,7 @@ const YoungMinds768 = () => (
         </div>
         {/* Heading + desc */}
         <div className="flex-1 flex flex-col justify-center">
-          <h2 className="text-left text-[35px] font-semibold text-[#002650] mb-6">
+          <h2 className="text-left text-[42px] font-semibold text-[#002650] mb-6">
             Inspiring Young Minds,
             Building <br /> Bright Futures
           </h2>

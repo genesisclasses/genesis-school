@@ -23,10 +23,10 @@ const GridItem = ({ img, large }) => (
 );
 
 const Campus = () => (
-  <div className="w-full flex justify-center py-12 px-4 lg:px-10">
+  <div className="w-full flex justify-center pb-12 px-4 lg:px-10">
     <div className="w-full max-w-[1400px] mx-auto flex flex-col items-center">
       {/* Header */}
-      <h2 className="text-[32px] sm:text-[32px] md:text-[36px] xl:text-[48px] font-semibold text-[#002650] mb-4 md:mb-6 text-center">
+      <h2 className="text-[32px] md:text-[43px] xl:text-[48px] font-semibold text-[#002650] mb-4 md:mb-6 text-center">
         A Campus That Inspires Learning
       </h2>
       {/* Description */}

@@ -90,7 +90,7 @@ const OurAlumni = () => (
       }
     `}</style>
     <div className="max-w-[1240px] w-full flex flex-col items-center">
-      <h2 className="text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold mb-2 text-center text-[#002650]">
+      <h2 className="text-[32px] md:text-[42px] xl:text-[48px] font-semibold mb-2 text-center text-[#002650]">
         What Our Alumni Say
       </h2>
       <p className="mb-10 text-[#4A5565] text-center text-[16px] md:text-[18px]">

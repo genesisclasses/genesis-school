@@ -28,7 +28,7 @@ export default function AboutSection() {
     <>
       {/* 💻 Desktop UI (your first design) */}
       {isDesktop && (
- <section className="max-w-[1340px] mx-auto px-4 py-8 xl:py-14 flex flex-col md:flex-row items-center justify-center gap-0 md:gap-0 xl:mt-14">
+ <section className="max-w-[1417px] mx-auto px-4 py-14 flex flex-row items-center justify-center gap-0 md:gap-0 xl:mt-14">
 
       {/* Mission Card */}
       <div className="bg-[#FFFFFF] shadow-[0_4px_24px_rgba(0,0,0,0.1)] rounded-xl md:rounded-l-xl md:rounded-r-none
@@ -56,6 +56,7 @@ export default function AboutSection() {
           width={536}
           height={700}
           className="object-cover "
+          priority
         />
       </div>
 

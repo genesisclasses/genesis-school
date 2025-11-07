@@ -55,9 +55,9 @@ export default function SchoolLife() {
   }, []);
 
   return (
-    <section className="w-full py-14 md:py-20 bg-white">
+    <section className="w-full py-10 md:py-16 bg-white">
       <div className="text-left md:text-center mb-12 px-4">
-        <h2 className="text-2xl md:text-4xl font-semibold text-[#09254A]">
+        <h2 className="text-[32px] md:text-[40px] xl:text-[48px] font-semibold text-[#09254A]">
           A Glimpse Into Our School Life
         </h2>
       </div>

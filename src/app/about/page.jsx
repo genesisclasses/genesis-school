@@ -17,7 +17,9 @@ const page = () => {
       <Whythegenesis/>
       <PillarsOfGenesis/>
       <SchoolLife/>
-      <AdmissionsSection/>
+      <div className="-mb-8">
+        <AdmissionsSection />
+      </div>
     </div>
   )
 }

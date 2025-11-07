@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Aboutgenesis() {
   return (
-    <section className="max-w-[1340px] mx-auto px-4 py-8 md:py-10 mt-10 flex flex-col-reverse md:flex-row items-center lg:items-start gap-8">
+    <section className="max-w-[1417px] mx-auto px-4 py-8 md:py-10 mt-10 flex flex-col-reverse md:flex-row items-center lg:items-start gap-8">
       {/* Text Section */}
       <div className="md:w-[640px] lg:w-[60%]">
         <h2 className="text-[32px] md:text-[42px] lg:text-[40px] xl:text-[48px] font-semibold mb-4 text-[#000000] xl:mt-10">About Genesis</h2>
