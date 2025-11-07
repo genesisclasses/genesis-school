@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import useScreenRange from "@/Utility Hook/useScreenRange"; // Adjust path if needed
-import PillarsMobile from "@/components/about/MobilePillar"; // Path depends on your file structure
+import PillarsMobile from "@/components/about/MobilePillar"; // Adjust path if needed
 
 const pillars = [
   { number: "01", title: "Enhancement of life skills" },
@@ -15,7 +15,7 @@ const pillars = [
 function PillarContent({ number, title, numberClass, titleClass }) {
   return (
     <>
-      <p className={` block text-left ml-4 lg:ml-9 xl:ml-13 ${numberClass} `}>{number}</p>
+      <p className={`block text-left ml-4 lg:ml-9 xl:ml-13 ${numberClass}`}>{number}</p>
       <p className={`font-bold px-3 md:text-left tracking-wide leading-tight ${titleClass}`}>
         {title}
       </p>
@@ -23,7 +23,7 @@ function PillarContent({ number, title, numberClass, titleClass }) {
   );
 }
 
-// iPad Grid Pillar
+// iPad Grid Pillar with animation
 function GridPillar({ pillar, index }) {
   return (
     <motion.div
@@ -49,7 +49,7 @@ function GridPillar({ pillar, index }) {
   );
 }
 
-// XL Large Screen Pillar for 5-column layout
+// XL Large Screen Pillar for 5-column layout with animation
 function XLPillar({ pillar, index }) {
   return (
     <motion.div
@@ -83,31 +83,40 @@ export default function PillarsOfGenesis() {
       id="pillars"
       className="max-w-[1340px] mx-auto px-4 md:px-8 lg:px-4 py-10 md:py-16 flex flex-col items-center justify-center gap-10 overflow-hidden"
     >
-      {/* Heading for MOBILE+MD+LG - hidden on XL */}
-      <motion.div
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="block lg:hidden text-left w-full"
-      >
-        <h2 className="text-[32px] md:text-[42px] lg:text-[42px] xl:text-[48px] font-semibold mb-12">
-          <span className="text-[#002650]">Pillars of</span>{" "}
-          <span className="text-[#F8B535] ml-2"> The Genesis School</span>
-        </h2>
-      </motion.div>
+      {/* Heading for MOBILE with no animation */}
+      {isMobile ? (
+        <div className="block lg:hidden text-left w-full">
+          <h2 className="text-[32px] md:text-[42px] lg:text-[42px] xl:text-[48px] font-semibold mb-12">
+            <span className="text-[#002650]">Pillars of</span>{" "}
+            <span className="text-[#F8B535] ml-2"> The Genesis School</span>
+          </h2>
+        </div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="block lg:hidden text-left w-full"
+        >
+          <h2 className="text-[32px] md:text-[42px] lg:text-[42px] xl:text-[48px] font-semibold mb-12">
+            <span className="text-[#002650]">Pillars of</span>{" "}
+            <span className="text-[#F8B535] ml-2"> The Genesis School</span>
+          </h2>
+        </motion.div>
+      )}
 
-      {/* MOBILE ONLY */}
+      {/* MOBILE ONLY - No animation */}
       {isMobile && <PillarsMobile pillars={pillars} />}
 
-      {/* iPad MD — 2x2 grid */}
+      {/* iPad MD — 2x2 grid with animations */}
       <div className="hidden md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-10 lg:grid lg:grid-cols-2 lg:gap-x-4 lg:gap-y-10 lg:hidden justify-center items-center -mt-10">
         {pillars.map((pillar, index) => (
           <GridPillar key={index} pillar={pillar} index={index} />
         ))}
       </div>
 
-      {/* XL — Heading left, pillars center */}
+      {/* XL — Heading left, pillars center with animation */}
       <div className="hidden lg:grid lg:grid-cols-5 lg:gap-x-0 xl:items-center xl:w-full xl:mx-auto">
         {/* Heading in Left column */}
         <motion.div
@@ -128,7 +137,7 @@ export default function PillarsOfGenesis() {
           </h2>
         </motion.div>
 
-        {/* Pillars Columns 2-5 */}
+        {/* Pillars Columns 2-5 with animations */}
         {pillars.map((pillar, index) => (
           <XLPillar key={index} pillar={pillar} index={index} />
         ))}

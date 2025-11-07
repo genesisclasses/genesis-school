@@ -56,6 +56,13 @@ const YoungMindsDefault = () => (
         background-position: center top 0px !important;
       }
     }
+
+    @media (max-width: 435px) {
+      .youngminds-container {
+        background-position: bottom -30px left 0px !important;
+      }
+
+
       @media (max-width: 425px) {
       .youngminds-container {
         background-position: bottom -20px left 0px !important;

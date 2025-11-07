@@ -122,9 +122,9 @@ export default function Mission() {
           <div className="relative z-10 -my-20 md:-my-28 lg:my-0
                           w-[100%] md:h-[422px] lg:w-[536px]
                           rounded-2xl lg:rounded-3xl overflow-hidden
-                           flex items-center justify-center block md:hidden">
+                           flex items-center justify-center block md:hidden px-3">
             <Image
-              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762412294/mission-vision_yvinec.webp"
+              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762510674/imgi_26_image_1_jmkhnv.webp"
               alt="The Genesis School"
               width={800}
               height={700}
