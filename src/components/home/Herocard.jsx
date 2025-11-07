@@ -16,7 +16,7 @@ const featureCards = [
 ];
 
 const Card = ({ title, iconPath }) => (
-  <div className="
+  <div id='herocards-section' className="
     flex flex-col bg-white shadow-xl p-6
     transition duration-300 hover:shadow-2xl cursor-pointer
     h-52 sm:h-56 lg:h-58 xl:h-59

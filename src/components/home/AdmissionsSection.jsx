@@ -6,7 +6,7 @@ const AdmissionsSection = () => (
     
     {/* Background image */}
     <Image
-      src="/assets/banner.png"
+      src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762493016/banner_kahkom.webp"
       alt="School Banner"
       fill
       priority
