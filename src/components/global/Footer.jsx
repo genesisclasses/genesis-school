@@ -220,7 +220,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-[#09254a] h-[70px] w-full" />
+      <div className="bg-[#09254a] h-[70px] w-full text-white justify-center items-center flex font-lato italic" >
+        <p>Copyright ©Genesis 2025. Maintained by Indiefluence</p>
+      </div>
     </footer>
   );
 }
