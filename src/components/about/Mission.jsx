@@ -51,7 +51,7 @@ export default function AboutSection() {
       <div className="overflow-hidden rounded-3xl shadow-[0_4pxrgba(0,0,0,0.15)]
                      lg:w-[636px] lg:h-[700px] xl:w-[536px] xl:h-[700px] flex items-center justify-center">
         <Image
-          src="/assets/about/aboutmission.png"
+          src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762510674/imgi_26_image_1_jmkhnv.webp"
           alt="The Genesis School"
           width={536}
           height={700}
@@ -114,6 +114,7 @@ export default function AboutSection() {
               width={800}
               height={700}
               className="object-cotain mt-16"
+              priority
             />
           </div>
 
