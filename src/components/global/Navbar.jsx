@@ -157,7 +157,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavigateToSection("academics-section");
                   }}
-                  className={`pb-1 cursor-pointer ${isActive("/", "academics-section") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 cursor-pointer ${isActive("/", "academics-section")}`}
                 >
                   Academics
                 </a>
@@ -216,7 +216,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ✅ ✅ ✅ MOBILE DRAWER — RESTORED ✅ ✅ ✅ */}
+        {/* ✅ ✅ ✅ MOBILE DRAWER — FIXED OFFSET ✅ ✅ ✅ */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -224,7 +224,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden fixed top-[96px] right-0 w-3/4 max-w-[329px] h-[calc(100vh-96px)] bg-white shadow-2xl p-8"
+              className="lg:hidden fixed  right-0 w-3/4 max-w-[329px] h-[calc(100vh-100px)] bg-white shadow-2xl p-8"
             >
               <ul className="flex flex-col items-center space-y-6 text-base font-medium">
 
@@ -241,7 +241,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href="/#academics-section"
-                    className={`pb-1 ${isActive("/", "academics-section") ? "border-b-2 border-amber-400" : ""}`}
+                    className={`pb-1 ${isActive("/", "academics-section")}`}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavigateToSection("academics-section");
@@ -251,29 +251,10 @@ export default function Navbar() {
                   </a>
                 </li>
 
-                <li>
-                  <Link href="/about" onClick={() => setMobileOpen(false)}>
-                    About
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/project-darpan" onClick={() => setMobileOpen(false)}>
-                    Project DARPAN
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/co-curricular" onClick={() => setMobileOpen(false)}>
-                    Co-Curricular
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="/blogs" onClick={() => setMobileOpen(false)}>
-                    Blogs
-                  </Link>
-                </li>
+                <li><Link href="/about" onClick={() => setMobileOpen(false)}>About</Link></li>
+                <li><Link href="/project-darpan" onClick={() => setMobileOpen(false)}>Project DARPAN</Link></li>
+                <li><Link href="/co-curricular" onClick={() => setMobileOpen(false)}>Co-Curricular</Link></li>
+                <li><Link href="/blogs" onClick={() => setMobileOpen(false)}>Blogs</Link></li>
 
                 <li className="w-full">
                   <Link
