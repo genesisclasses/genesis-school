@@ -132,7 +132,7 @@ export default async function BlogDetailPage({ params }) {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <div className="flex gap-12">
+        <div className=" flex-row md:flex gap-12">
           <ShareSidebar post={post} readTime={post.read_time} />
 
           <main className="flex-1 max-w-3xl">
