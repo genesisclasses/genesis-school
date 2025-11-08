@@ -2,9 +2,10 @@ import { Kameron, Lato } from 'next/font/google';
 import "./globals.css";
 import Navbar from "../components/global/Navbar";
 import Footer from "../components/global/Footer";
+import ScrollToTop from '@/Utility Hook/ScrollToTop'; // Import the client component
 
 const kameron = Kameron({
-  weight: ['400', '700'],
+  weight: ['400', '600'],
   subsets: ['latin'],
   variable: '--font-kameron'
 });
@@ -26,7 +27,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${kameron.variable} ${lato.variable}`}>
       <body>
         <Navbar />
-        {children}
+        <ScrollToTop /> {/* Client component for scroll restoration */}
+        <main className="pt-0">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

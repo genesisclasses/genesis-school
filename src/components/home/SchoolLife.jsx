@@ -56,13 +56,13 @@ export default function SchoolLife() {
 
   return (
     <section className="w-full py-10 md:py-16 bg-white">
-      <div className="text-left md:text-center mb-12 px-4">
+      <div className="text-left mb-12 px-4 max-w-[1417px] mx-auto">
         <h2 className="text-[32px] md:text-[40px] xl:text-[48px] font-semibold text-[#09254A]">
           A Glimpse Into Our School Life
         </h2>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+      <div className="max-w-[1417px] mx-auto px-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
         {cards.map((card) => {
           const hasText = !!card.text;
           // ✅ Default: text side visible (rotate 180)
