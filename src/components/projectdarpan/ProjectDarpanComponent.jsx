@@ -44,6 +44,10 @@ const ProjectDarpan = () => {
             background-position: bottom 30px left 0px !important;
           }
         }
+          @media (max-width: 435px) {
+          .projectdarpan-container {
+            background-position: bottom -30px left 0px !important;
+          }
         @media (max-width: 425px) {
           .projectdarpan-container {
             background-position: bottom -30px left 0px !important;

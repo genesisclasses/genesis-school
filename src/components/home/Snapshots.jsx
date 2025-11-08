@@ -77,6 +77,7 @@ const Snapshots = () => {
                   alt={snap.alt}
                   className="w-full h-full object-cover select-none"
                   draggable={false}
+                  loading="eager" 
                 />
               </div>
             ))}

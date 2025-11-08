@@ -39,10 +39,10 @@ const Toppers = () => (
               alt={topper.name}
               width={334}
               height={432}
-              className="object-cover border h-[200px] md:h-[390px] border-gray-200"
+              className="object-cover border h-[250px] md:h-[390px] border-gray-200"
               priority
             />
-            <p className="text-[#ffc700] text-[16px] font-bold mt-6 mb-1 uppercase text-center">{topper.name}</p>
+            <p className="text-[#F8B535] text-[16px] font-bold mt-6 mb-1 uppercase text-center">{topper.name}</p>
             {/* <p className="text-gray-700 text-sm text-center">{topper.batch}</p> */}
           </div>
         ))}

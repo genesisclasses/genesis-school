@@ -144,7 +144,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/"
-                  className={`pb-1 ${isActive("/") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/") ? "border-b-2 border-amber-400" : ""}`}
                 >
                   Home
                 </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavigateToSection("academics-section");
                   }}
-                  className={`pb-1 cursor-pointer ${isActive("/", "academics-section")}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/", "academics-section")}`}
                 >
                   Academics
                 </a>
@@ -166,7 +166,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/about"
-                  className={`pb-1 ${isActive("/about") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/about") ? "border-b-2 border-amber-400" : ""}`}
                 >
                   About
                 </Link>
@@ -175,7 +175,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/project-darpan"
-                  className={`pb-1 ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}
                 >
                   Project DARPAN
                 </Link>
@@ -184,7 +184,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/co-curricular"
-                  className={`pb-1 ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}
                 >
                   Co-Curricular
                 </Link>
@@ -193,7 +193,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/blogs"
-                  className={`pb-1 ${isActive("/blogs") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/blogs") ? "border-b-2 border-amber-400" : ""}`}
                 >
                   Blogs
                 </Link>
@@ -251,10 +251,10 @@ export default function Navbar() {
                   </a>
                 </li>
 
-                <li><Link href="/about" onClick={() => setMobileOpen(false)}>About</Link></li>
-                <li><Link href="/project-darpan" onClick={() => setMobileOpen(false)}>Project DARPAN</Link></li>
-                <li><Link href="/co-curricular" onClick={() => setMobileOpen(false)}>Co-Curricular</Link></li>
-                <li><Link href="/blogs" onClick={() => setMobileOpen(false)}>Blogs</Link></li>
+                <li><Link href="/about" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/about") ? "border-b-2 border-amber-400" : ""}`}>About</Link></li>
+                <li><Link href="/project-darpan" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}>Project Darpan</Link></li>
+                <li><Link href="/co-curricular" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}>Co-Curricular</Link></li>
+                <li><Link href="/blogs" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/blogs") ? "border-b-2 border-amber-400" : ""}`}>Blogs</Link></li>
 
                 <li className="w-full">
                   <Link

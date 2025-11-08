@@ -10,7 +10,7 @@ const pillars = [
   { number: "04", title: "Soft Skills and Effective Communication" },
 ];
 
-export default function MobilePillar() {
+export default function PillarsMobile() {
   return (
     <div className="w-full flex flex-col items-center relative -mt-16">
       {pillars.map((pillar, idx) => (
@@ -39,7 +39,7 @@ export default function MobilePillar() {
           <div className="absolute inset-0 flex items-center pointer-events-none">
             <div className="ml-9">
               <div className="text-[16px] text-[#333] mb-1">{pillar.number}</div>
-              <div className="text-[18px] text-[#333] tracking-wide font-bold  text-left max-w-[220px]">
+              <div className="text-[18px] text-[#333] tracking-wide font-bold text-left max-w-[220px]">
                 {pillar.title}
               </div>
             </div>

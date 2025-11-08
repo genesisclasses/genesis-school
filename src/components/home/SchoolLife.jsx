@@ -93,6 +93,7 @@ export default function SchoolLife() {
                     alt="School Image"
                     fill
                     className="object-cover w-full h-full rounded-3xl"
+                    priority
                   />
                 </div>
 
