@@ -1,6 +1,6 @@
 // app/blogs/[slug]/page.jsx
 import { createClient } from '@/lib/supabase/server';
-import { createStaticClient } from '@/lib/supabase/client'; // ✅ New import
+import { createStaticClient } from '@/lib/supabase/client';
 import { notFound } from 'next/navigation';
 import { createSlug } from '@/lib/utils/slugify';
 import ShareSidebar from '@/components/blog/ShareSidebar';
@@ -31,7 +31,7 @@ async function getBlogPostBySlug(slug) {
 // ✅ Use createStaticClient() instead of createClient() here
 export async function generateStaticParams() {
   try {
-    const supabase = createStaticClient(); // ✅ No await, no cookies
+    const supabase = createStaticClient();
 
     const { data: posts, error } = await supabase
       .from('posts')
@@ -79,7 +79,7 @@ function renderContent(content) {
           switch (node.type) {
             case 'paragraph':
               return (
-                <p key={idx} className="text-base text-gray-700 mb-5 leading-relaxed">
+                <p key={idx} className="text-[16px] md:text-base text-gray-700 mb-5 leading-relaxed">
                   {node.content?.map((item, i) => {
                     if (!item) return null;
                     let element = item.text || '';
@@ -93,8 +93,19 @@ function renderContent(content) {
             case 'heading':
               const level = node.attrs?.level || 1;
               const Tag = `h${level}`;
+
+              // Responsive heading sizes: 18px mobile, scales up on desktop
+              const headingSizes = {
+                h1: 'text-[18px] md:text-4xl',
+                h2: 'text-[18px] md:text-3xl',
+                h3: 'text-[18px] md:text-2xl',
+                h4: 'text-[18px] md:text-xl',
+                h5: 'text-[18px] md:text-lg',
+                h6: 'text-[18px] md:text-base'
+              };
+
               return (
-                <Tag key={idx} className={`text-${4-level}xl font-bold mb-4 mt-6`}>
+                <Tag key={idx} className={`${headingSizes[Tag]} font-bold mb-4 mt-6`}>
                   {node.content?.map((item, i) => <span key={i}>{item.text}</span>)}
                 </Tag>
               );
@@ -125,14 +136,14 @@ export default async function BlogDetailPage({ params }) {
           />
         )}
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-          <h1 className="text-5xl font-bold text-white text-center px-8">
+          <h1 className="text-[32px] md:text-5xl font-bold text-white text-center px-8">
             {post.title}
           </h1>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <div className=" flex-row md:flex gap-12">
+        <div className="flex-row md:flex gap-12">
           <ShareSidebar post={post} readTime={post.read_time} />
 
           <main className="flex-1 max-w-3xl">
@@ -159,4 +170,4 @@ export default async function BlogDetailPage({ params }) {
 }
 
 export const revalidate = 60;
-export const dynamicParams = true; // ✅ Allow fallback for new posts
+export const dynamicParams = true;

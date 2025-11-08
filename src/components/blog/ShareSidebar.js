@@ -22,7 +22,7 @@ export default function ShareSidebar({ post, readTime }) {
   return (
     <>
       {/* MOBILE: Horizontal layout matching the image */}
-      <div className="lg:hidden w-full border-b border-gray-300 pb-6 mb-6">
+      <div className="md:hidden w-full border-b border-gray-300 pb-6 mb-6">
         <div className="flex items-center justify-center gap-16">
           {/* Read Time Section - Mobile */}
           <div className="flex flex-col items-center gap-2">
@@ -93,7 +93,7 @@ export default function ShareSidebar({ post, readTime }) {
       </div>
 
       {/* DESKTOP: Vertical sidebar (unchanged) */}
-      <aside className="hidden lg:block w-28 border-r-1 border-gray-300 flex-shrink-0 pt-6">
+      <aside className="hidden md:block w-28 border-r-1 border-gray-300 flex-shrink-0 pt-6">
         {/* Read Time Section */}
         {displayReadTime ? (
           <div className="mb-6">
