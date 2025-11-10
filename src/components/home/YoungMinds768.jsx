@@ -49,11 +49,11 @@ const YoungMinds768 = () => (
         </div>
         {/* Heading + desc */}
         <div className="flex-1 flex flex-col justify-center">
-          <h2 className="text-left text-[42px] font-semibold text-[#002650] mb-6">
+          <h2 className="text-left text-[42px] font-semibold text-[#002650] mb-2">
             Inspiring Young Minds,
             Building <br /> Bright Futures
           </h2>
-          <p className="text-left text-gray-600 mb-0 text-[18px]">
+          <p className="text-left text-gray-600 mb-3 text-[18px]">
             At Genesis, we go beyond textbooks to create an environment where every child can learn, grow, and lead with confidence.
           </p>
         </div>

@@ -69,7 +69,7 @@ const YoungMindsDefault = () => (
       }
     }
   `}</style>
-    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 py-14 lg:py-16 xl:mb-20 flex flex-col lg:flex-row items-stretch gap-12">
+    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 my-[29px] lg:py-[40px] xl:mb-[40px] flex flex-col lg:flex-row items-stretch gap-12">
       {/* Image block */}
       <div className="shrink-0 flex items-center justify-center min-h-[340px]">
         <img
@@ -83,7 +83,7 @@ const YoungMindsDefault = () => (
       {/* Content + Grid block */}
       <div className="flex-1 2xl:ml-12 flex flex-col justify-center">
         {/* Desktop Title */}
-        <h2 className="text-left text-[32px] md:text-[35px] lg:text-[40px] 2xl:text-[48px] font-semibold text-[#002650] mb-6 sm:block hidden">
+        <h2 className="text-left text-[32px] leading-tight md:text-[35px] lg:text-[40px] 2xl:text-[48px] font-semibold text-[#002650] mb-2 sm:block hidden">
           Inspiring Young Minds,<br />
           Building Bright Futures
         </h2>
@@ -93,7 +93,7 @@ const YoungMindsDefault = () => (
           Minds,Building <br />
           Bright Futures
         </h2>
-        <p className="text-left text-gray-600 mb-7 text-[16px] sm:text-[18px]">
+        <p className="text-left text-gray-600 mb-3 text-[16px] sm:text-[18px]">
           At Genesis, we go beyond textbooks to create an environment where every child can learn, grow, and lead with confidence.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-4 lg:gap-x-4 gap-y-4">

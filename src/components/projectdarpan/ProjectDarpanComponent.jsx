@@ -15,7 +15,7 @@ const ProjectDarpan = () => {
 
   return (
     <div
-      className={`projectdarpan-container projectdarpan-bg flex justify-center py-10 px-4 xl:px-6 relative overflow-hidden
+      className={`projectdarpan-container projectdarpan-bg flex justify-center mt-[30px] mb-[40px] px-4 xl:px-6 relative overflow-hidden
         bg-no-repeat
         bg-[url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762406066/darpan-bg-mobile_werezn.svg')] bg-contain bg-bottom
         md:bg-[url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762406064/darpan-bg-768_o1op57.svg')]

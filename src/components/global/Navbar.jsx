@@ -139,7 +139,7 @@ export default function Navbar() {
 
           {/* ✅ DESKTOP MENU */}
           <div className="hidden lg:flex items-center space-x-7">
-            <ul className="flex space-x-7 text-gray-900 text-sm font-medium">
+            <ul className="flex space-x-7 text-gray-900 text-[16px] font-medium">
 
               <li>
                 <Link
@@ -200,7 +200,7 @@ export default function Navbar() {
               </li>
             </ul>
 
-            <div className="flex text-sm font-semibold ml-4">
+            <div className="flex text-[16px] font-semibold ml-4">
               <Link href="/contact" className="text-black bg-[#ffb833] px-4 py-2 rounded-l-full">
                 Schedule a Visit
               </Link>

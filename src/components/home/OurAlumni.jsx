@@ -67,7 +67,7 @@ const alumniData = [
 ];
 
 const OurAlumni = () => (
-  <div className="w-full flex flex-col items-center py-10 bg-white px-4 md:px-10">
+  <div className="w-full flex flex-col items-center pt-[40px] pb-[40px] bg-white px-4 md:px-10">
     <style jsx>{`
       @media (max-width: 480px) {
         .fixed-mobile-height {
@@ -90,10 +90,10 @@ const OurAlumni = () => (
       }
     `}</style>
     <div className="max-w-[1240px] w-full flex flex-col items-center">
-      <h2 className="text-[32px] md:text-[42px] xl:text-[48px] font-semibold mb-2 text-center text-[#002650]">
+      <h2 className="text-[32px] md:text-[42px] xl:text-[48px] font-semibold mb-[10px] text-center text-[#002650]">
         What Our Alumni Say
       </h2>
-      <p className="mb-10 text-[#4A5565] text-center text-[16px] md:text-[18px]">
+      <p className="mb-[30px] text-[#4A5565] text-center text-[16px] md:text-[18px] lg:text-[16px]">
         Hear from our students who've gone on to achieve great things
       </p>
       <div className="relative w-full max-w-[1072px] h-auto sm:h-[404px] flex items-center justify-center">

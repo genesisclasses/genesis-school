@@ -1,8 +1,10 @@
 import Image from 'next/image'
-import { Users, ListChecks } from 'lucide-react'
+import Link from 'next/link';
+
+import { Users, ListChecks, } from 'lucide-react'
 
 const AdmissionsSection = () => (
-  <section className="relative w-full h-[465px] flex items-center justify-center overflow-hidden mb-[30px]">
+  <section className="relative w-full h-[465px] flex items-center justify-center overflow-hidden py-[30px]">
     
     {/* Background image */}
     <Image
@@ -10,7 +12,7 @@ const AdmissionsSection = () => (
       alt="School Banner"
       fill
       priority
-      style={{ objectFit: 'cover', objectPosition: 'center', zIndex: 0 }}
+      style={{ objectFit: 'cover', objectPosition: 'center 80%', zIndex: 0 }}
     />
 
     {/* Blue overlay */}
@@ -65,7 +67,7 @@ const AdmissionsSection = () => (
         w-full md:w-auto 
         px-5 md:px-0
       ">
-        <button className="
+      <Link href="/contact"> <button className="
           bg-amber-400 text-[#09254a] font-bold
           rounded-full
           w-full md:w-auto
@@ -76,8 +78,8 @@ const AdmissionsSection = () => (
           transition
         ">
           Apply Now
-        </button>
-
+        </button></Link>
+      <Link href="/contact">
         <button className="
           bg-white text-[#09254a] font-bold
           rounded-full 
@@ -91,6 +93,7 @@ const AdmissionsSection = () => (
         ">
           Take Scholarship Test
         </button>
+        </Link> 
       </div>
     </div>
   </section>

@@ -55,7 +55,7 @@ export default function SchoolLife() {
   }, []);
 
   return (
-    <section className="w-full py-10 md:py-16 bg-white">
+    <section className="w-full mt-[30px] mb-[40px]  bg-white">
       <div className="text-left mb-12 px-4 max-w-[1417px] mx-auto">
         <h2 className="text-[32px] md:text-[40px] xl:text-[48px] font-semibold text-[#09254A]">
           A Glimpse Into Our School Life
@@ -67,15 +67,15 @@ export default function SchoolLife() {
           const hasText = !!card.text;
           // ✅ Default: text side visible (rotate 180)
           // ✅ Hover: flip back to image side (rotate 0)
-          const isFlipped = !isMobile && hasText && hoveredId === card.id;
+          const isFlipped =  hasText && hoveredId === card.id;
 
           return (
             <div
               key={card.id}
               className="relative w-full aspect-square rounded-3xl overflow-hidden cursor-pointer border border-[#DADADA]"
               style={{ perspective: "1000px" }}
-              onMouseEnter={() => !isMobile && hasText && setHoveredId(card.id)}
-              onMouseLeave={() => !isMobile && setHoveredId(null)}
+              onMouseEnter={() => hasText && setHoveredId(card.id)}
+              onMouseLeave={() => setHoveredId(null)}
             >
               <div
                 className={`relative w-full h-full transition-transform duration-500 ${
@@ -83,7 +83,7 @@ export default function SchoolLife() {
                 }`}
                 style={{
                   transformStyle: "preserve-3d",
-                  transition: isMobile ? "none" : "transform 0.6s ease",
+                  transition: "transform 0.6s ease",
                 }}
               >
                 {/* Front (Image) */}
@@ -100,7 +100,7 @@ export default function SchoolLife() {
                 {/* Back (Text) */}
                 {hasText && (
                   <div className="absolute inset-0 flex items-start justify-start p-4 md:p-5 bg-white text-[#09254A] text-left rounded-3xl rotate-y-180 flip-face leading-snug">
-                    <p className="text-[14px] sm:text-[14px] md:text-[12px] lg:text-[15px]  xl:text-[15px] italic text-[#777777]">
+                    <p className="text-[14.3px] md:text-[13px] lg:text-[15px]  xl:text-[15px] italic text-[#777777]">
                       {card.text}
                     </p>
                   </div>
