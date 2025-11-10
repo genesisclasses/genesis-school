@@ -26,7 +26,7 @@ const Hero = () => {
     >
       <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto">
         <Image
-          className="mx-auto h-30 sm:h-30 lg:h-55 w-auto mb-3 sm:mb-4 md:h-40 xl:h-40 xl:w-120 drop-shadow-lg"
+          className="mx-auto h-30 sm:h-30 md:h-40 lg:h-36 xl:h-30 2xl:h-50 w-auto  xl:w-120 drop-shadow-lg"
           src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762494438/logo_offgkb.svg"
           alt="Genesis School Crest"
           width={96}
@@ -35,12 +35,12 @@ const Hero = () => {
         />
 
         {/* Main Title */}
-        <h1 className="text-2xl sm:text-4xl lg:text-4xl tracking-wide font-extrabold  mb-5 md:mb-2 leading-tight">
+        <h1 className="text-2xl sm:text-4xl lg:text-4xl tracking-wide font-extrabold  mb-2 md:mb-2 leading-tight">
           Excellence in Education, Excellence in Life
         </h1>
 
         {/* Description */}
-        <p className="max-w-2xl sm:max-w-2xl lg:max-w-4xl mx-auto text-xs sm:text-sm lg:text-base mb-10 md:mb-4 font-light leading-relaxed px-1">
+        <p className="max-w-2xl sm:max-w-xl lg:max-w-4xl mx-auto text-xs sm:text-sm lg:text-base mb-6 md:mb-2 font-light leading-relaxed px-1">
           From the first step in pre-primary to the final years of senior secondary, we guide every learner
           with a world-class curriculum, expert faculty, Olympiad and competitive exam training, and holistic
           support that ensures success in higher education and beyond.

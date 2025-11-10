@@ -100,7 +100,7 @@ export default function SchoolLife() {
                 {/* Back (Text) */}
                 {hasText && (
                   <div className="absolute inset-0 flex items-start justify-start p-4 md:p-5 bg-white text-[#09254A] text-left rounded-3xl rotate-y-180 flip-face leading-snug">
-                    <p className="text-xs sm:text-[12px] md:text-[12px] lg:text-[15px]  xl:text-[15px] italic text-[#777777]">
+                    <p className="text-[14px] sm:text-[14px] md:text-[12px] lg:text-[15px]  xl:text-[15px] italic text-[#777777]">
                       {card.text}
                     </p>
                   </div>
