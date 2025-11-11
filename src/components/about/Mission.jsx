@@ -107,7 +107,7 @@ export default function Mission() {
           {/* Center Image for tablet*/}
           <div className="relative z-10 -my-20 md:-my-28 lg:my-0
                           w-[732px] h-[522px] overflow-hidden
-                          flex items-center justify-center md:block hidden">
+                          items-center justify-center md:block hidden">
             <Image
               src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762420168/768-mission_ymems8.webp"
               alt="The Genesis School"
@@ -120,15 +120,15 @@ export default function Mission() {
 
           {/* Center Image for mobile screen*/}
           <div className="relative z-10 -my-20 md:-my-28 lg:my-0
-                          w-[100%] md:h-[422px] lg:w-[536px]
+                          w-full md:h-[422px] lg:w-[536px]
                           rounded-2xl lg:rounded-3xl overflow-hidden
-                           flex items-center justify-center block md:hidden px-3">
+                            items-center justify-center block md:hidden px-3">
             <Image
               src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762510674/imgi_26_image_1_jmkhnv.webp"
               alt="The Genesis School"
               width={800}
               height={700}
-              className="object-cover w-full h-full mt-5 md:mt-32 lg:mt-0"
+              className="object-cover w-full h-full mt-10 md:mt-32 lg:mt-0"
               priority
             />
           </div>
@@ -139,7 +139,7 @@ export default function Mission() {
                           w-[85%] md:w-[643px] lg:w-[400px]
                           flex flex-col justify-center text-left
                           lg:rounded-r-2xl lg:rounded-l-none
-                          lg:z-auto mt-6 md:mt-7 lg:mt-0">
+                          lg:z-auto mt-10 md:mt-7 lg:mt-0">
             <h1 className="text-[22px] font-semibold text-[#002650] mb-4">
               Vision
             </h1>

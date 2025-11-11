@@ -1,3 +1,4 @@
+// **************************** this component use in below 1024px screen 1023px to 768px screen ******************************** //  
 'use client';
 import React from "react";
 import "@/components/css/YoungMinds.css";

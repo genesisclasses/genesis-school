@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, Menu, X } from 'lucide-react';
@@ -10,6 +10,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isHeroVisible, setIsHeroVisible] = useState(false);
+  const mobileDrawerRef = useRef(null);
 
   const pathname = usePathname();
   const router = useRouter();
@@ -98,18 +99,40 @@ export default function Navbar() {
     return false;
   };
 
+  // Close drawer when clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        mobileOpen &&
+        mobileDrawerRef.current &&
+        !mobileDrawerRef.current.contains(event.target)
+      ) {
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileOpen]);
+
   return (
     <header className="sticky top-0 z-50 w-full">
-
       {/* ✅ Top Bar */}
-      <div className="bg-[#001f3f] text-white flex justify-end items-center text-xs h-8 px-4">
-        <div className="max-w-7xl w-full flex justify-end px-2 sm:px-6">
-          <span className="flex items-center mr-6 font-light">
-            <Phone size={14} className="mr-2" /> +91 98123 98123
+      <div className="bg-[#001f3f] text-white flex justify-end items-center text-xs h-8 px-0 md:px-4">
+        <div className="max-w-7xl w-full flex justify-center md:justify-end px-2 sm:px-6 ">
+          <span className="flex items-center mr-6  border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-6">
+            <li className="flex md:justify-start  justify-center gap-2 items-center">
+              <Phone size={14} />
+              <Link href="tel:+919876543210" className="">
+                <p className="md:text-[14px]">+91 98765 43210</p>
+              </Link>
+            </li>
           </span>
-          <span className="flex items-center font-light">
+          <span className="flex items-center  border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0 md:text-[14px] tracking-wide">
             <Mail size={14} className="mr-2" />
-            <a href="mailto:info@genesisclasses.com">info@genesisclasses.com</a>
+            <a href="mailto:info@genesisschool.in ">info@genesisschool.in</a>
           </span>
         </div>
       </div>
@@ -124,7 +147,6 @@ export default function Navbar() {
         `}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
-
           {/* ✅ LOGO */}
           <Link href="/" className="flex items-center">
             <Image
@@ -140,7 +162,6 @@ export default function Navbar() {
           {/* ✅ DESKTOP MENU */}
           <div className="hidden lg:flex items-center space-x-7">
             <ul className="flex space-x-7 text-gray-900 text-[16px] font-medium">
-
               <li>
                 <Link
                   href="/"
@@ -220,14 +241,14 @@ export default function Navbar() {
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
+              ref={mobileDrawerRef}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden fixed  right-0 w-3/4 max-w-[329px] h-[calc(100vh-100px)] bg-white shadow-2xl p-8"
+              className="lg:hidden fixed right-0 w-3/4 max-w-[329px] h-[calc(100vh-100px)] bg-white shadow-2xl p-8"
             >
               <ul className="flex flex-col items-center space-y-6 text-base font-medium">
-
                 <li>
                   <Link
                     href="/"
@@ -250,7 +271,6 @@ export default function Navbar() {
                     Academics
                   </a>
                 </li>
-
                 <li><Link href="/about" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/about") ? "border-b-2 border-amber-400" : ""}`}>About</Link></li>
                 <li><Link href="/project-darpan" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}>Project Darpan</Link></li>
                 <li><Link href="/co-curricular" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}>Co-Curricular</Link></li>

@@ -47,8 +47,8 @@ const Snapshots = () => {
   };
 
   return (
-    <section className="pt-[30px] pb-[40px] box-border w-full bg-white">
-      <div className="snapshots-container pl-6 xl:pl-0">
+    <section className="md:pt-[30px] pb-10 box-border w-full bg-white">
+      <div className="snapshots-container pl-4 md:pl-6 xl:pl-0">
         <div className="w-full mb-5">
           <h2 className="text-[32px] md:text-[42px] xl:text-[48px] font-semibold text-[#1b365d] m-0">
             Snapshots from Campus
@@ -69,7 +69,7 @@ const Snapshots = () => {
             {snapshotsData.map((snap, idx) => (
               <div
                 key={idx}
-                className="bg-white overflow-hidden flex-shrink-0 mx-[9px]"
+                className="bg-white overflow-hidden shrink-0 mx-[9px]"
                 style={{ width: 360, height: 490 }}
               >
                 <img
