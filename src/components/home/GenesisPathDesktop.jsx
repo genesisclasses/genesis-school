@@ -3,9 +3,9 @@ import React from 'react';
 import { genesisCards } from '@/data/genesis-path';
 
 const cardMarginTops = [
-  'mt-[30px] md:mt-[24px] lg:mt-[110px] lg:ml-[40px] xl:mt-[160px] xl:ml-[110px]  2xl:mt-[215px] 2xl:ml-[180px]',
-  'mt-[16px] md:mt-[0px] lg:mt-[58px] lg:ml-[5px] xl:mt-[80px] xl:ml-[65px] 2xl:mt-[110px] 2xl:ml-[140px]',
-  'mt-[16px] md:mt-[0px] lg:mt-[-50px] lg:ml-[10px] xl:mt-[-65px] xl:ml-[30px] 2xl:mt-[-80px] 2xl:ml-[90px]',
+  'mt-[30px] md:mt-[24px] lg:mt-[120px] lg:ml-[40px] xl:mt-[160px] xl:ml-[110px]  2xl:mt-[215px] 2xl:ml-[180px]',
+  'mt-[16px] md:mt-[0px] lg:mt-[68px] lg:ml-[5px] xl:mt-[80px] xl:ml-[65px] 2xl:mt-[110px] 2xl:ml-[140px]',
+  'mt-[16px] md:mt-[0px] lg:mt-[-40px] lg:ml-[10px] xl:mt-[-65px] xl:ml-[30px] 2xl:mt-[-80px] 2xl:ml-[90px]',
 ];
 
 const GenesisPath = () => {

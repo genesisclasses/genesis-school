@@ -1,5 +1,8 @@
-import Image from "next/image";
+'use client';
+import React from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Instagram,
   Facebook,
@@ -10,12 +13,31 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Navbar-like logic for section navigation
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const yOffset = -96;
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+
+  const handleNavigateToSection = (id) => {
+    if (pathname !== '/') {
+      sessionStorage.setItem('scrollTarget', id);
+      router.push(`/#${id}`);
+      return;
+    }
+    scrollToId(id);
+  };
+
   return (
     <footer className="w-full bg-[#ECECEC]">
-      
       {/* Top Section */}
       <div className="max-w-[1729px] md:pl-12 mx-auto px-6 pt-[70px] pb-[30px] flex flex-col md:flex-row justify-between items-center md:items-start">
-        
         {/* Logo */}
         <div className="flex justify-center  lg:ml-[50px]  mb-2 mt-[-23px] md:block">
           <Image
@@ -28,7 +50,6 @@ export default function Footer() {
           />
           <p className=" hidden lg:block lg:text-[12px] xl:text-[15px] lg:w-[280px] xl:w-[450px] mt-3 lg:mr-7 xl:mr-0">From the first step in pre-primary to the final years of senior secondary, Genesis School guides each pupil with a world-class curriculum, expert faculty, focused enrichment and exam-readiness programmes, and pastoral support that secures success in higher education beyond.</p>
         </div>
-
         {/* Right Side Content */}
         <div className="
           grid grid-cols-1 sm:grid-cols-3 gap-12 
@@ -40,59 +61,72 @@ export default function Footer() {
         ">          
          <ul className="space-y-2 text-sm text-center md:text-left">
             <h4 className="font-semibold mb-4 text-sm md:text-base">Quick Links</h4>
-
-  <li>
-    <Link href="/">
-      <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
-        Home
-      </p>
-    </Link>
-  </li>
-  <li>
-    <Link href="/academics">
-      <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
-        Academics
-      </p>
-    </Link>
-  </li>
-  <li>
-    <Link href="/about">
-      <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
-        About
-      </p>
-    </Link>
-  </li>
-  <li>
-    <Link href="/project-darpan">
-      <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
-        Project DARPAN
-      </p>
-    </Link>
-  </li>
-  <li>
-    <Link href="/co-curricular">
-      <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
-        Co-Curricular
-      </p>
-    </Link>
-  </li>
-  <li>
-    <Link href="/blogs">
-      <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
-        Blogs
-      </p>
-    </Link>
-  </li>
-</ul>
-
+            <li>
+              <Link href="/">
+                <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
+                  Home
+                </p>
+              </Link>
+            </li>
+            <li>
+              {/* Updated to use same logic as Navbar for section scroll */}
+              <a
+                href="/#academics-section"
+                onClick={e => {
+                  e.preventDefault();
+                  handleNavigateToSection('academics-section');
+                }}
+                className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0 cursor-pointer"
+              >
+                Academics
+              </a>
+            </li>
+            <li>
+              <Link href="/about">
+                <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
+                  About
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link href="/project-darpan">
+                <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
+                  Project DARPAN
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link href="/co-curricular">
+                <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
+                  Co-Curricular
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blogs">
+                <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
+                  Blogs
+                </p>
+              </Link>
+            </li>
+          </ul>
           {/* Contact Us */}
           <div>
             <h4 className="font-semibold mb-4 text-sm md:text-base">Contact Us</h4>
             <ul className="space-y-2 text-sm text-center md:text-left">
               <li className="flex md:justify-start justify-center gap-2 items-start">
                 <MapPin size={16} />
-                <p>Genesis School, Sector 45,<br />Karnal, Haryana – 122003</p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Genesis+School,+Sector+45,+Karnal,+Haryana+122003"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0"
+              >
+                Genesis School, Sector 45,<br />Karnal, Haryana – 122003
+              </a>
+
               </li>
+
               <li className="flex md:justify-start  justify-center gap-2 items-center">
                 <Phone size={16} />
                 <Link href="tel:+919876543210" className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0">
@@ -100,19 +134,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
-                <Mail size={16} />
+                <Mail size={19} />
                 <Link href="mailto:info@genesisschool.in" className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
                   <p >info@genesisschool.in</p>
                 </Link>
               </li>
             </ul>
           </div>
-
           {/* Social Links */}
           <div>
             <h4 className="font-semibold mb-4 text-sm md:text-base">Social Links</h4>
-         
-
             <ul className="space-y-3">
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <Link href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 ">
@@ -133,10 +164,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
       {/* Bottom Bar */}
-      <div className="bg-[#09254a] h-[70px] w-full text-white justify-center items-center flex font-lato italic" >
-        <p>Copyright ©Genesis 2025. Maintained by<span > <Link href={'https://indiefluence.in/'}>Indiefluence</Link> </span></p>
+      <div className="bg-[#09254a] h-[70px] w-full text-white justify-center items-center flex font-lato italic px-4" >
+        <p className='text-[14px] md:text-[16px]'>Copyright ©Genesis 2025. Maintained by<span > <Link href={'https://indiefluence.in/'}>Indiefluence</Link> </span></p>
       </div>
     </footer>
   );

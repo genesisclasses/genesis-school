@@ -10,16 +10,17 @@ const paragraphs = [
 ];
 
 const ProjectDarpan = () => {
-  const pathname = usePathname(); 
+  const pathname = usePathname();
   const hideButton = pathname === "/project-darpan";  // ✅ Hide on this route
 
   return (
     <div
-      className={`projectdarpan-container projectdarpan-bg flex justify-center mt-[30px] mb-[40px] px-4 xl:px-6 relative overflow-hidden
+      className={`projectdarpan-container projectdarpan-bg flex justify-center pt-10 mb-10 px-4 xl:px-6 relative overflow-hidden
         bg-no-repeat
         bg-[url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762406066/darpan-bg-mobile_werezn.svg')] bg-contain bg-bottom
         md:bg-[url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762406064/darpan-bg-768_o1op57.svg')]
         lg:bg-[url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762406065/darpan-bg-desktop_go7gma.svg')] `}
+      style={{ minHeight: 'unset' }} // allows media query override
     >
       <style jsx>{`
         @media (min-width: 1440px) {
@@ -28,12 +29,7 @@ const ProjectDarpan = () => {
             background-position: top 90px left 80px !important;
           }
         }
-        @media (min-width: 1920px) {
-          .projectdarpan-bg {
-            background-size: 82% auto !important;
-            background-position: top 50px left 80px !important;
-          }
-        }
+        
         @media (max-width: 1024px) {
           .projectdarpan-container {
             background-position: top 210px left 0px !important;
@@ -44,13 +40,26 @@ const ProjectDarpan = () => {
             background-position: bottom 30px left 0px !important;
           }
         }
-          @media (max-width: 435px) {
+        @media (max-width: 435px) {
           .projectdarpan-container {
             background-position: bottom -30px left 0px !important;
           }
+        }
         @media (max-width: 425px) {
           .projectdarpan-container {
             background-position: bottom -30px left 0px !important;
+          }
+        }
+
+        /* 2560px screens (only affects ultra-wide) */
+        @media (min-width: 1700px) and (max-width: 2560px) {
+          .projectdarpan-bg {
+            background-size: 76% auto !important;
+            background-position: bottom 0px left 120px !important;
+            min-height: 10vh !important;
+          }
+          .projectdarpan-container {
+            min-height: 50vh !important;
           }
         }
       `}</style>
@@ -69,21 +78,18 @@ const ProjectDarpan = () => {
             />
           </div>
 
-          <div className="w-full lg:w-1/2 md:px-4 lg:px-8 py-2 lg:py-10 flex flex-col justify-center items-start text-left">
+          <div className="w-full lg:w-1/2 md:px-4 lg:px-8 pb-12 lg:py-10 flex flex-col justify-center items-start text-left">
             <div className="text-[#F8B535] text-[14px] sm:text-lg font-medium tracking-wide mb-1 sm:mb-0 w-full sm:w-auto">
               PROJECT
             </div>
-
             <h1 className="sm:text-[32px] md:text-[42px] lg:text-[40px] mb-4 sm:mb-8 leading-tight text-black w-full sm:w-auto text-[32px]   xl:text-[48px] font-semibold">
               DARPAN
             </h1>
-
             {paragraphs.map((text, idx) => (
               <p key={idx} className="text-[#777777] text-[15px] lg:text-[14px] sm:text-base xl:text-[16px] xl:w-[837px] mb-2 sm:mb-4 tracking-wide w-full sm:w-auto">
                 {text}
               </p>
             ))}
-
             {/* ✅ SHOW ONLY ON HOME PAGE */}
             {!hideButton && (
               <Link
@@ -99,7 +105,6 @@ const ProjectDarpan = () => {
                 />
               </Link>
             )}
-
           </div>
         </div>
       </div>

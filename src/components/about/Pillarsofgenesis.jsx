@@ -87,7 +87,7 @@ export default function PillarsOfGenesis() {
       {isMobile && <PillarsMobile />}
 
       {/* iPad MD grid */}
-      <div className="hidden md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-10 lg:grid lg:grid-cols-2 lg:gap-x-4 lg:gap-y-10 lg:hidden justify-center items-center -mt-10">
+      <div className="hidden md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-10  lg:grid-cols-2 lg:gap-x-4 lg:gap-y-10 lg:hidden justify-center items-center -mt-10">
         {pillars.map((pillar, index) => (
           <GridPillar key={index} pillar={pillar} index={index} />
         ))}

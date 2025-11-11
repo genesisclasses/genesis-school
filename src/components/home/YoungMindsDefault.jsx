@@ -1,3 +1,4 @@
+// **************************** this component use in 1440px , 1024px and mobile screen below 768px screen ******************************** //  
 'use client';
 import React from "react";
 
@@ -44,11 +45,11 @@ const YoungMindsDefault = () => (
 >
   <style jsx>{`
   .youngminds-container {
-        background-position: center top -50px !important;
+        background-position: center top -100px !important;
       }
       @media (max-width: 1440px) {
       .youngminds-container {
-        background-position: center top 0px !important;
+        background-position: center top 30px !important;
       }
     }
     @media (max-width: 1024px) {
@@ -69,7 +70,7 @@ const YoungMindsDefault = () => (
       }
     }
   `}</style>
-    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 my-[29px] lg:py-[40px] xl:mb-[40px] flex flex-col lg:flex-row items-stretch gap-12">
+    <div className="xl:max-w-[1340px] 2xl:max-w-[1417px] mx-auto px-4 md:px-6 my-[29px] pb-14 lg:py-10 xl:mb-10 flex flex-col lg:flex-row items-stretch gap-12">
       {/* Image block */}
       <div className="shrink-0 flex items-center justify-center min-h-[340px]">
         <img

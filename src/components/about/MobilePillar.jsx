@@ -12,9 +12,12 @@ const pillars = [
 
 export default function PillarsMobile() {
   return (
-    <div className="w-full flex flex-col items-center relative ">
+    <div
+      className="w-full flex flex-col items-center relative overflow-visible"
+      style={{ WebkitOverflowScrolling: "touch" }}
+    >
       {/* Mobile heading included here */}
-      <div className="block w-full text-left mb-12 px-4">
+      <div className="block w-full text-left mb-12 px-4 pointer-events-none">
         <h2 className="text-[32px] md:text-[42px] font-semibold">
           <span className="text-[#002650]">Pillars of</span>{" "}
           <span className="text-[#F8B535] ml-2">The Genesis School</span>
@@ -27,8 +30,10 @@ export default function PillarsMobile() {
           key={pillar.number}
           className="w-[90vw] max-w-[343px] relative"
           style={{
-            aspectRatio: "343/230",
-            marginTop: idx === 0 ? 0 : "-36px",
+            // Removed aspectRatio to prevent scroll issues on mobile
+            // aspectRatio: "343/230",
+            height: "230px", // fallback fixed height roughly equal to aspect ratio
+            marginTop: idx === 0 ? 0 : "-46px",
             zIndex: 10 - idx,
           }}
         >
@@ -36,11 +41,10 @@ export default function PillarsMobile() {
             src={elipseSrc}
             alt=""
             fill
-            className="object-contain"
+            className="object-contain pointer-events-none"
             priority={idx === 0}
             sizes="(max-width: 343px) 90vw, 343px"
             draggable={false}
-            style={{ pointerEvents: "none" }}
           />
           <div className="absolute inset-0 flex items-center pointer-events-none">
             <div className="ml-9">
