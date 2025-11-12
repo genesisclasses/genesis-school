@@ -2,6 +2,7 @@ import React from 'react'
 import ProjectDarpanComponent from '@/components/projectdarpan/ProjectDarpanComponent'
 import DarpanStorySection from '@/components/projectdarpan/DarpanStorySection'
 import DarpanCards from '@/components/projectdarpan/DarpanCards'
+import SupportSystem from '@/components/projectdarpan/SupportSystem'
 
 const ProjectDarpan = () => {
   return (
@@ -21,7 +22,8 @@ const ProjectDarpan = () => {
     >
       <ProjectDarpanComponent noBg />
       <DarpanStorySection/>
-      <DarpanCards/>
+      {/* <DarpanCards/> */}
+      <SupportSystem/>
     </div>
   )
 }
