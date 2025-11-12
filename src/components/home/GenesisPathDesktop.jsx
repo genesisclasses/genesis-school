@@ -11,7 +11,7 @@ const cardMarginTops = [
 const GenesisPath = () => {
   return (
     <div
-      className="relative w-full overflow-x-hidden pt-[30px] pb-[40px] xl:min-h-[620px] px-4 lg:px-2"
+      className="relative w-full overflow-x-hidden pt-[30px] pb-10 xl:min-h-[620px] px-4 lg:px-2"
       id="academics-section"
     >
       {/* Heading */}
