@@ -39,7 +39,8 @@ const Toppers = () => (
               alt={topper.name}
               width={334}
               height={432}
-              className="object-cover border h-[280px] md:h-[390px] border-gray-200"
+              className="object-cover border h-[200px] md:h-[390px] border-gray-200 "
+              style={{ objectFit: 'cover', objectPosition: 'top' }}
               priority
             />
             <p className="text-[#F8B535] text-[16px] font-bold mt-2 mb-1 uppercase text-center">{topper.name}</p>
