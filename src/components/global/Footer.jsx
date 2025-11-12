@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,15 +15,24 @@ import {
 
 export default function Footer() {
   const pathname = usePathname();
+  const [hash, setHash] = useState('');
+
+  useEffect(() => {
+    setHash(window.location.hash);
+    const onHashChange = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', onHashChange);
+
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   // Helper to check active state
   const isActive = (href) => {
     // Exact page match
     if (pathname === href) return true;
-    // Section anchor on homepage
+    // Section anchor on homepage, using hash state
     if (href.startsWith('/#') && pathname === '/') {
       const hashId = href.split('#')[1];
-      if (typeof window !== 'undefined' && window.location.hash === `#${hashId}`) {
+      if (hash === `#${hashId}`) {
         return true;
       }
     }
@@ -88,8 +97,8 @@ export default function Footer() {
             <li>
               <a
                 href="/#academics-section"
-                className={`border-b-2 w-fit mx-auto md:mx-0 transition-all duration-200 cursor-pointer
-                  ${isActive('/#academics-section') ? 'border-[#F8B535] ' : 'border-transparent hover:border-[#F8B535]'}`}
+                className={` mx-auto md:mx-0 transition-all duration-200 cursor-pointer
+                  `}
                 onClick={e => {
                   e.preventDefault();
                   handleNavigateToSection('academics-section');
@@ -154,8 +163,8 @@ export default function Footer() {
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <Mail size={19} />
-                <Link href="mailto:info@genesisschool.in" className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">
-                  <p >info@genesisschool.in</p>
+                <Link href="mailto:info@genesisschool.in" >
+                  <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">info@genesisschool.in</p>
                 </Link>
               </li>
             </ul>
