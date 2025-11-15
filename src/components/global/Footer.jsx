@@ -101,7 +101,7 @@ export default function Footer() {
                   `}
                 onClick={e => {
                   e.preventDefault();
-                  handleNavigateToSection('academics-section');
+                  handleNavigateToSection('academics-section'); 
                 }}
               >
                 Academics
