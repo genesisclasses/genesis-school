@@ -4,11 +4,11 @@ import React, { useRef, useState, useEffect } from "react";
 // Card data
 const cards = [
   { number: 1, title: "Future-Ready Curriculum", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
-  { number: 2, title: "Innovative Teaching Methods", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
-  { number: 3, title: "Holistic Development", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
-  { number: 4, title: "Expert Faculty", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
-  { number: 5, title: "Modern Infrastructure", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
-  { number: 6, title: "Community Focus", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." }
+  { number: 2, title: "Expert & Caring Faculty", desc: "A team of passionate educators mentors every child with patience, personal attention, and a deep commitment to excellence." },
+  { number: 3, title: "Holistic Development ", desc: "Beyond academics, we nurture creativity, confidence, and character through co-curricular programmes that inspire balanced growth." },
+  { number: 4, title: "Culture of Values & Integrity", desc: "Rooted in respect, empathy, and discipline, The Genesis School fosters an environment where learning builds both intellect and integrity." },
+  { number: 5, title: "Modern Infrastructure", desc: "Smart classrooms, advanced laboratories, and spacious activity zones provide a stimulating environment for innovation and discovery." },
+  { number: 6, title: "Personalised Learning", desc: "We recognise that every child learns differently. Our approach ensures individual attention, guidance, and growth at every step." }
 ];
 
 // Card styles with responsive width/height
@@ -16,8 +16,8 @@ const cardBase =
   "flex-shrink-0 snap-center rounded-xl shadow-md border-l-4 px-6 py-6 relative transition-all duration-300 hover:shadow-lg flex flex-col items-start justify-center text-left";
 const cardColors = (idx) =>
   idx % 2 === 1
-    ? "bg-yellow-50 border-[#F8B535]"
-    : "bg-gray-100 border-[#002650]";
+    ? "bg-[#F8B535]/10 border-[#F8B535]"
+    : "bg-[#002650]/10 border-[#002650]";
 const cardSize =
   "w-[302px] h-[300px] md:w-[320px] md:h-[340px] lg:w-[352px] lg:h-[350px]";
 
@@ -31,7 +31,7 @@ function WhyGenesisCard({ card, idx }) {
         </div>
       </div>
       <h2 className="mb-3 font-semibold text-[22px] text-[#333333]">{card.title}</h2>
-      <p className="text-gray-600 text-sm">{card.desc}</p>
+      <p className="text-[#777777] text-[16px]">{card.desc}</p>
     </div>
   );
 }

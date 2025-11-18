@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-// JSON data defined inside the same file
+// JSON data defined inside the same file, with a single quote field
 const directorData = {
   image: {
     src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762412294/director_hsl2nh.webp",
@@ -29,19 +29,15 @@ const directorData = {
       },
     },
   },
-  quotes: {
-    mobile:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    desktop:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-  },
+  quote:
+    "Education is not confined to textbooks; it is the art of nurturing curiosity, compassion, and courage within every learner. True success lies in shaping individuals who think deeply, act wisely, and lead with integrity",
   directorInfo: {
     name: "Seema Sharma",
     title: "(Director) 36+ Years of Delivering Excellence",
-    subtitle: "36+ years of compassion towards students and educational institutions",
+    subtitle: "36+ years of compassion towards students and educational institutions",
     paragraphs: [
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.",
+      "At Genesis, we believe education is not a destination but a lifelong journey of discovery and growth. Over the past three decades, I have seen how a nurturing environment built on care, curiosity, and courage can shape young learners into confident, compassionate, and capable individuals.",
+      "Our goal has always been to maintain a balance between academic excellence and emotional wellbeing, ensuring that every child develops both intellect and empathy. At Genesis, we teach students not just to excel in exams, but to understand themselves and the world around them. We strive to awaken their potential, inspire purpose, and build values that last a lifetime — nurturing excellence with heart, vision, and unwavering dedication to holistic growth.",
     ],
   },
 };
@@ -77,7 +73,7 @@ export default function DirectorMessage() {
               className="mb-2 rounded-lg"
             />
             <h2 className="text-[24px] mb-3 font-semibold text-[#0d1b50] md:leading-relaxed">
-              {directorData.quotes.mobile}
+              <b>&quot;{directorData.quote}&quot;</b>
             </h2>
           </div>
 
@@ -91,14 +87,14 @@ export default function DirectorMessage() {
               priority
               className="absolute -left-70 -top-30 lg:-left-85 lg:-top-36 xl:-top-50 xl:-left-100 rounded-lg rotate-180"
             />
-            <h3 className="text-[22px] lg:text-[26px] xl:text-[34px] font-semibold text-[#002650] w-[440px] lg:w-[483px] xl:w-[688px]  relative -left-[210px] -top-18 lg:-left-58 lg:-top-20 xl:-top-36  2xl:-top-34 xl:-left-80 leading-tight tracking-wider">
-              {directorData.quotes.desktop}
+            <h3 className="text-[22px] lg:text-[26px] xl:text-[34px] font-medium text-[#002650] w-[440px] lg:w-[483px] xl:w-[688px]  relative -left-[210px] -top-18 lg:-left-58 lg:-top-20 xl:-top-34  2xl:-top-34 xl:-left-80 leading-tight tracking-wider">
+              <b>&quot;{directorData.quote}&quot;</b>
             </h3>
           </div>
 
           {/* Paragraphs & Name Section for desktop */}
-          <div className="director-para mt-13 xl:block hidden xl:w-[700px] 2xl:w-[758px] xl:-ml-16 ">
-           {directorData.directorInfo.paragraphs.map((para, index) => (
+          <div className="director-para xl:mt-14 2xl:mt-20 xl:block hidden xl:w-[700px] 2xl:w-[758px] xl:-ml-16 2xl:-ml-10 ">
+            {directorData.directorInfo.paragraphs.map((para, index) => (
               <p key={index} className="text-[18px] text-[#777777] font-normal leading-relaxed mb-3 ">
                 {para}
               </p>
@@ -106,20 +102,17 @@ export default function DirectorMessage() {
             <h3 className="text-[20px] font-bold text-[#333333] mb-1">
               {directorData.directorInfo.name}
             </h3>
-            <p className="text-[16px] font-medium font-bold text-[#333333] mb-0">
+            <p className="text-[16px] font-medium font-bold text-[#333333] mb-3">
               {directorData.directorInfo.title}
             </p>
-            <p className="text-[16px] font-medium text-[#333333] mb-0">
+            <p className="text-[16px] font-medium text-[#333333] ">
               {directorData.directorInfo.subtitle}
             </p>
           </div>
         </div>
       </div>
 
-      
-      
-
-      {/* Paragraphs & Name Section for mobile , tablet and 1024px */}
+      {/* Paragraphs & Name Section for mobile, tablet and 1024px */}
       <div className="director-para mt-3 lg:mt-6 md:block xl:hidden md:px-4 lg:px-5">
         {directorData.directorInfo.paragraphs.map((para, index) => (
           <p key={index} className="text-[16px] md:text-[18px] text-[#777777] mb-3">
@@ -133,10 +126,9 @@ export default function DirectorMessage() {
           {directorData.directorInfo.title}
         </p>
         <p className="text-[16px] font-medium text-[#333333] mb-0">
-              {directorData.directorInfo.subtitle}
-            </p>
+          {directorData.directorInfo.subtitle}
+        </p>
       </div>
     </section>
-    
   );
 }

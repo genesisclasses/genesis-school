@@ -38,12 +38,8 @@ export default function Mission() {
         <h1 className="text-[22px] font-semibold text-[#002650] mb-3 md:mb-4">
           Mission
         </h1>
-        <p className="text-[16px] md:text-[16px] text-[#777777] leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur.
+        <p className="text-[16px] lg:text-[14px] xl:text-[16px] text-[#777777] leading-relaxed">
+          Our mission is to provide an education that nurtures intellect, builds character, and inspires purpose. At The Genesis School, we aim to create a learning environment where curiosity is encouraged, values are lived, and excellence is a habit. Through innovative teaching, personal guidance, and holistic development, we prepare every student to face challenges with confidence, empathy, and integrity — shaping responsible global citizens who lead with wisdom and contribute meaningfully to society.
         </p>
       </div>
 
@@ -68,12 +64,8 @@ export default function Mission() {
         <h1 className="text-[22px] md:text-[22px] lg:text-[22px] xl:text-[22px] font-semibold text-[#002650] mb-3 md:mb-4">
           Vision
         </h1>
-        <p className="text-[16px] md:text-[16px] text-[#777777] leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur.
+        <p className="text-[16px] lg:text-[14px] xl:text-[16px] text-[#777777] leading-relaxed">
+          Our vision is to be a centre of excellence where learning transcends classrooms and education shapes both heart and mind. We aspire to cultivate generations of thinkers, innovators, and leaders who uphold the values of truth, compassion, and perseverance. Genesis School envisions a world where every student discovers their unique potential, pursues knowledge with passion, and uses it to create positive, lasting change in their communities and beyond.
         </p>
       </div>
     </section>
@@ -95,12 +87,7 @@ export default function Mission() {
               Mission
             </h1>
             <p className="text-[16px] text-[#777777] leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-              qui officia deserunt mollit anim id est laborum.
+              Our mission is to provide an education that nurtures intellect, builds character, and inspires purpose. At The Genesis School, we aim to create a learning environment where curiosity is encouraged, values are lived, and excellence is a habit. Through innovative teaching, personal guidance, and holistic development, we prepare every student to face challenges with confidence, empathy, and integrity — shaping responsible global citizens who lead with wisdom and contribute meaningfully to society.
             </p>
           </div>
 
@@ -144,12 +131,7 @@ export default function Mission() {
               Vision
             </h1>
             <p className="text-[16px] text-[#777777] leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-              qui officia deserunt mollit anim id est laborum.
+              Our vision is to be a centre of excellence where learning transcends classrooms and education shapes both heart and mind. We aspire to cultivate generations of thinkers, innovators, and leaders who uphold the values of truth, compassion, and perseverance. Genesis School envisions a world where every student discovers their unique potential, pursues knowledge with passion, and uses it to create positive, lasting change in their communities and beyond.
             </p>
           </div>
         </section>
