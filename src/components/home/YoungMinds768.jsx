@@ -1,4 +1,4 @@
-// **************************** this component use in below 1024px screen 1023px to 768px screen ******************************** //  
+// **************************** this component use in below 1024px screen 1023px to 768px screen ******************************** //
 'use client';
 import React from "react";
 import "@/components/css/YoungMinds.css";
@@ -45,7 +45,7 @@ const YoungMinds768 = () => (
             alt="Young Minds Grid"
             className="w-[280px] h-auto"
             draggable={false}
-            loading="eager" 
+            loading="eager"
           />
         </div>
         {/* Heading + desc */}

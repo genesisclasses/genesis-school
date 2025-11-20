@@ -60,9 +60,9 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#ECECEC]">
       {/* Top Section */}
-      <div className="max-w-[1729px] md:pl-12 mx-auto px-6 pt-[70px] pb-[30px] flex flex-col md:flex-row justify-between items-center md:items-start">
+      <div className="max-w-[1729px] md:pl-12 mx-auto px-6 py-[100px] flex flex-col md:flex-row justify-between items-center md:items-start">
         {/* Logo */}
-        <div className="flex justify-center lg:ml-[50px] mb-2 mt-[-23px] md:block">
+        <div className="flex justify-center lg:ml-[50px] mb-2  md:block">
           <Image
             src="/assets/logo.svg"
             alt="Genesis School Logo"
@@ -77,14 +77,14 @@ export default function Footer() {
         </div>
         {/* Right Side Content */}
         <div className="
-          grid grid-cols-1 sm:grid-cols-3 gap-12 
-          mt-10 md:mt-0 
+          grid grid-cols-1 sm:grid-cols-3 gap-12
+          mt-10 md:mt-0
           w-full md:w-auto
           text-center md:text-left
-          md:max-w-[500px] lg:max-w-[1000px] 
+          md:max-w-[500px] lg:max-w-[1000px]
           font-lato
         ">
-          <ul className="space-y-2 text-sm text-center md:text-left">
+          <ul className="space-y-[15px] text-sm text-center md:text-left">
             <h4 className="font-semibold mb-4 text-sm md:text-base">Quick Links</h4>
             <li>
               <Link href="/">
@@ -101,7 +101,7 @@ export default function Footer() {
                   `}
                 onClick={e => {
                   e.preventDefault();
-                  handleNavigateToSection('academics-section'); 
+                  handleNavigateToSection('academics-section');
                 }}
               >
                 Academics
@@ -190,12 +190,26 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-        </div> 
+        </div>
       </div>
       {/* Bottom Bar */}
-      <div className="bg-[#09254a] h-[70px] w-full text-white justify-center items-center flex font-lato italic px-4" >
-        <p className='text-[14px] md:text-[16px]'>Copyright ©Genesis 2025. Maintained by<span > <Link href={'https://indiefluence.in/'}>Indiefluence</Link> </span></p>
-      </div>
+      <div className="bg-[#09254a] h-[70px] w-full text-white flex items-center px-4 font-lato italic">
+  <div className="w-full max-w-[1369px] mx-auto flex justify-between items-center text-[14px] md:text-[16px]">
+
+    {/* Left */}
+    <p>Copyright ©Genesis 2025.</p>
+
+    {/* Right */}
+    <p>
+      Maintained by{" "}
+      <Link href="https://indiefluence.in/" className="underline">
+        Indiefluence
+      </Link>
+    </p>
+
+  </div>
+</div>
+
     </footer>
   );
 }

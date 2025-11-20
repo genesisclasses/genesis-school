@@ -79,7 +79,7 @@ function renderContent(content) {
           switch (node.type) {
             case 'paragraph':
               return (
-                <p key={idx} className="text-[16px] md:text-base text-gray-700 mb-5 leading-relaxed">
+                <p key={idx} className="text-[16px] md:text-base text-gray-700 mb-1 leading-relaxed">
                   {node.content?.map((item, i) => {
                     if (!item) return null;
                     let element = item.text || '';
@@ -105,7 +105,7 @@ function renderContent(content) {
               };
 
               return (
-                <Tag key={idx} className={`${headingSizes[Tag]} font-bold mb-4 mt-6`}>
+                <Tag key={idx} className={`${headingSizes[Tag]} font-bold my-3`}>
                   {node.content?.map((item, i) => <span key={i}>{item.text}</span>)}
                 </Tag>
               );
@@ -142,11 +142,11 @@ export default async function BlogDetailPage({ params }) {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-8">
+      <div className="max-w-[1369px] mx-auto px-6 py-8">
         <div className="flex-row md:flex gap-12">
           <ShareSidebar post={post} readTime={post.read_time} />
 
-          <main className="flex-1 max-w-3xl">
+          <main className="flex-1 max-w-full">
             <div className="prose-lg max-w-none mb-12">
               {renderContent(post.content)}
             </div>

@@ -125,8 +125,8 @@ export default function Whythegenesis() {
 
   return (
     <section className="flex flex-col items-center bg-white px-0 py-10 md:py-16">
-      <div className="max-w-[1417px] w-full px-4 md:px-[24px] xl:px-[54px]">
-        <div className="flex items-center justify-between mb-10">
+      <div className="max-w-[1417px] w-full px-4 md:px-6 xl:px-[54px]">
+        <div className="flex items-center justify-between mb-2.5">
           <h1 className="text-[32px] md:text-[35px] lg:text-[40px] xl:text-[48px] font-semibold ">
             <span className="text-[#002650] mr-3">Why</span>
             <span className="text-[#F8B535]">The Genesis School?</span>

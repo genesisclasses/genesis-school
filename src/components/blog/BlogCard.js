@@ -144,7 +144,7 @@ export default function BlogCard({ post }) {
         </div>
 
         {/* Card Content - SAME PADDING */}
-        <div className="flex flex-col flex-grow pt-4 px-4">
+        <div className="flex flex-col grow pt-4 px-1.5">
           {/* Title - 22px semibold */}
           <h2 className="  md:text-[20px] xl:text-[22px] font-semibold text-gray-900 mb-3 line-clamp-2 leading-tight">
             {title}

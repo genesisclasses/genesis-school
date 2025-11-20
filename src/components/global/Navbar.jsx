@@ -146,15 +146,16 @@ export default function Navbar() {
             : "bg-white border-gray-200 shadow-md"}
         `}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1369px] mx-auto flex items-center justify-between h-23 px-4 sm:px-6 lg:px-8">
           {/* ✅ LOGO */}
           <Link href="/" className="flex items-center">
             <Image
-              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762494438/logo_offgkb.svg"
+              // src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762494438/logo_offgkb.svg"
+              src="/assets/logo2.svg"
               alt="Logo"
               width={48}
               height={48}
-              className="h-12 w-auto"
+              className="h-16 w-auto"
               priority
             />
           </Link>

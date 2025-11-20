@@ -5,7 +5,7 @@ import { Users, ListChecks, } from 'lucide-react'
 
 const AdmissionsSection = () => (
   <section className="relative w-full h-[465px] flex items-center justify-center overflow-hidden py-[30px]">
-    
+
     {/* Background image */}
     <Image
       src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762493016/banner_kahkom.webp"
@@ -24,15 +24,15 @@ const AdmissionsSection = () => (
       {/* Label */}
       <div className="flex gap-1 items-center mb-2 md:mb-3">
         <Image  alt="Admissions" width={26} height={26} className="mb-1" src="/assets/home/edu.svg" />
-        <span className="text-amber-400 text-[10px] sm:text-[11px] font-semibold tracking-wide uppercase">
+        <span className="text-amber-400 text-[10px] sm:text-[18px] font-semibold tracking-wide uppercase">
           ADMISSIONS OPEN
         </span>
       </div>
 
       {/* Title */}
       <h1 className="
-        font-bold 
-        text-[22px] sm:text-2xl md:text-4xl 
+        font-bold
+        text-[22px] sm:text-2xl md:text-4xl
         leading-tight
         mb-3 md:mb-4
       ">
@@ -42,9 +42,9 @@ const AdmissionsSection = () => (
 
       {/* Features */}
       <div className="
-        flex flex-col md:flex-row 
+        flex flex-col md:flex-row
         items-center justify-center
-        gap-1 md:gap-8 
+        gap-1 md:gap-8
         mb-5 md:mb-6
         text-[13px] sm:text-sm md:text-base
         opacity-90
@@ -52,7 +52,7 @@ const AdmissionsSection = () => (
         <div className="flex items-center gap-2">
           <Users size={16} /> Limited seats per grade
         </div>
-        
+
         <span className="hidden md:block text-white/50 text-xl">|</span>
 
         <div className="flex items-center gap-2">
@@ -62,9 +62,9 @@ const AdmissionsSection = () => (
 
       {/* Buttons */}
       <div className="
-        flex flex-col md:flex-row 
-        gap-3 md:gap-4 
-        w-full md:w-auto 
+        flex flex-col md:flex-row
+        gap-3 md:gap-4
+        w-full md:w-auto
         px-5 md:px-0
       ">
       <Link href="/contact"> <button className="
@@ -82,18 +82,18 @@ const AdmissionsSection = () => (
       <Link href="/contact">
         <button className="
           bg-white text-[#09254a] font-bold
-          rounded-full 
+          rounded-full
           w-full md:w-auto
           py-2.5 md:py-3
           md:px-5
-          shadow-md hover:bg-gray-100 
+          shadow-md hover:bg-gray-100
           border border-gray-200
           text-sm md:text-base
           transition
         ">
           Take Scholarship Test
         </button>
-        </Link> 
+        </Link>
       </div>
     </div>
   </section>
