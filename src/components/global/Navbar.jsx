@@ -9,40 +9,15 @@ import { usePathname, useRouter } from 'next/navigation';
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const [isHeroVisible, setIsHeroVisible] = useState(false);
   const mobileDrawerRef = useRef(null);
 
   const pathname = usePathname();
   const router = useRouter();
 
-  // ✅ FIX: Re-run observer whenever pathname changes
-  useEffect(() => {
-    if (pathname !== '/') {
-      setIsHeroVisible(false);
-      return;
-    }
-
-    const hero = document.getElementById('hero-section');
-    const herocards = document.getElementById('herocards-section');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.some((entry) => entry.isIntersecting);
-        setIsHeroVisible(visible);
-      },
-      { threshold: 0.35 }
-    );
-
-    if (hero) observer.observe(hero);
-    if (herocards) observer.observe(herocards);
-
-    return () => observer.disconnect();
-  }, [pathname]);
-
+  // Scroll to section utility
   const scrollToId = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
-
     const yOffset = -96;
     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({ top: y, behavior: 'smooth' });
@@ -50,7 +25,6 @@ export default function Navbar() {
 
   const handleNavigateToSection = (id) => {
     setMobileOpen(false);
-
     if (pathname !== '/') {
       sessionStorage.setItem('scrollTarget', id);
       router.push(`/#${id}`);
@@ -111,7 +85,6 @@ export default function Navbar() {
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -119,49 +92,41 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* ✅ Top Bar */}
+      {/* Top Bar */}
       <div className="bg-[#001f3f] text-white flex justify-end items-center text-xs h-8 px-0 md:px-4">
         <div className="max-w-7xl w-full flex justify-center md:justify-end px-2 sm:px-6 ">
-          <span className="flex items-center mr-6  border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-6">
-            <li className="flex md:justify-start  justify-center gap-2 items-center">
+          <span className="flex items-center mr-6 border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit md:mx-6">
+            <li className="flex md:justify-start justify-center gap-2 items-center">
               <Phone size={14} />
               <Link href="tel:+919876543210" className="">
                 <p className="md:text-[14px]">+91 98765 43210</p>
               </Link>
             </li>
           </span>
-          <span className="flex items-center  border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0 md:text-[14px] tracking-wide">
+          <span className="flex items-center border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit md:mx-0 md:text-[14px] tracking-wide">
             <Mail size={14} className="mr-2" />
             <a href="mailto:info@genesisschool.in ">info@genesisschool.in</a>
           </span>
         </div>
       </div>
 
-      {/* ✅ NAVBAR + GLASS BLUR */}
-      <nav
-        className={`
-          transition-all duration-300 border-b
-          ${isHeroVisible
-            ? "bg-white/20 backdrop-blur-md border-transparent shadow-none"
-            : "bg-white border-gray-200 shadow-md"}
-        `}
-      >
-        <div className="max-w-[1369px] mx-auto flex items-center justify-between h-23 px-4 sm:px-6 lg:px-8">
-          {/* ✅ LOGO */}
+      {/* NAVBAR - always solid white */}
+      <nav className="bg-white   transition-all duration-300">
+        <div className="max-w-[1369px] mx-auto flex items-center justify-between h-23 px-0 sm:px-6 lg:px-8">
+          {/* LOGO */}
           <Link href="/" className="flex items-center">
             <Image
-              // src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762494438/logo_offgkb.svg"
               src="/assets/logo2.svg"
               alt="Logo"
               width={48}
               height={48}
-              className="h-16 w-auto"
+              className="h-16 w-full px-1"
               priority
             />
           </Link>
 
-          {/* ✅ DESKTOP MENU */}
-          <div className="hidden lg:flex items-center space-x-7">
+          {/* DESKTOP MENU */}
+          <div className="hidden xl:flex items-center space-x-7">
             <ul className="flex space-x-7 text-gray-900 text-[16px] font-medium">
               <li>
                 <Link
@@ -171,7 +136,6 @@ export default function Navbar() {
                   Home
                 </Link>
               </li>
-
               <li>
                 <a
                   href="/#academics-section"
@@ -184,7 +148,6 @@ export default function Navbar() {
                   Academics
                 </a>
               </li>
-
               <li>
                 <Link
                   href="/about"
@@ -193,7 +156,6 @@ export default function Navbar() {
                   About
                 </Link>
               </li>
-
               <li>
                 <Link
                   href="/project-darpan"
@@ -202,7 +164,6 @@ export default function Navbar() {
                   Project DARPAN
                 </Link>
               </li>
-
               <li>
                 <Link
                   href="/co-curricular"
@@ -211,7 +172,6 @@ export default function Navbar() {
                   Co-Curricular
                 </Link>
               </li>
-
               <li>
                 <Link
                   href="/blogs"
@@ -232,13 +192,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* ✅ MOBILE BUTTON */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden">
+          {/* MOBILE BUTTON */}
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="xl:hidden px-1">
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* ✅ ✅ ✅ MOBILE DRAWER — FIXED OFFSET ✅ ✅ ✅ */}
+        {/* MOBILE DRAWER */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -247,7 +207,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden fixed right-0 w-3/4 max-w-[329px] h-[calc(100vh-100px)] bg-white shadow-2xl p-8"
+              className="xl:hidden fixed right-0 w-3/4 max-w-[329px] h-[calc(100vh-100px)] bg-white  p-8"
             >
               <ul className="flex flex-col items-center space-y-6 text-base font-medium">
                 <li>
@@ -259,7 +219,6 @@ export default function Navbar() {
                     Home
                   </Link>
                 </li>
-
                 <li>
                   <a
                     href="/#academics-section"
@@ -272,11 +231,18 @@ export default function Navbar() {
                     Academics
                   </a>
                 </li>
-                <li><Link href="/about" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/about") ? "border-b-2 border-amber-400" : ""}`}>About</Link></li>
-                <li><Link href="/project-darpan" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}>Project Darpan</Link></li>
-                <li><Link href="/co-curricular" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}>Co-Curricular</Link></li>
-                <li><Link href="/blogs" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/blogs") ? "border-b-2 border-amber-400" : ""}`}>Blogs</Link></li>
-
+                <li>
+                  <Link href="/about" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/about") ? "border-b-2 border-amber-400" : ""}`}>About</Link>
+                </li>
+                <li>
+                  <Link href="/project-darpan" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}>Project Darpan</Link>
+                </li>
+                <li>
+                  <Link href="/co-curricular" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}>Co-Curricular</Link>
+                </li>
+                <li>
+                  <Link href="/blogs" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/blogs") ? "border-b-2 border-amber-400" : ""}`}>Blogs</Link>
+                </li>
                 <li className="w-full">
                   <Link
                     href="/contact"
@@ -286,7 +252,6 @@ export default function Navbar() {
                     Schedule a Visit
                   </Link>
                 </li>
-
                 <li className="w-full">
                   <Link
                     href="/contact"

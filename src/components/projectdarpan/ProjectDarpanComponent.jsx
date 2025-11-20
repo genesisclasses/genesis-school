@@ -78,11 +78,11 @@ const ProjectDarpan = () => {
             />
           </div>
 
-          <div className="w-full lg:w-1/2 md:px-4 lg:px-8 pb-12 lg:py-10 flex flex-col justify-center items-start text-left">
+          <div className="w-full lg:w-1/2 md:px-4  pb-12 lg:px-8 lg:py-10 lg:pb-0 flex flex-col justify-center items-start text-left">
             <div className="text-[#F8B535] text-[14px] sm:text-lg font-medium tracking-wide mb-1 sm:mb-0 w-full sm:w-auto">
               PROJECT
             </div>
-            <h1 className="sm:text-[32px] md:text-[42px] lg:text-[40px] mb-4 sm:mb-8 leading-tight text-black w-full sm:w-auto text-[32px]   xl:text-[48px] font-semibold">
+            <h1 className="sm:text-[32px] md:text-[42px] lg:text-[40px] mb-4 xl:mb-[50px] leading-tight text-black w-full sm:w-auto text-[32px]   xl:text-[48px] font-semibold ">
               DARPAN
             </h1>
             {paragraphs.map((text, idx) => (
@@ -94,7 +94,7 @@ const ProjectDarpan = () => {
             {!hideButton && (
               <Link
                 href="/project-darpan"
-                className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 bg-white border border-gray-400 rounded-md text-[#333333] font-medium transition hover:bg-gray-100 justify-center"
+                className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 bg-white border border-gray-400 rounded-md text-[#333333] font-medium transition hover:bg-gray-100 justify-center mt-4 xl:mt-[50px]"
               >
                 <p>Know More</p>
                 <img

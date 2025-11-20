@@ -2,7 +2,8 @@ import { Kameron, Lato } from 'next/font/google';
 import "./globals.css";
 import Navbar from "../components/global/Navbar";
 import Footer from "../components/global/Footer";
-import ScrollToTop from '@/Utility Hook/ScrollToTop'; // Import the client component
+import ScrollToTop from '@/Utility Hook/ScrollToTop';
+import ConditionalAnnouncementCarousel from '@/components/global/ConditionalAnnouncementCarousel';
 
 const kameron = Kameron({
   weight: ['400', '600'],
@@ -27,7 +28,8 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${kameron.variable} ${lato.variable}`}>
       <body>
         <Navbar />
-        <ScrollToTop /> {/* Client component for scroll restoration */}
+        <ConditionalAnnouncementCarousel />
+        <ScrollToTop />
         <main className="pt-0">
           {children}
         </main>

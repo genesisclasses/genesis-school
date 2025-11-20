@@ -67,7 +67,7 @@ const alumniData = [
 ];
 
 const OurAlumni = () => (
-  <div className="w-full flex flex-col items-center py-10 bg-white px-4 md:px-10">
+  <div className="w-full flex flex-col items-center py-10  md:py-14 bg-white px-4 md:px-10">
     <style jsx>{`
       @media (max-width: 480px) {
         .fixed-mobile-height {

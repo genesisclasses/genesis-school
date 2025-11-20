@@ -1,7 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-// import bannerImage from '../../../../public/assets/banner.png'
-// import bannerImage from 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762493016/banner_kahkom.webp'
 
 const Hero = () => {
   return (
@@ -11,30 +9,37 @@ const Hero = () => {
         backgroundImage: `url('https://res.cloudinary.com/dluulfzrc/image/upload/v1762493016/banner_kahkom.webp')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        minHeight: '70vh', // Responsive minimum for mobile
         width: '100%'
       }}
       className="
         relative
         flex items-center justify-center
         w-full
-        pt-20 sm:pt-28 lg:pt-40
-        pb-14 sm:pb-24 lg:pb-28
-        min-h-[70vh] lg:h-[90vh]
-        mt-[-70px] lg:-mt-20
+        
+        min-h-[90vh] sm:min-h-[90vh] lg:min-h-[90vh]
+        
       "
     >
 
       {/* Black opacity overlay */}
       <div className="absolute inset-0 bg-black/30 z-0"></div>
 
-      <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto">
+      <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto pb-16 lg:pb-28">
         <Image
           className="mx-auto h-30 sm:h-30 md:h-40 lg:h-36 xl:h-30 2xl:h-50 w-auto  xl:w-120 drop-shadow-lg"
           src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762494438/logo_offgkb.svg"
           alt="Genesis School Crest"
           width={96}
           height={126}
+          priority
+        />
+
+        <Image
+          className="mx-auto w-[295px] md:w-[382px] xl:w-[482px] h-[39px] drop-shadow-lg my-3 md:my-5"
+          src="/assets/new-logo.svg"
+          alt="New Genesis School Logo"
+          width={482}
+          height={39}
           priority
         />
 
@@ -53,12 +58,22 @@ const Hero = () => {
         {/* Action Button */}
         <button
           className="
-            bg-white text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4
+            bg-[#F8B535] text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4
             rounded-4xl text-sm sm:text-base
-            hover:bg-amber-400 transition duration-200 shadow-lg
+            hover:bg-amber-400 transition duration-200 shadow-lg cursor-pointer
           "
         >
           Book Campus Tour
+        </button>
+
+        <button
+          className="
+            bg-white mt-4 sm:mt-3 ml-3 text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4
+            rounded-4xl text-sm sm:text-base
+            hover:bg-gray-50 cursor-pointer transition duration-200 shadow-lg
+          "
+        >
+          Take Scholarship Test
         </button>
       </div>
 

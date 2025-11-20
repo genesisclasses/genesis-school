@@ -47,7 +47,7 @@ const Snapshots = () => {
   };
 
   return (
-    <section className="md:pt-20 pb-10 box-border w-full bg-white">
+    <section className="pb-10 lg:pt-16 lg:pb-16 box-border w-full bg-white">
       <div className="snapshots-container pl-4 md:pl-6 xl:pl-0">
         <div className="w-full mb-5">
           <h2 className="text-[32px] md:text-[42px] xl:text-[48px] font-semibold text-[#1b365d] m-0">
