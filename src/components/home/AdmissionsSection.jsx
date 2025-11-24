@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Users, ListChecks, } from 'lucide-react'
 
 const AdmissionsSection = () => (
-  <section className="relative w-full h-[465px] flex items-center justify-center overflow-hidden my-10 lg:my-16">
+  <section className="relative w-full h-[465px] flex items-center justify-center overflow-hidden my-10 lg:my-10">
     {/* Background image */}
     <Image
       src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762493016/banner_kahkom.webp"

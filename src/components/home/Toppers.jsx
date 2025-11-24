@@ -25,7 +25,7 @@ const toppers = [
 ];
 
 const Toppers = () => (
-  <section className="w-full bg-white py-6  md:py-14 flex items-center justify-center">
+  <section className="w-full bg-white py-6  md:py-10 flex items-center justify-center">
     <div className="flex flex-col items-center justify-center w-full">
       <h2 className="text-[32px] md:text-[42px] xl:text-[48px] font-semibold text-center mb-2.5 -mt-1">Toppers</h2>
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
