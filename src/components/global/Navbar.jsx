@@ -1,14 +1,14 @@
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Phone, Mail, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { usePathname, useRouter } from 'next/navigation';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Phone, Mail, Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
   const mobileDrawerRef = useRef(null);
 
   const pathname = usePathname();
@@ -20,13 +20,13 @@ export default function Navbar() {
     if (!el) return;
     const yOffset = -96;
     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   const handleNavigateToSection = (id) => {
     setMobileOpen(false);
-    if (pathname !== '/') {
-      sessionStorage.setItem('scrollTarget', id);
+    if (pathname !== "/") {
+      sessionStorage.setItem("scrollTarget", id);
       router.push(`/#${id}`);
       return;
     }
@@ -34,42 +34,43 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    if (pathname === '/') {
-      const target = sessionStorage.getItem('scrollTarget');
+    if (pathname === "/") {
+      const target = sessionStorage.getItem("scrollTarget");
       if (target) {
-        sessionStorage.removeItem('scrollTarget');
+        sessionStorage.removeItem("scrollTarget");
         setTimeout(() => scrollToId(target), 50);
       }
     }
   }, [pathname]);
 
   useEffect(() => {
-    if (pathname !== '/') return;
+    if (pathname !== "/") return;
 
     const handleScroll = () => {
-      const sections = document.querySelectorAll('section[id]');
+      const sections = document.querySelectorAll("section[id]");
       const scrollPos = window.scrollY + 120;
-      let current = '';
+      let current = "";
 
       sections.forEach((section) => {
         if (
           section.offsetTop <= scrollPos &&
           section.offsetTop + section.offsetHeight > scrollPos
         ) {
-          current = section.getAttribute('id');
+          current = section.getAttribute("id");
         }
       });
 
       setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  const isActive = (path, sectionId = '') => {
+  const isActive = (path, sectionId = "") => {
     if (pathname === path) return true;
-    if (pathname === '/' && sectionId && activeSection === sectionId) return true;
+    if (pathname === "/" && sectionId && activeSection === sectionId)
+      return true;
     return false;
   };
 
@@ -84,9 +85,9 @@ export default function Navbar() {
         setMobileOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [mobileOpen]);
 
@@ -131,7 +132,9 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/"
-                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${
+                    isActive("/") ? "border-b-2 border-amber-400" : ""
+                  }`}
                 >
                   Home
                 </Link>
@@ -143,7 +146,10 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavigateToSection("academics-section");
                   }}
-                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/", "academics-section")}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive(
+                    "/",
+                    "academics-section"
+                  )}`}
                 >
                   Academics
                 </a>
@@ -151,7 +157,9 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/about"
-                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/about") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${
+                    isActive("/about") ? "border-b-2 border-amber-400" : ""
+                  }`}
                 >
                   About
                 </Link>
@@ -159,7 +167,11 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/project-darpan"
-                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${
+                    isActive("/project-darpan")
+                      ? "border-b-2 border-amber-400"
+                      : ""
+                  }`}
                 >
                   Project DARPAN
                 </Link>
@@ -167,7 +179,11 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/co-curricular"
-                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${
+                    isActive("/co-curricular")
+                      ? "border-b-2 border-amber-400"
+                      : ""
+                  }`}
                 >
                   Co-Curricular
                 </Link>
@@ -175,7 +191,9 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/blogs"
-                  className={`pb-1 hover:text-amber-400 cursor-pointer ${isActive("/blogs") ? "border-b-2 border-amber-400" : ""}`}
+                  className={`pb-1 hover:text-amber-400 cursor-pointer ${
+                    isActive("/blogs") ? "border-b-2 border-amber-400" : ""
+                  }`}
                 >
                   Blogs
                 </Link>
@@ -183,17 +201,26 @@ export default function Navbar() {
             </ul>
 
             <div className="flex text-[16px] font-semibold ml-4">
-              <Link href="/contact" className="text-black bg-[#ffb833] px-4 py-2 rounded-l-full">
+              <Link
+                href="/contact"
+                className="text-black bg-[#F8B535] hover:bg-white hover:text-black hover:border border-[#DDDDDD] transition duration-300 px-4 py-2 rounded-l-full active:bg-[#EFEFEF]"
+              >
                 Schedule a Visit
               </Link>
-              <Link href="/contact" className="bg-black text-white px-4 py-2 rounded-r-full">
+              <Link
+                href="/contact"
+                className="bg-black hover:bg-white hover:text-black hover:border border-[#DDDDDD] transition duration-300 text-white px-4 py-2 rounded-r-full active:bg-[#EFEFEF] active:text-black"
+              >
                 Get in touch
               </Link>
             </div>
           </div>
 
           {/* MOBILE BUTTON */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="xl:hidden px-1">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="xl:hidden px-1"
+          >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -214,7 +241,9 @@ export default function Navbar() {
                   <Link
                     href="/"
                     onClick={() => setMobileOpen(false)}
-                    className={`pb-1 ${isActive("/") ? "border-b-2 border-amber-400" : ""}`}
+                    className={`pb-1 ${
+                      isActive("/") ? "border-b-2 border-amber-400" : ""
+                    }`}
                   >
                     Home
                   </Link>
@@ -232,16 +261,52 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li>
-                  <Link href="/about" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/about") ? "border-b-2 border-amber-400" : ""}`}>About</Link>
+                  <Link
+                    href="/about"
+                    onClick={() => setMobileOpen(false)}
+                    className={`pb-1 ${
+                      isActive("/about") ? "border-b-2 border-amber-400" : ""
+                    }`}
+                  >
+                    About
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/project-darpan" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/project-darpan") ? "border-b-2 border-amber-400" : ""}`}>Project Darpan</Link>
+                  <Link
+                    href="/project-darpan"
+                    onClick={() => setMobileOpen(false)}
+                    className={`pb-1 ${
+                      isActive("/project-darpan")
+                        ? "border-b-2 border-amber-400"
+                        : ""
+                    }`}
+                  >
+                    Project Darpan
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/co-curricular" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/co-curricular") ? "border-b-2 border-amber-400" : ""}`}>Co-Curricular</Link>
+                  <Link
+                    href="/co-curricular"
+                    onClick={() => setMobileOpen(false)}
+                    className={`pb-1 ${
+                      isActive("/co-curricular")
+                        ? "border-b-2 border-amber-400"
+                        : ""
+                    }`}
+                  >
+                    Co-Curricular
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/blogs" onClick={() => setMobileOpen(false)} className={`pb-1 ${isActive("/blogs") ? "border-b-2 border-amber-400" : ""}`}>Blogs</Link>
+                  <Link
+                    href="/blogs"
+                    onClick={() => setMobileOpen(false)}
+                    className={`pb-1 ${
+                      isActive("/blogs") ? "border-b-2 border-amber-400" : ""
+                    }`}
+                  >
+                    Blogs
+                  </Link>
                 </li>
                 <li className="w-full">
                   <Link

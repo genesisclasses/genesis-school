@@ -20,14 +20,17 @@
               </div>
     
               {/* TEXT LEFT */}
-              <div className="w-full lg:w-[55%] px-2 lg:px-0 py-2 lg:py-10 flex flex-col justify-start items-start text-left lg:mt-16 xl:mt-24 ml-">
+              <div className="w-full lg:w-[55%] px-2 lg:px-0 py-2 lg:py-10 flex flex-col justify-start items-start text-left lg:mt-0 xl:mt-18 ">
                 <h1 className="text-[28px] sm:text-[32px] md:text-[35px] lg:text-[35px] xl:text-[45px] font-semibold mb-4 sm:mb-8 leading-tight text-black">
                   Every child carries a world within.
                 </h1>
     
-                <p className="text-[#777777] xl:text-[24px] sm:text-base md:w-[500px] lg:w-[379px] xl:w-[670px] mb-2 sm:mb-4 tracking-wide">
-                  At Genesis, we believe that every student has a unique story and a voice that deserves to be heard.
-                  DARPAN creates safe spaces where children can reflect, express, and heal.
+                <p className="text-[#555555] xl:text-[18px] sm:text-base w-full lg:w-[500px] xl:w-[770px] mb-2 sm:mb-4 tracking-wide">
+                  At Genesis, we recognize that every child carries a unique story filled with experiences, emotions, and dreams. Project DARPAN honors these individual journeys by creating safe, nurturing spaces where students feel genuinely seen and valued. 
+                </p>
+
+                <p className="text-[#555555] xl:text-[18px] sm:text-base w-full lg:w-[379px] xl:w-[670px]  tracking-wide">
+                  Through compassionate listening and guided support, children learn to reflect, express themselves without judgment, and heal at their own pace. In these spaces, students discover that their voices matter and develop the courage to navigate life's complexities with confidence.
                 </p>
               </div>
     

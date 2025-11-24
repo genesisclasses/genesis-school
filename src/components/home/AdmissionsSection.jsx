@@ -69,9 +69,8 @@ const AdmissionsSection = () => (
           w-full md:w-auto
           py-2.5 md:py-3
           md:px-5
-          shadow-md hover:bg-amber-400 cursor-pointer
+          hover:bg-black hover:text-white active:bg-[#333333] transition duration-300 shadow-lg cursor-pointer
           text-sm md:text-base
-          transition
         ">
           Apply Now
         </button></Link>
@@ -82,10 +81,9 @@ const AdmissionsSection = () => (
           w-full md:w-auto
           py-2.5 md:py-3
           md:px-5
-          shadow-md hover:bg-gray-100
-          border border-gray-200
+          shadow-md
           text-sm md:text-base
-          transition cursor-pointer
+          hover:bg-black hover:text-white active:bg-[#333333] transition duration-300 cursor-pointer
         ">
           Take Scholarship Test
         </button>

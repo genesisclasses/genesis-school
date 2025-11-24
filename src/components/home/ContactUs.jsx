@@ -285,7 +285,7 @@ const ContactUs = () => {
             {/* Button */}
             <button
               type="submit"
-              className="w-full bg-[#09254A] text-white font-semibold rounded-md py-3 text-sm sm:text-base hover:bg-[#183864] cursor-pointer transition duration-300 hover:scale-105"
+              className="w-full bg-[#09254A] text-white font-semibold rounded-md py-3 text-sm sm:text-base hover:bg-[#F8B535] hover:text-black active:bg-[#FBC253] cursor-pointer transition duration-300 "
             >
               Submit Enquiry
             </button>

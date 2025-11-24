@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState, useMemo } from 'react';
-import { createSlug } from '@/lib/utils/slugify';
+import Image from "next/image";
+import Link from "next/link";
+import { useState, useMemo } from "react";
+import { createSlug } from "@/lib/utils/slugify";
 
 function calculateTimePassed(createdAt) {
   const now = new Date();
@@ -16,23 +16,24 @@ function calculateTimePassed(createdAt) {
   const diffMonths = Math.floor(diffDays / 30);
   const diffYears = Math.floor(diffDays / 365);
 
-  if (diffMins < 1) return 'Just now';
-  if (diffMins < 60) return `${diffMins} min${diffMins > 1 ? 's' : ''} ago`;
-  if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
-  if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
-  if (diffWeeks < 4) return `${diffWeeks} week${diffWeeks > 1 ? 's' : ''} ago`;
-  if (diffMonths < 12) return `${diffMonths} month${diffMonths > 1 ? 's' : ''} ago`;
-  return `${diffYears} year${diffYears > 1 ? 's' : ''} ago`;
+  if (diffMins < 1) return "Just now";
+  if (diffMins < 60) return `${diffMins} min${diffMins > 1 ? "s" : ""} ago`;
+  if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
+  if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? "s" : ""} ago`;
+  if (diffWeeks < 4) return `${diffWeeks} week${diffWeeks > 1 ? "s" : ""} ago`;
+  if (diffMonths < 12)
+    return `${diffMonths} month${diffMonths > 1 ? "s" : ""} ago`;
+  return `${diffYears} year${diffYears > 1 ? "s" : ""} ago`;
 }
 
 function getExcerpt(content) {
-  if (!content) return '';
+  if (!content) return "";
 
   try {
     let contentObj = content;
 
     // Handle if content is a string
-    if (typeof content === 'string') {
+    if (typeof content === "string") {
       contentObj = JSON.parse(content);
     }
 
@@ -43,34 +44,46 @@ function getExcerpt(content) {
 
     // Extract text from content array
     if (!contentObj.content || !Array.isArray(contentObj.content)) {
-      console.warn('No content array found');
-      return '';
+      console.warn("No content array found");
+      return "";
     }
 
-    let textContent = '';
+    let textContent = "";
 
     // Loop through nodes and extract text
     contentObj.content.forEach((node) => {
       if (!node) return;
 
-      if (node.type === 'paragraph' && node.content && Array.isArray(node.content)) {
+      if (
+        node.type === "paragraph" &&
+        node.content &&
+        Array.isArray(node.content)
+      ) {
         node.content.forEach((item) => {
           if (item.text) {
-            textContent += item.text + ' ';
+            textContent += item.text + " ";
           }
         });
-      } else if (node.type === 'heading' && node.content && Array.isArray(node.content)) {
+      } else if (
+        node.type === "heading" &&
+        node.content &&
+        Array.isArray(node.content)
+      ) {
         node.content.forEach((item) => {
           if (item.text) {
-            textContent += item.text + ' ';
+            textContent += item.text + " ";
           }
         });
-      } else if (node.type === 'bulletList' && node.content) {
+      } else if (node.type === "bulletList" && node.content) {
         node.content.forEach((listItem) => {
-          if (listItem.content && listItem.content[0] && listItem.content[0].content) {
+          if (
+            listItem.content &&
+            listItem.content[0] &&
+            listItem.content[0].content
+          ) {
             listItem.content[0].content.forEach((item) => {
               if (item.text) {
-                textContent += item.text + ' ';
+                textContent += item.text + " ";
               }
             });
           }
@@ -82,25 +95,29 @@ function getExcerpt(content) {
 
     // Return excerpt with ellipsis
     if (textContent.length > 120) {
-      return textContent.slice(0, 120) + '...';
+      return textContent.slice(0, 120) + "...";
     }
 
-    return textContent || '';
+    return textContent || "";
   } catch (error) {
-    console.error('Error extracting excerpt:', error);
-    return '';
+    console.error("Error extracting excerpt:", error);
+    return "";
   }
 }
 
 export default function BlogCard({ post }) {
-  const { id, title, featured_image_url, created_at, read_time, content } = post;
+  const { id, title, featured_image_url, created_at, read_time, content } =
+    post;
   const [imageError, setImageError] = useState(false);
 
   const excerpt = useMemo(() => getExcerpt(content), [content]);
-  const timePassed = useMemo(() => calculateTimePassed(created_at), [created_at]);
+  const timePassed = useMemo(
+    () => calculateTimePassed(created_at),
+    [created_at]
+  );
   const slug = useMemo(() => createSlug(title), [title]);
 
-  console.log('📝 Post:', title, 'Excerpt:', excerpt); // ✅ DEBUG
+  console.log("📝 Post:", title, "Excerpt:", excerpt); // ✅ DEBUG
 
   return (
     <Link href={`/blogs/${slug}`}>
@@ -133,7 +150,9 @@ export default function BlogCard({ post }) {
                   d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                 />
               </svg>
-              <span className="text-gray-600 font-medium text-sm">No Image</span>
+              <span className="text-gray-600 font-medium text-sm">
+                No Image
+              </span>
             </div>
           )}
 
@@ -163,7 +182,7 @@ export default function BlogCard({ post }) {
 
           {/* View Post Link - Black with underline */}
           <div className="mt-auto pb-2">
-            <span className="text-[24px] font-normal text-black underline inline-flex items-center gap-2 hover:opacity-70 transition-opacity">
+            <span className="sliding-underline text-[24px] font-normal text-[#333333] hover:text-black active:text-[#555555] underline-none inline-flex items-center gap-2 ">
               View Post
               <svg
                 className="w-6 h-6"
@@ -179,6 +198,25 @@ export default function BlogCard({ post }) {
                 />
               </svg>
             </span>
+
+            <style jsx>{`
+              .sliding-underline {
+                position: relative;
+              }
+              .sliding-underline::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                height: 2px; /* Border thickness */
+                width: 0;
+                background: #000;
+                transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+              }
+              .sliding-underline:hover::after {
+                width: 100%;
+              }
+            `}</style>
           </div>
         </div>
       </article>

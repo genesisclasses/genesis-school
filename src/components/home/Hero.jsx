@@ -58,9 +58,9 @@ const Hero = () => {
         {/* Action Button */}
         <button
           className="
-            bg-[#F8B535] text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4
+            bg-[#F8B535]   text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4
             rounded-4xl text-sm sm:text-base
-            hover:bg-amber-400 transition duration-200 shadow-lg cursor-pointer
+            hover:bg-black hover:text-white active:bg-[#333333] transition duration-300 shadow-lg cursor-pointer
           "
         >
           Book Campus Tour
@@ -70,7 +70,7 @@ const Hero = () => {
           className="
             bg-white mt-4 sm:mt-3 ml-3 text-[#001f3f] border-[#001f3f] font-semibold px-5 sm:px-6 py-4
             rounded-4xl text-sm sm:text-base
-            hover:bg-gray-50 cursor-pointer transition duration-200 shadow-lg
+            hover:bg-black hover:text-white active:bg-[#333333] transition duration-300 shadow-lg cursor-pointer
           "
         >
           Take Scholarship Test

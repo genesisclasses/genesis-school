@@ -1,5 +1,5 @@
 'use client'
-import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -11,7 +11,8 @@ const paragraphs = [
 
 const ProjectDarpan = () => {
   const pathname = usePathname();
-  const hideButton = pathname === "/project-darpan";  // ✅ Hide on this route
+  const hideButton = pathname === "/project-darpan"; // ✅ Hide on this route
+  const [hovered, setHovered] = useState(false);
 
   return (
     <div
@@ -29,7 +30,6 @@ const ProjectDarpan = () => {
             background-position: top 90px left 80px !important;
           }
         }
-        
         @media (max-width: 1024px) {
           .projectdarpan-container {
             background-position: top 210px left 0px !important;
@@ -50,8 +50,6 @@ const ProjectDarpan = () => {
             background-position: bottom -30px left 0px !important;
           }
         }
-
-        /* 2560px screens (only affects ultra-wide) */
         @media (min-width: 1700px) and (max-width: 2560px) {
           .projectdarpan-bg {
             background-size: 76% auto !important;
@@ -67,6 +65,7 @@ const ProjectDarpan = () => {
       {/* Main container */}
       <div className="relative w-full max-w-[1418px] flex items-center overflow-hidden rounded-xl">
         <div className="relative z-10 flex flex-col lg:flex-row w-full items-center">
+          
           <div className="w-full h-auto lg:w-[530px] lg:h-[450px] xl:w-[550px] xl:h-[540px] p-0 sm:p-4 flex items-center justify-center mb-0 lg:mb-0">
             <img
               src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762506768/Frame_128_w0bnee.png"
@@ -78,7 +77,7 @@ const ProjectDarpan = () => {
             />
           </div>
 
-          <div className="w-full lg:w-1/2 md:px-4  pb-12 lg:px-8 lg:py-10 lg:pb-0 flex flex-col justify-center items-start text-left">
+          <div className="w-full lg:w-1/2 md:px-4 pb-12 lg:px-8 lg:py-10 lg:pb-0 flex flex-col justify-center items-start text-left">
             <div className="text-[#F8B535] text-[14px] sm:text-lg font-medium tracking-wide mb-1 sm:mb-0 w-full sm:w-auto">
               PROJECT
             </div>
@@ -94,11 +93,17 @@ const ProjectDarpan = () => {
             {!hideButton && (
               <Link
                 href="/project-darpan"
-                className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 bg-white border border-gray-400 rounded-md text-[#333333] font-medium transition hover:bg-gray-100 justify-center mt-4 xl:mt-[50px]"
+                className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 bg-white border border-black rounded-sm text-[#333333] font-medium  hover:bg-black hover:text-white active:bg-[#333333] transition duration-300  cursor-pointer justify-center mt-4 xl:mt-[50px]"
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
               >
                 <p>Know More</p>
                 <img
-                  src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762406067/know-more-btn_tcl2b3.svg"
+                  src={
+                    hovered
+                      ? "/assets/projectdarpan/know-more-icon.svg"
+                      : "https://res.cloudinary.com/dluulfzrc/image/upload/v1762406067/know-more-btn_tcl2b3.svg"
+                  }
                   alt="External Link Icon"
                   width={22}
                   height={22}
