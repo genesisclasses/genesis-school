@@ -126,7 +126,7 @@ export default async function BlogDetailPage({ params }) {
   if (!post) notFound();
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white">
       <div className="relative w-full h-[373px]">
         {post.featured_image_url && (
           <img

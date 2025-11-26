@@ -58,7 +58,7 @@ async function BlogGrid() {
 
 export default async function BlogsPage() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white ">
       {/* Container - max 1414px for large screens */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1414px] py-16">
         <div className="text-center mb-12">
