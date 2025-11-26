@@ -2,8 +2,7 @@ import { Kameron, Lato } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import ConditionalAnnouncementCarousel from "@/components/global/ConditionalAnnouncementCarousel";
-import ScrollToTop from "@/Utility Hook/ScrollToTop"; // Import the client component
-import ScrollToTop from "@/Utility Hook/ScrollToTop";
+import ScrollToTop from "@/hook/ScrollToTop"; // Import the client component
 import Footer from "../components/global/Footer";
 
 const kameron = Kameron({

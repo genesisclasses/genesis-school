@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
-import useScreenRange from "@/Utility Hook/useScreenRange"; // Adjust path if needed
+import React from "react";
 import PillarsMobile from "@/components/about/MobilePillar"; // Adjust path if needed
+import useScreenRange from "@/hook/useScreenRange"; // Adjust path if needed
 
 const pillars = [
   { number: "01", title: "Enhancement of life skills" },
@@ -16,9 +16,7 @@ function PillarContent({ number, title, numberClass, titleClass }) {
   return (
     <>
       <p className={`block text-left ml-4 lg:ml-9 xl:ml-13 ${numberClass}`}>{number}</p>
-      <p className={`font-bold px-3 md:text-left tracking-wide leading-tight ${titleClass}`}>
-        {title}
-      </p>
+      <p className={`font-bold px-3 md:text-left tracking-wide leading-tight ${titleClass}`}>{title}</p>
     </>
   );
 }
@@ -121,4 +119,3 @@ export default function PillarsOfGenesis() {
     </section>
   );
 }
-
