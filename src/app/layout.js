@@ -4,6 +4,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import ConditionalAnnouncementCarousel from "@/components/global/ConditionalAnnouncementCarousel";
 import ScrollToTop from "@/hook/ScrollToTop"; // Import the client component
 import Footer from "../components/global/Footer";
+import Navbar from "../components/global/Navbar";
 
 const kameron = Kameron({
   weight: ["400", "600"],
