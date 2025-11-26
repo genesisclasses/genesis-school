@@ -1,13 +1,10 @@
 import { Kameron, Lato } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import ScrollToTop from "@/Utility Hook/ScrollToTop"; // Import the client component
-import Footer from "../components/global/Footer";
-
-
 import ConditionalAnnouncementCarousel from "@/components/global/ConditionalAnnouncementCarousel";
+import ScrollToTop from "@/Utility Hook/ScrollToTop"; // Import the client component
 import ScrollToTop from "@/Utility Hook/ScrollToTop";
-
+import Footer from "../components/global/Footer";
 
 const kameron = Kameron({
   weight: ["400", "600"],
@@ -95,7 +92,7 @@ const lato = Lato({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${kameron.variable} ${lato.variable}`}>
-      <GoogleAnalytics gaId="G-8S341V7KV6" />
+      <GoogleTagManager gtmId="G-8S341V7KV6" />
       <body>
         <Navbar />
         <ConditionalAnnouncementCarousel />
