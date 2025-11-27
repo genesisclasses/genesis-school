@@ -33,8 +33,8 @@ const directorData = {
     "Education is not confined to textbooks; it is the art of nurturing curiosity, compassion, and courage within every learner. True success lies in shaping individuals who think deeply, act wisely, and lead with integrity",
   directorInfo: {
     name: "Seema Sharma",
-    title: "(Director) 36+ Years of Delivering Excellence",
-    subtitle: "36+ years of compassion towards students and educational institutions",
+    title: "Director, The Genesis School",
+    subtitle: "36+ years of compassion towards students and educational institutions",
     paragraphs: [
       "At Genesis, we believe education is not a destination but a lifelong journey of discovery and growth. Over the past three decades, I have seen how a nurturing environment built on care, curiosity, and courage can shape young learners into confident, compassionate, and capable individuals.",
       "Our goal has always been to maintain a balance between academic excellence and emotional wellbeing, ensuring that every child develops both intellect and empathy. At Genesis, we teach students not just to excel in exams, but to understand themselves and the world around them. We strive to awaken their potential, inspire purpose, and build values that last a lifetime — nurturing excellence with heart, vision, and unwavering dedication to holistic growth.",
@@ -99,10 +99,10 @@ export default function DirectorMessage() {
                 {para}
               </p>
             ))}
-            <h3 className="text-[20px] font-bold text-[#333333] mb-1">
+            <h3 className="text-[20px] font-extrabold text-[#333333] mb-1">
               {directorData.directorInfo.name}
             </h3>
-            <p className="text-[16px] font-medium font-bold text-[#333333] mb-3">
+            <p className="text-[16px] font-medium  text-[#333333] mb-0">
               {directorData.directorInfo.title}
             </p>
             <p className="text-[16px] font-medium text-[#333333] ">

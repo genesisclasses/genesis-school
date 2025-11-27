@@ -68,7 +68,7 @@ const ProjectDarpan = () => {
           
           <div className="w-full h-auto lg:w-[530px] lg:h-[450px] xl:w-[550px] xl:h-[540px] p-0 sm:p-4 flex items-center justify-center mb-0 lg:mb-0">
             <img
-              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762506768/Frame_128_w0bnee.png"
+              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1764238158/project-darpan-img_ajm5jc.webp"
               alt="Project Darpan"
               width={420}
               height={320}
@@ -81,7 +81,7 @@ const ProjectDarpan = () => {
             <div className="text-[#F8B535] text-[14px] sm:text-lg font-medium tracking-wide mb-1 sm:mb-0 w-full sm:w-auto">
               PROJECT
             </div>
-            <h1 className="sm:text-[32px] md:text-[42px] lg:text-[40px] mb-4 xl:mb-[50px] leading-tight text-black w-full sm:w-auto text-[32px]   xl:text-[48px] font-semibold ">
+            <h1 className="sm:text-[32px] md:text-[42px] lg:text-[40px] mb-4 xl:mb-[20px] leading-tight text-black w-full sm:w-auto text-[32px]   xl:text-[48px] font-semibold ">
               DARPAN
             </h1>
             {paragraphs.map((text, idx) => (
@@ -93,7 +93,7 @@ const ProjectDarpan = () => {
             {!hideButton && (
               <Link
                 href="/project-darpan"
-                className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 bg-white border border-black rounded-sm text-[#333333] font-medium  hover:bg-black hover:text-white active:bg-[#333333] transition duration-300  cursor-pointer justify-center mt-4 xl:mt-[50px]"
+                className="inline-flex w-[168px] text-[16px] sm:text-[18px] items-center gap-2 px-4 sm:px-4 py-3 bg-white border border-black rounded-sm text-[#333333] font-medium  hover:bg-black hover:text-white active:bg-[#333333] transition duration-300  cursor-pointer justify-center mt-4 xl:mt-[20px]"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
               >

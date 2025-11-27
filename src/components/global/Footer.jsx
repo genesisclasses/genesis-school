@@ -60,7 +60,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#ECECEC]">
       {/* Top Section */}
-      <div className="max-w-[1729px] md:pl-12 mx-auto px-6 py-[100px] flex flex-col md:flex-row justify-between items-center md:items-start">
+      <div className="max-w-[1729px] xl:pl-12 mx-auto px-4 xl:px-6 py-[100px] flex flex-col md:flex-row justify-between items-center md:items-start">
         {/* Logo */}
         <div className="flex justify-center lg:ml-[50px] mb-2  md:block">
           <Image
@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
         {/* Right Side Content */}
         <div className="
-          grid grid-cols-1 sm:grid-cols-3 gap-12
+          grid grid-cols-1 sm:grid-cols-3 gap-12 md:gap-6 lg:gap-8 xl:gap-12
           mt-10 md:mt-0
           w-full md:w-auto
           text-center md:text-left
@@ -85,10 +85,10 @@ export default function Footer() {
           font-lato
         ">
           <ul className="space-y-[15px] text-sm text-center md:text-left">
-            <h4 className="font-semibold mb-4 text-sm md:text-base">Quick Links</h4>
+            <h4 className="font-semibold mb-4 text-base">Quick Links</h4>
             <li>
               <Link href="/">
-                <p className={`border-b-2 w-fit mx-auto md:mx-0 transition-all duration-200
+                <p className={`border-b-2 text-16px md:text-[14px] xl:text-[16px]  w-fit mx-auto md:mx-0 transition-all duration-200
                   ${isActive('/') ? 'border-[#F8B535] ' : 'border-transparent hover:border-[#F8B535]'}`}>
                   Home
                 </p>
@@ -97,19 +97,19 @@ export default function Footer() {
             <li>
               <a
                 href="/#academics-section"
-                className={` mx-auto md:mx-0 transition-all duration-200 cursor-pointer
+                className={` mx-auto  md:mx-0 transition-all duration-200 cursor-pointer
                   `}
                 onClick={e => {
                   e.preventDefault();
                   handleNavigateToSection('academics-section');
                 }}
               >
-                Academics
+                <p className='text-16px md:text-[14px] xl:text-[16px]'>Academics</p>
               </a>
             </li>
             <li>
               <Link href="/about">
-                <p className={`border-b-2 w-fit mx-auto md:mx-0 transition-all duration-200
+                <p className={`border-b-2 text-16px md:text-[14px] xl:text-[16px] w-fit mx-auto md:mx-0 transition-all duration-200
                   ${isActive('/about') ? 'border-[#F8B535] ' : 'border-transparent hover:border-[#F8B535]'}`}>
                   About
                 </p>
@@ -117,7 +117,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/project-darpan">
-                <p className={`border-b-2 w-fit mx-auto md:mx-0 transition-all duration-200
+                <p className={`border-b-2 w-fit text-16px md:text-[14px] xl:text-[16px] mx-auto md:mx-0 transition-all duration-200
                   ${isActive('/project-darpan') ? 'border-[#F8B535] ' : 'border-transparent hover:border-[#F8B535]'}`}>
                   Project DARPAN
                 </p>
@@ -125,7 +125,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/co-curricular">
-                <p className={`border-b-2 w-fit mx-auto md:mx-0 transition-all duration-200
+                <p className={`border-b-2 w-fit text-16px md:text-[14px] xl:text-[16px] mx-auto md:mx-0 transition-all duration-200
                   ${isActive('/co-curricular') ? 'border-[#F8B535] ' : 'border-transparent hover:border-[#F8B535]'}`}>
                   Co-Curricular
                 </p>
@@ -133,7 +133,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/blogs">
-                <p className={`border-b-2 w-fit mx-auto md:mx-0 transition-all duration-200
+                <p className={`border-b-2 w-fit text-16px md:text-[14px] xl:text-[16px] mx-auto md:mx-0 transition-all duration-200
                   ${isActive('/blogs') ? 'border-[#F8B535] ' : 'border-transparent hover:border-[#F8B535]'}`}>
                   Blogs
                 </p>
@@ -141,8 +141,8 @@ export default function Footer() {
             </li>
           </ul>
           {/* Contact Us */}
-          <div>
-            <h4 className="font-semibold mb-4 text-sm md:text-base">Contact Us</h4>
+          <div >
+            <h4 className="font-semibold mb-4 text-base">Contact Us</h4>
             <ul className="space-y-2 text-sm text-center md:text-left">
               <li className="flex md:justify-start justify-center gap-2 items-start">
                 <MapPin size={16} />
@@ -150,57 +150,76 @@ export default function Footer() {
                   href="https://www.google.com/maps/search/?api=1&query=Genesis+School,+Sector+45,+Karnal,+Haryana+122003"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0"
+                  className="border-b-2  border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0 text-16px md:text-[14px] xl:text-[16px]"
                 >
-                  Genesis School, Sector 45,<br />Karnal, Haryana – 122003
+                  <p>Genesis School, Sector 45,<br />Karnal, Haryana – 122003</p>
                 </a>
               </li>
               <li className="flex md:justify-start  justify-center gap-2 items-center">
                 <Phone size={16} />
-                <Link href="tel:+919876543210" className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0">
-                  <p>+91 98765 43210</p>
+                <Link href="tel:+919876543210" className="border-b-2 text-16px md:text-[14px] xl:text-[16px] border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0">
+                  <p className=''>+91 98765 43210</p>
                 </Link>
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <Mail size={19} />
                 <Link href="mailto:info@genesisschool.in" >
-                  <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">info@genesisschool.in</p>
+                  <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0 text-16px md:text-[14px] xl:text-[16px]">info@genesisschool.in</p>
                 </Link>
               </li>
             </ul>
           </div>
           {/* Social Links */}
-          <div>
-            <h4 className="font-semibold mb-4 text-sm md:text-base">Social Links</h4>
-            <ul className="space-y-3">
-              <li className="flex md:justify-start justify-center gap-2 items-center">
-                <Link href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 ">
-                  <Instagram size={16} /> <p  className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">Instagram</p>
-                </Link>
-              </li>
-              <li className="flex md:justify-start justify-center gap-2 items-center">
-                <Link href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <Facebook size={16} /> <p  className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">Facebook</p>
-                </Link>
-              </li>
-              <li className="flex md:justify-start justify-center gap-2 items-center">
-                <Link href="https://youtube.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 ">
-                  <Youtube size={16} /> <p  className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0">YouTube</p>
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Social Links */}
+<div>
+  <h4 className="font-semibold mb-4 text-base">Social Links</h4>
+  <ul className="space-y-6">
+    <li className="flex md:justify-start justify-center items-center">
+      <Link
+        href="https://instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-4"  // increased gap
+      >
+        <Instagram size={20} />
+      </Link>
+    </li>
+
+    <li className="flex md:justify-start justify-center items-center">
+      <Link
+        href="https://facebook.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-4"  // increased gap
+      >
+        <Facebook size={20} />
+      </Link>
+    </li>
+
+    <li className="flex md:justify-start justify-center items-center">
+      <Link
+        href="https://youtube.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-4"  // increased gap
+      >
+        <Youtube size={20} />
+      </Link>
+    </li>
+  </ul>
+</div>
+
         </div>
       </div>
       {/* Bottom Bar */}
-      <div className="bg-[#09254a] h-[70px] w-full text-white flex items-center px-4 font-lato italic">
-  <div className="w-full max-w-[1369px] mx-auto flex justify-between items-center text-[14px] md:text-[16px]">
+      <div className="bg-[#09254a] h-[70px] w-full text-white flex items-center px-4 font-lato italic ">
+  <div className="w-full max-w-[1729px] mx-auto flex justify-between items-center text-[12px] md:text-[16px] xl:px-[75px] 2xl:px-[91px]">
 
     {/* Left */}
-    <p>Copyright ©Genesis 2025.</p>
+    <p>Copyright ©The Genesis School 2025.</p>
 
     {/* Right */}
-    <p>
+    <p className='text-[12px] md:text-[16px]'>
       Maintained by{" "}
       <Link href="https://indiefluence.in/" className="underline">
         Indiefluence

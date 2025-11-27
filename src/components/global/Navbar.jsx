@@ -205,13 +205,13 @@ export default function Navbar() {
                 href="/contact"
                 className="text-black bg-[#F8B535] hover:bg-white hover:text-black hover:border border-[#DDDDDD] transition duration-300 px-4 py-2 rounded-l-full active:bg-[#EFEFEF]"
               >
-                Schedule a Visit
+                <p className="text-[15px]">Schedule a Visit</p>
               </Link>
               <Link
                 href="/contact"
                 className="bg-black hover:bg-white hover:text-black hover:border border-[#DDDDDD] transition duration-300 text-white px-4 py-2 rounded-r-full active:bg-[#EFEFEF] active:text-black"
               >
-                Get in touch
+                <p className="text-[15px]">Get in touch</p>
               </Link>
             </div>
           </div>

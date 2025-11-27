@@ -58,7 +58,7 @@ const Hero = () => {
               transition duration-300 hover:bg-black hover:text-white active:bg-[#333333]
             "
           >
-            Book Campus Tour
+            <p className='text-[16px]'>Book Campus Tour</p>
           </Link>
           <Link
             href="/contact"
@@ -69,7 +69,7 @@ const Hero = () => {
               transition duration-300 hover:bg-black hover:text-white active:bg-[#333333]
             "
           >
-            Take Scholarship Test
+           <p className='text-[16px]'>Take Scholarship Test</p>
           </Link>
         </div>
       </div>

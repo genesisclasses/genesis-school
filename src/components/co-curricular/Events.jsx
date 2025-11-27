@@ -48,49 +48,66 @@ const eventsData = [
 ];
 
 const Events = () => (
-  <div className="w-full flex justify-center pt-12 lg:pt-12 lg:pb-12 bg-white">
+  <div
+    id="co-curricular-section"
+    className="w-full flex justify-center pt-12 lg:pt-12 lg:pb-12 bg-white"
+  >
     <div className="max-w-[1417px] w-full">
-{eventsData.map((event, idx) => ( // <-- ADDED idx here
+      {eventsData.map((event, idx) => (
         <div
           key={event.title}
-          className={`flex flex-col lg:flex-row items-center mb-20 ${event.reverse ? 'lg:flex-row-reverse' : ''}`}
+          id={
+            event.title === "Events & Sports"
+              ? "events-sports"
+              : event.title === "Co-Curricular Activities"
+              ? "arts-culture"
+              : `event-${idx}-${event.title.replace(/\s+/g, "-").toLowerCase()}`
+          }
+          className={`flex flex-col lg:flex-row items-center mb-20 ${
+            event.reverse ? "lg:flex-row-reverse" : ""
+          }`}
         >
           <div className="w-full lg:w-1/2 flex justify-center px-4">
-            <div className="
-              w-full max-w-[390px] sm:max-w-[350px] md:max-w-[420px]
-              lg:max-w-[480px] xl:max-w-[555px]
-            ">
+            <div
+              className="
+                w-full max-w-[390px] sm:max-w-[350px] md:max-w-[420px]
+                lg:max-w-[480px] xl:max-w-[555px]
+              "
+            >
               <Image
                 src={event.image}
                 alt={event.title}
                 width={event.imgWidth}
                 height={event.imgHeight}
                 className="w-full h-auto rounded-2xl"
-                style={{objectFit: "contain"}}
+                style={{ objectFit: "contain" }}
                 sizes="
-                  (max-width: 640px) 80vw, 
-                  (max-width: 1024px) 40vw, 
-                  (max-width: 1280px) 32vw, 
+                  (max-width: 640px) 80vw,
+                  (max-width: 1024px) 40vw,
+                  (max-width: 1280px) 32vw,
                   25vw
                 "
                 priority
               />
             </div>
           </div>
+
           <div
             className={`
               w-full px-4 lg:px-8 py-6
-              ${idx % 2 === 0 ? 'text-left' : 'text-right'}
-              
+              ${idx % 2 === 0 ? "text-left" : "text-right"}
             `}
           >
-            <h2 className="text-[32px] md:text-[40px] xl:text-[48px] font-semibold text-[#002650] mb-2 ">
+            <h2 className="text-[32px] md:text-[40px] xl:text-[48px] font-semibold text-[#002650] mb-2">
               {event.title}
             </h2>
-            {event.description.map((para, idx) => (
+
+            {event.description.map((para, dIdx) => (
               <p
-                key={idx}
-                className={`text-[#777777] text-[16px] font-medium ${idx !== event.description.length - 1 ? 'mb-4' : ''}`}
+                key={dIdx}
+                className={`text-[#777777] text-[16px] font-medium ${
+                  dIdx !== event.description.length - 1 ? "mb-4" : ""
+                }`}
               >
                 {para}
               </p>

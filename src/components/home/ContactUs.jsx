@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Image from 'next/image';
 import Swal from 'sweetalert2';
+import '../css/contact-checkbox.css'
 
 const SERVICE_ID = 'service_uxzjpaa';
 const TEMPLATE_ID = 'template_78nd7xs';
@@ -267,7 +268,7 @@ const ContactUs = () => {
                     name="user_contactmethod"
                     type="checkbox"
                     value="Call"
-                    className="h-4 w-4 border-gray-300 rounded"
+                    className="h-4 w-4 border-gray-300 rounded custom-checkbox"
                   />
                   <span>Call</span>
                 </label>
@@ -276,7 +277,7 @@ const ContactUs = () => {
                     name="user_contactmethod"
                     type="checkbox"
                     value="Whatsapp"
-                    className="h-4 w-4 border-gray-300 rounded"
+                    className="h-4 w-4 border-gray-300 rounded custom-checkbox"
                   />
                   <span>Whatsapp</span>
                 </label>
@@ -292,7 +293,9 @@ const ContactUs = () => {
           </form>
         </div>
       </div>
+      
     </section>
+    
   );
 };
 

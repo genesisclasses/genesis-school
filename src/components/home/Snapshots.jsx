@@ -3,14 +3,18 @@ import React, { useEffect, useState, useRef } from 'react';
 import Marquee from 'react-fast-marquee';
 
 const snapshotsData = [
-  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401368/ey4rterrbopejqwvlw1v_v4psoc.webp', alt: 'Art activity' },
-  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401365/kagwelcco00jnxbwsrr7_jsw6un.webp', alt: 'Student playing guitar' },
-  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401365/jgfsc78ab2zx6flgcopz_hojk5e.webp', alt: 'Painting class' },
-  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401370/ryaa0kwf5kwda0cow7ap_zmazpy.webp', alt: 'Group event' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764237860/DSC_9979_ezxfyd.webp', alt: 'Art activity' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764239358/wdzezrlhxatytc2llgcl_p45rwn.webp', alt: 'Student playing guitar' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764239361/y61lsune3zppynrfgteo_j81krg.webp', alt: 'Painting class' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764239354/fd7et7facilpcou2zuqk_wi4vpi.webp', alt: 'Group event' },
   { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401365/tsiqub1k0aan3382lnha_giw7sc.webp', alt: 'Workshop' },
   { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401407/fr3hppfio0sn3q4trkbj_zunnjc.webp', alt: 'Science fair' },
-  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401364/ixtpr3likojugbelgkog_pw5uw4.webp', alt: 'Music lesson' },
-  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762403876/jm7fyfmhdi22zjohuix6_m64cvt.webp', alt: 'Drama performance' }
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764239359/wtmzlydlnqijpkfcblty_rs0dsp.webp', alt: 'Music lesson' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1762401364/ixtpr3likojugbelgkog_pw5uw4.webp', alt: 'topper' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764239354/hnwl13wwxxcfxq8q6goy_vpj49e.webp', alt: 'Drama performance' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764239356/suxbxs7ckzzhagbb1ovs_umqkzo.webp', alt: 'Drama performance' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764239355/oxylpj4yifla6gwc0lzb_w2stjo.webp', alt: 'Drama performance' },
+  { imageUrl: 'https://res.cloudinary.com/dluulfzrc/image/upload/v1764239357/uiwxmaxiqkedix5fqpuu_stszmf.webp', alt: 'Drama performance' }
 ];
 
 const Snapshots = () => {

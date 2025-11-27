@@ -8,7 +8,7 @@ const campusImages = [
 ];
 
 const GridItem = ({ img, large }) => (
-  <div className="group relative w-full min-w-0 h-[340px] md:h-[280px] xl:h-[414px] rounded-lg overflow-hidden bg-gray-200">
+  <div className="group  relative w-full min-w-0 h-[340px] md:h-[400px] xl:h-[414px] rounded-lg overflow-hidden bg-gray-200" >
     <img
       src={img.src}
       alt={img.alt}
@@ -16,8 +16,8 @@ const GridItem = ({ img, large }) => (
     />
     {/* Text is always visible, gradient/fade removed */}
     <div className="absolute inset-0 flex flex-col justify-end px-4 lg:px-6 pb-4 lg:pb-4 text-white">
-      <div className="text-[16px] lg:text-lg font-medium tracking-wide">{img.title}</div>
-      <div className="text-[14px] lg:text-[16px] tracking-wide">{img.description}</div>
+      <h2 className="text-[18px] lg:text-[24px] font-semibold tracking-wide">{img.title}</h2>
+      <div className="text-[14px] lg:text-[18px] font-medium tracking-wide">{img.description}</div>
     </div>
   </div>
 );
@@ -26,7 +26,7 @@ const Campus = () => (
   <div className="w-full flex justify-center pb-12 px-4 lg:px-10">
     <div className="w-full max-w-[1400px] mx-auto flex flex-col items-center">
       {/* Header */}
-      <h2 className="text-[32px] md:text-[43px] xl:text-[48px] font-semibold text-[#002650] mb-4 md:mb-0 text-center">
+      <h2 id="campus-section" className="text-[32px] md:text-[43px] xl:text-[48px] font-semibold text-[#002650] mb-4 md:mb-0 text-center">
         A Campus That Inspires Learning
       </h2>
       {/* Description */}

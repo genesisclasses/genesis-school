@@ -19,7 +19,7 @@ export default function Aboutgenesis() {
       {/* Image Section */}
       <div className="lg:w-[50%] xl:w-[40%]">
         <Image
-          src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762411846/about-genesis_igjyoy.webp"
+          src="https://res.cloudinary.com/dluulfzrc/image/upload/v1764241038/about-page-img_ljfamf.webp"
           alt="Genesis International School"
           width={400}
           height={400}

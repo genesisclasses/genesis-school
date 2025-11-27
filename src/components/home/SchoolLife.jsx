@@ -9,14 +9,14 @@ export default function SchoolLife() {
     { id: 3, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uw2ij1pbxyelcq2gwo9a_iqernb.webp" },
     {
       id: 4,
-      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uackkd1d0n8olymp7dgi_c6ukhs.webp",
+      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764239911/phcfipqnh4rvb5uxhebs_hcmmzz.webp",
       text: "Our spacious, digitally equipped classrooms and state-of-the-art labs provide a comfortable and enriching academic environment.",
     },
     { id: 5, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762425943/5c_qs640h.webp" },
     { id: 6, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762425749/b9tq2ehdqjs28ngbji0t_roorcq.webp" },
     {
       id: 7,
-      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uackkd1d0n8olymp7dgi_c6ukhs.webp",
+      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764239910/mid9kan0xravm1rr2raz_zacnqd.webp",
       text: "The Genesis campus is thoughtfully designed to inspire curiosity, collaboration, and confidence in every learner.",
     },
     { id: 8, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762426628/lltrnolwzot84zdsu6qh_a9hqcy.webp" },
@@ -24,7 +24,7 @@ export default function SchoolLife() {
     { id: 10, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401155/ubqb5nl7bovgzvkhd6mj_xp7gfa.webp" },
     {
       id: 11,
-      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uackkd1d0n8olymp7dgi_c6ukhs.webp",
+      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764239910/iua7svr9kmsu3re2irej_zjmzni.webp",
       text: "Smart classrooms and advanced laboratories create an engaging environment that promotes practical understanding daily.",
     },
     { id: 12, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/lnfdo4sr47pmy5bqbas0_mbgnlu.webp" },
@@ -32,14 +32,14 @@ export default function SchoolLife() {
     { id: 14, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762427203/14c_lnq8os.webp" },
     {
       id: 15,
-      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uackkd1d0n8olymp7dgi_c6ukhs.webp",
+      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764239909/f1ada61rlrkobnjtru2p_ct3yei.webp",
       text: "Expansive playgrounds encourage teamwork, physical fitness, and the spirit of healthy competition among young minds.",
     },
     { id: 16, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401156/vu1cr1jyc5g6wxceo2aj_mrgbst.webp" },
     { id: 17, img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uackkd1d0n8olymp7dgi_c6ukhs.webp" },
     {
       id: 18,
-      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762401154/uackkd1d0n8olymp7dgi_c6ukhs.webp",
+      img: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764239912/prqbvechwakrwfps7qzr_swd3hg.webp",
       text: "Music and art rooms nurture creativity, self-expression, and emotional growth through diverse cultural and artistic experiences.",
     },
   ];
@@ -87,7 +87,7 @@ export default function SchoolLife() {
                 }}
               >
                 {/* Front (Image) */}
-                <div className="absolute inset-0 rounded-3xl flip-face">
+                <div className="absolute inset-0 rounded-3xl flip-face ">
                   <Image
                     src={card.img}
                     alt="School Image"
@@ -96,6 +96,7 @@ export default function SchoolLife() {
                     priority
                   />
                 </div>
+                
 
                 {/* Back (Text) */}
                 {hasText && (
