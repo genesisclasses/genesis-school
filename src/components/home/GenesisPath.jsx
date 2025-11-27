@@ -1,7 +1,7 @@
-'use client';
-import useScreenRange from '@/Utility Hook/useScreenRange';
-import GenesisPathDesktop from '@/components/home/GenesisPathDesktop';
-import GenesisPathResponsive from '@/components/home/GenesisPathResponsive'; // Covers both mobile and tablet (0–1023px)
+"use client";
+import GenesisPathDesktop from "@/components/home/GenesisPathDesktop";
+import GenesisPathResponsive from "@/components/home/GenesisPathResponsive"; // Covers both mobile and tablet (0–1023px)
+import useScreenRange from "@/hook/useScreenRange";
 
 const GenesisPath = () => {
   const isDesktop = useScreenRange(1024, 9999);
