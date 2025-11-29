@@ -112,7 +112,7 @@ export default function Navbar() {
       </div>
 
       {/* NAVBAR - always solid white */}
-      <nav className="bg-white   transition-all duration-300">
+      <nav className="bg-white transition-all duration-300">
         <div className="max-w-[1369px] mx-auto flex items-center justify-between h-23 px-0 sm:px-6 lg:px-8">
           {/* LOGO */}
           <Link href="/" className="flex items-center">
@@ -200,18 +200,14 @@ export default function Navbar() {
               </li>
             </ul>
 
-            <div className="flex text-[16px] font-semibold ml-4">
+            {/* SINGLE GET IN TOUCH BUTTON (desktop) */}
+            <div className="flex items-center ml-4">
               <Link
                 href="/contact"
-                className="text-black bg-[#F8B535] hover:bg-white hover:text-black hover:border border-[#DDDDDD] transition duration-300 px-4 py-2 rounded-l-full active:bg-[#EFEFEF]"
+                className="inline-flex items-center justify-center bg-[#002650] text-white px-6 py-[9px] rounded-full transition-colors duration-200 hover:bg-[#F8B535] active:bg-[#FBC253] hover:text-black "
+                aria-label="Get in touch"
               >
-                <p className="text-[15px]">Schedule a Visit</p>
-              </Link>
-              <Link
-                href="/contact"
-                className="bg-black hover:bg-white hover:text-black hover:border border-[#DDDDDD] transition duration-300 text-white px-4 py-2 rounded-r-full active:bg-[#EFEFEF] active:text-black"
-              >
-                <p className="text-[15px]">Get in touch</p>
+                <p className="text-[16px] font-medium">Get in touch</p>
               </Link>
             </div>
           </div>
@@ -219,7 +215,8 @@ export default function Navbar() {
           {/* MOBILE BUTTON */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="xl:hidden px-1"
+            className="xl:hidden px-2"
+            aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -234,7 +231,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
-              className="xl:hidden fixed right-0 w-3/4 max-w-[329px] h-[calc(100vh-100px)] bg-white  p-8"
+              className="xl:hidden fixed right-0 w-3/4 max-w-[329px] h-[calc(100vh-100px)] bg-white p-8"
             >
               <ul className="flex flex-col items-center space-y-6 text-base font-medium">
                 <li>
@@ -308,22 +305,16 @@ export default function Navbar() {
                     Blogs
                   </Link>
                 </li>
-                <li className="w-full">
+
+                {/* SINGLE GET IN TOUCH BUTTON (mobile drawer) */}
+                <li className="w-full pt-2">
                   <Link
                     href="/contact"
-                    className="block bg-[#ffb833] py-3 rounded-full text-center"
                     onClick={() => setMobileOpen(false)}
+                    className="block w-full text-center bg-[#002650] text-white py-[9px] rounded-full transition-colors duration-200 hover:bg-[#F8B535] active:bg-[#FBC253]"
+                    aria-label="Get in touch"
                   >
-                    Schedule a Visit
-                  </Link>
-                </li>
-                <li className="w-full">
-                  <Link
-                    href="/contact"
-                    className="block bg-black text-white py-3 rounded-full text-center"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    Get in touch
+                    <span className="text-[15px] font-semibold">Get in touch</span>
                   </Link>
                 </li>
               </ul>

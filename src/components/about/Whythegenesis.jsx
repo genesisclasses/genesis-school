@@ -1,14 +1,42 @@
-'use client';
+"use client";
 import React, { useRef, useState, useEffect } from "react";
 
 // Card data
 const cards = [
-  { number: 1, title: "Future-Ready Curriculum", desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly." },
-  { number: 2, title: "Expert & Caring Faculty", desc: "A team of passionate educators mentors every child with patience, personal attention, and a deep commitment to excellence." },
-  { number: 3, title: "Holistic Development ", desc: "Beyond academics, we nurture creativity, confidence, and character through co-curricular programmes that inspire balanced growth." },
-  { number: 4, title: "Culture of Values & Integrity", desc: "Rooted in respect, empathy, and discipline, The Genesis School fosters an environment where learning builds both intellect and integrity." },
-  { number: 5, title: "Modern Infrastructure", desc: "Smart classrooms, advanced laboratories, and spacious activity zones provide a stimulating environment for innovation and discovery." },
-  { number: 6, title: "Personalised Learning", desc: "We recognise that every child learns differently. Our approach ensures individual attention, guidance, and growth at every step." }
+  {
+    number: 1,
+    title: "Future-Ready Curriculum",
+    desc: "Our progressive curriculum integrates academics with real-world skills, empowering students to think critically, adapt confidently, and lead responsibly.",
+  },
+  {
+    number: 2,
+    title: "Expert & Caring Faculty",
+    desc: "A team of passionate educators mentors every child with patience, personal attention, and a deep commitment to excellence.",
+  },
+  {
+    number: 3,
+    title: "Holistic Development ",
+    desc: "Beyond academics, we nurture creativity, confidence, and character through co-curricular programmes that inspire balanced growth.",
+  },
+
+  // ⭐ Custom title only for this card:
+  {
+    number: 4,
+    title: "Culture of Values & Integrity",
+    customTitle: "Culture of   Values & Integrity", // <-- Extra spacing here
+    desc: "Rooted in respect, empathy, and discipline, The Genesis School fosters an environment where learning builds both intellect and integrity.",
+  },
+
+  {
+    number: 5,
+    title: "Modern Infrastructure",
+    desc: "Smart classrooms, advanced laboratories, and spacious activity zones provide a stimulating environment for innovation and discovery.",
+  },
+  {
+    number: 6,
+    title: "Personalised Learning",
+    desc: "We recognise that every child learns differently. Our approach ensures individual attention, guidance, and growth at every step.",
+  },
 ];
 
 // Card styles with responsive width/height
@@ -24,13 +52,30 @@ const cardSize =
 // Card component
 function WhyGenesisCard({ card, idx }) {
   return (
-    <div className={`${cardBase} ${cardColors(idx)} ${cardSize} pointer-events-none`}>
+    <div
+      className={`${cardBase} ${cardColors(
+        idx
+      )} ${cardSize} pointer-events-none`}
+    >
       <div className="mb-4">
         <div className="rounded-full bg-white shadow-md flex items-center justify-center w-10 h-10 font-semibold text-gray-800">
           {card.number}
         </div>
       </div>
-      <h2 className="mb-3 font-semibold text-[22px] text-[#333333]">{card.title}</h2>
+
+      {/* Title using customTitle ONLY for card 4 */}
+      {/* Title using custom logic ONLY for card 4 */}
+      <h2 className="mb-3 font-semibold text-[22px] text-[#333333]">
+        {card.number === 4 ? (
+          <>
+            Culture of
+            <span className="ml-2">Values</span> & Integrity
+          </>
+        ) : (
+          card.title
+        )}
+      </h2>
+
       <p className="text-[#777777] text-[16px]">{card.desc}</p>
     </div>
   );
@@ -48,7 +93,7 @@ export default function Whythegenesis() {
     setIsDragging(true);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
-    scrollRef.current.style.cursor = 'grabbing';
+    scrollRef.current.style.cursor = "grabbing";
   };
 
   const handleMouseMove = (e) => {
@@ -61,65 +106,49 @@ export default function Whythegenesis() {
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    scrollRef.current.style.cursor = 'grab';
+    scrollRef.current.style.cursor = "grab";
   };
 
   const handleMouseLeave = () => {
     setIsDragging(false);
-    scrollRef.current.style.cursor = 'grab';
+    scrollRef.current.style.cursor = "grab";
   };
 
   // Keyboard navigation
   const handleKeyDown = (e) => {
-    const cardWidth = 352 + 24; // match lg:w-[352px] + gap-6(~24px)
-    if (e.key === 'ArrowRight') {
+    const cardWidth = 352 + 24;
+    if (e.key === "ArrowRight") {
       e.preventDefault();
-      scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    } else if (e.key === 'ArrowLeft') {
+      scrollRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
+    } else if (e.key === "ArrowLeft") {
       e.preventDefault();
-      scrollRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    } else if (e.key === 'Home') {
+      scrollRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    } else if (e.key === "Home") {
       e.preventDefault();
-      scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-    } else if (e.key === 'End') {
+      scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    } else if (e.key === "End") {
       e.preventDefault();
-      scrollRef.current.scrollTo({ left: scrollRef.current.scrollWidth, behavior: 'smooth' });
+      scrollRef.current.scrollTo({
+        left: scrollRef.current.scrollWidth,
+        behavior: "smooth",
+      });
     }
   };
 
   // Track active card
   const handleScroll = () => {
     if (!scrollRef.current) return;
-    const cardWidth = 352 + 24; // sync with lg:w-[352px]
+    const cardWidth = 352 + 24;
     const currentScroll = scrollRef.current.scrollLeft;
     const currentCard = Math.round(currentScroll / cardWidth);
     setActiveCard(currentCard);
   };
 
-  // Navigation buttons (for future use if needed)
-  const scrollToCard = (index) => {
-    const cardWidth = 352 + 24;
-    scrollRef.current.scrollTo({
-      left: index * cardWidth,
-      behavior: 'smooth'
-    });
-  };
-
-  const scrollPrev = () => {
-    const newIndex = Math.max(0, activeCard - 1);
-    scrollToCard(newIndex);
-  };
-
-  const scrollNext = () => {
-    const newIndex = Math.min(cards.length - 1, activeCard + 1);
-    scrollToCard(newIndex);
-  };
-
   useEffect(() => {
     const scrollElement = scrollRef.current;
     if (scrollElement) {
-      scrollElement.addEventListener('scroll', handleScroll);
-      return () => scrollElement.removeEventListener('scroll', handleScroll);
+      scrollElement.addEventListener("scroll", handleScroll);
+      return () => scrollElement.removeEventListener("scroll", handleScroll);
     }
   }, []);
 
@@ -132,6 +161,7 @@ export default function Whythegenesis() {
             <span className="text-[#F8B535]">The Genesis School?</span>
           </h1>
         </div>
+
         <div
           ref={scrollRef}
           tabIndex={0}
@@ -152,7 +182,7 @@ export default function Whythegenesis() {
           "
           style={{
             WebkitOverflowScrolling: "touch",
-            scrollBehavior: 'smooth'
+            scrollBehavior: "smooth",
           }}
         >
           {cards.map((card, idx) => (

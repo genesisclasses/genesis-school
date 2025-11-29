@@ -18,10 +18,14 @@ const snapshotsData = [
 ];
 
 const Snapshots = () => {
+  // isMobile true when screen < 768 (mobile / small tablet)
   const [isMobile, setIsMobile] = useState(false);
-  const scrollRef = useRef(null);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const total = snapshotsData.length;
+  const slideWidth = 360; // desktop slide width for marquee
+  const duplicated = [...snapshotsData, ...snapshotsData]; // duplicated for marquee to avoid jump
+  const mobileItems = snapshotsData; // don't animate on mobile; single list is fine
 
-  // Detect screen resize
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -29,25 +33,8 @@ const Snapshots = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Touch scroll: enable horizontal scrolling by touch on mobile
-  const horizontalScrollStyles = {
-    overflowX: 'auto',
-    WebkitOverflowScrolling: 'touch',
-    display: 'flex',
-    scrollSnapType: 'x mandatory',
-    paddingBottom: 8,
-    width: '100%',
-  };
-
-  const slideStyle = {
-    flex: '0 0 auto',
-    scrollSnapAlign: 'start',
-    width: 280, // reduce width for small screens
-    height: 380,
-    marginLeft: 9,
-    marginRight: 9,
-    background: '#fff',
-    overflow: 'hidden',
+  const handleImgLoad = () => {
+    setImagesLoaded((s) => s + 1);
   };
 
   return (
@@ -61,52 +48,81 @@ const Snapshots = () => {
             A glimpse into the activities, experiences, and community that make learning at Genesis dynamic and memorable.
           </p>
         </div>
+
+        {/* For screens >= 768px: use Marquee (auto-slide). */}
         {!isMobile ? (
-          // Desktop/Tablet Marquee
           <Marquee
             pauseOnHover
-            speed={60}
+            pauseOnClick
+            speed={80}
             direction="right"
             gradient={false}
             style={{ width: '100%', gap: '0px' }}
+            // start marquee after initial images loaded to reduce jump risk
+            play={imagesLoaded >= total}
           >
-            {snapshotsData.map((snap, idx) => (
+            {duplicated.map((snap, idx) => (
               <div
                 key={idx}
                 className="bg-white overflow-hidden shrink-0 mx-[9px]"
-                style={{ width: 360, height: 490 }}
+                style={{ width: slideWidth, height: 490, flex: '0 0 auto' }}
               >
                 <img
                   src={snap.imageUrl}
                   alt={snap.alt}
+                  width={slideWidth}
+                  height={490}
                   className="w-full h-full object-cover select-none"
                   draggable={false}
                   loading="eager"
+                  onLoad={handleImgLoad}
                 />
               </div>
             ))}
           </Marquee>
         ) : (
-          // Mobile: Touch scrollable horizontal row!
-          <div ref={scrollRef} style={horizontalScrollStyles}>
-            {snapshotsData.map((snap, idx) => (
+          /* For mobile/tablet (<768): NO auto-slide. Pure touch-scrollable row with scroll-snap. */
+          <div
+            className="touch-row"
+            style={{
+              display: 'flex',
+              overflowX: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              gap: 18,
+              paddingBottom: 8,
+              scrollSnapType: 'x mandatory',
+              // keep height consistent
+            }}
+          >
+            {mobileItems.map((snap, idx) => (
               <div
                 key={idx}
-                style={slideStyle}
-                className=""
+                style={{
+                  flex: '0 0 auto',
+                  width: 280,
+                  height: 380,
+                  scrollSnapAlign: 'start',
+                  background: '#fff',
+                  overflow: 'hidden',
+                  borderRadius: 6,
+                }}
+                className="touch-slide"
               >
                 <img
                   src={snap.imageUrl}
                   alt={snap.alt}
+                  width={280}
+                  height={380}
                   className="w-full h-full object-cover select-none"
                   draggable={false}
+                  onLoad={handleImgLoad}
                 />
               </div>
             ))}
           </div>
         )}
       </div>
-      {/* ...your responsive <style jsx> for margins as before... */}
+
       <style jsx>{`
         .snapshots-container {
           width: 100%;
@@ -136,6 +152,23 @@ const Snapshots = () => {
             padding-right: 48px;
             width: 100%;
           }
+        }
+
+        /* Hide scrollbars but keep scrollable on mobile (optional) */
+        .touch-row {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+        }
+        .touch-row::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Opera */
+        }
+
+        /* small visual smoothing */
+        .touch-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       `}</style>
     </section>

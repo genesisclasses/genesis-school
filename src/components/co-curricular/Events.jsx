@@ -18,7 +18,7 @@ const eventsData = [
       "At The Genesis School, learning finds life beyond the classroom. Our co-curricular activities open doors to imagination, expression, and discovery. Whether through music, dance, theatre, or art, every child learns to communicate ideas and emotions creatively. Sports, debates, and club projects strengthen collaboration and confidence, teaching lessons that extend far beyond school walls. ",
       "Each initiative is thoughtfully designed to balance intellect with empathy, helping students build character while exploring their passions. By celebrating individuality and teamwork in equal measure, The Genesis School shapes learners who not only perform well academically but also shine with creativity, courage, and compassion in everything they do."
     ],
-    image: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762409795/event-2-1_djbfjg.webp",
+    image: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764306893/co-activities_hknam0.webp",
     imgWidth: 555,
     imgHeight: 436,
     reverse: false,
@@ -29,7 +29,7 @@ const eventsData = [
       "Events at The Genesis School bring learning to life through celebration and creativity. From cultural performances and art exhibitions to science fairs and literary fests, every occasion encourages students to express themselves with confidence. These experiences foster teamwork, leadership, and respect for diversity, helping learners grow beyond academics.",
       "Annual functions, assemblies, and inter-house activities build community spirit and strengthen the bond between students, teachers, and parents. Each event is thoughtfully designed to balance joy with purpose, ensuring that every child finds a platform to shine. Every applause becomes motivation, every stage a stepping stone — inspiring students to embrace excellence and carry these lessons far beyond school life."
     ],
-    image: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762409795/event-3-1_nd7c3i.webp",
+    image: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764306894/co-events_qqzf5d.webp",
     imgWidth: 537,
     imgHeight: 508,
     reverse: true,

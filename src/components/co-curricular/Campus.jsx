@@ -1,10 +1,10 @@
 import React from 'react';
 
 const campusImages = [
-  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762410353/campus-1_uzacv2.webp", alt: "Classroom", title: "Modern Science & Computer Labs", description: "Advanced, well-equipped labs encourage exploration, experimentation, and innovation, helping students connect scientific concepts with real-world applications effectively." },
-  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762410354/campus-2_undinh.webp", alt: "Library", title: "Sports & Activity Zones", description: "Expansive, safe sports areas encourage teamwork, discipline, and resilience,  building confident, active learners with balanced minds and healthy lifestyles." },
-  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762410353/campus-3_ef20ky.webp", alt: "Lab", title: "Smart & Spacious Classrooms", description: "Technology-enabled, airy classrooms promote engagement, collaboration, and focus; creating an environment where learning feels inspiring, interactive, and meaningful daily." },
-  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1762410353/campus-4_vjevwa.webp", alt: "Aerial", title: "Library & Reading Hubs", description: "A peaceful reading space filled with knowledge, creativity, and inspiration; cultivating curiosity, imagination, and a lifelong passion for learning." },
+  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764306554/campu-1_irn1uu.webp", alt: "Classroom", title: "Modern Science & Computer Labs", description: "Advanced, well-equipped labs encourage exploration, experimentation, and innovation, helping students connect scientific concepts with real-world applications effectively." },
+  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764306555/campus-2_v1lhsr.webp", alt: "Library", title: "Sports & Activity Zones", description: "Expansive, safe sports areas encourage teamwork, discipline, and resilience,  building confident, active learners with balanced minds and healthy lifestyles." },
+  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764306555/campus-3_ubjeqv.webp", alt: "Lab", title: "Smart & Spacious Classrooms", description: "Technology-enabled, airy classrooms promote engagement, collaboration, and focus; creating an environment where learning feels inspiring, interactive, and meaningful daily." },
+  { src: "https://res.cloudinary.com/dluulfzrc/image/upload/v1764306555/campus-4_nsqn4a.webp", alt: "Aerial", title: "Library & Reading Hubs", description: "A peaceful reading space filled with knowledge, creativity, and inspiration; cultivating curiosity, imagination, and a lifelong passion for learning." },
 ];
 
 const GridItem = ({ img, large }) => (

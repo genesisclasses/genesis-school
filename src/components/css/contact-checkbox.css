@@ -25,3 +25,48 @@
   background-position: center;
   background-size: 14px;
 }
+
+
+/* base radio look (unchecked state = black border) */
+input[type="radio"].radio-button {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #000; /* black border when NOT checked */
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+/* inner dot (hidden by default) */
+input[type="radio"].radio-button::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #F8B535; /* dot color when checked */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.15s ease;
+}
+
+/* WHEN CHECKED → change border to orange + show dot */
+input[type="radio"].radio-button:checked {
+  border-color: #F8B535;
+}
+
+input[type="radio"].radio-button:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* focus effect */
+input[type="radio"].radio-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(248,181,53,0.25);
+}
+
+

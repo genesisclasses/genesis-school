@@ -97,11 +97,11 @@ export default function Mission() {
                           w-[732px] h-[522px] overflow-hidden
                           items-center justify-center md:block hidden">
             <Image
-              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762420168/768-mission_ymems8.webp"
+              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1764241701/about-img-2_s3ujbg.webp"
               alt="The Genesis School"
               width={800}
               height={700}
-              className="object-cotain mt-16"
+              className="object-contain mt-16"
               priority
             />
           </div>
@@ -112,7 +112,7 @@ export default function Mission() {
                           rounded-2xl lg:rounded-3xl overflow-hidden
                             items-center justify-center block md:hidden px-3">
             <Image
-              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1762510674/imgi_26_image_1_jmkhnv.webp"
+              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1764241701/about-img-2_s3ujbg.webp"
               alt="The Genesis School"
               width={800}
               height={700}
