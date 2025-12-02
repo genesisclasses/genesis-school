@@ -115,11 +115,11 @@ export default function DirectorMessage() {
       {/* Paragraphs & Name Section for mobile, tablet and 1024px */}
       <div className="director-para mt-3 lg:mt-6 md:block xl:hidden md:px-4 lg:px-5">
         {directorData.directorInfo.paragraphs.map((para, index) => (
-          <p key={index} className="text-[16px] md:text-[18px] text-[#777777] mb-3">
+          <p key={index} className="text-[16px] lg:text-[18px] text-[#777777] mb-3">
             {para}
           </p>
         ))}
-        <h3 className="md:text-[20px] text-[18px] font-bold text-[#333333] mb-1">
+        <h3 className="lg:text-[20px] text-[18px] font-bold text-[#333333] mb-1">
           {directorData.directorInfo.name}
         </h3>
         <p className="text-[16px] font-bold text-[#333333] mb-0">

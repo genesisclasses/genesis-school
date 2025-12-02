@@ -94,14 +94,14 @@ export default function Mission() {
 
           {/* Center Image for tablet*/}
           <div className="relative z-10 -my-20 md:-my-28 lg:my-0
-                          w-[732px] h-[522px] overflow-hidden
+                          w-[700px] h-[838px] 
                           items-center justify-center md:block hidden">
             <Image
-              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1764241701/about-img-2_s3ujbg.webp"
+              src="https://res.cloudinary.com/dluulfzrc/image/upload/v1764648793/mission-vision-768px_wwdnpc.webp"
               alt="The Genesis School"
               width={800}
               height={700}
-              className="object-contain mt-16"
+              className="object-cover mt-16"
               priority
             />
           </div>
@@ -127,7 +127,7 @@ export default function Mission() {
                           w-[85%] md:w-[643px] lg:w-[400px]
                           flex flex-col justify-center text-left
                           lg:rounded-r-2xl lg:rounded-l-none
-                          lg:z-auto mt-10 md:mt-7 lg:mt-0">
+                          lg:z-auto mt-10 md:mt-[125px] lg:mt-0">
             <h1 className="text-[22px] font-semibold text-[#002650] mb-4">
               Vision
             </h1>
