@@ -139,6 +139,14 @@ export default function Footer() {
                 </p>
               </Link>
             </li>
+            <li>
+              <Link href="/mandate-disclosure">
+                <p className={`border-b-2 w-fit text-16px md:text-[14px] xl:text-[16px] mx-auto md:mx-0 transition-all duration-200
+                  ${isActive('/mandate-disclosure') ? 'border-[#F8B535] ' : 'border-transparent hover:border-[#F8B535]'}`}>
+                  Mandate Disclosure
+                </p>
+              </Link>
+            </li>
           </ul>
           {/* Contact Us */}
           <div >
