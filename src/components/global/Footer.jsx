@@ -171,8 +171,8 @@ export default function Footer() {
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <Mail size={19} />
-                <Link href="mailto:info@genesisschool.in" >
-                  <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0 text-16px md:text-[14px] xl:text-[16px]">info@genesisschool.in</p>
+                <Link href="mailto:thegenesisschoolknl@gmail.com" >
+                  <p className="border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit mx-auto md:mx-0 text-16px md:text-[14px] xl:text-[16px]">thegenesisschoolknl@gmail.com</p>
                 </Link>
               </li>
             </ul>

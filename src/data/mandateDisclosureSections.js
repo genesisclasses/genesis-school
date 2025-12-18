@@ -16,8 +16,8 @@ export const mandateDisclosureSections = [
         "SCHOOL EMAIL ID",
         {
           type: "link",
-          label: "thegenesisschoolkarnal@gmail.com",
-          href: "mailto:thegenesisschoolkarnal@gmail.com",
+          label: "thegenesisschoolknl@gmail.com",
+          href: "mailto:thegenesisschoolknl@gmail.com",
         },
       ],
       ["CONTACT DETAILS", "9671111069"],
@@ -58,7 +58,7 @@ export const mandateDisclosureSections = [
       },
       {
         label: "No Objection Certificate",
-        href: "#",
+        href: "/assets/mandate-disclosure/no-objection-certificate.pdf",
       },
       {
         label: "Building Safety Certificate",
@@ -70,11 +70,11 @@ export const mandateDisclosureSections = [
       },
       {
         label: "Navyug Shiksha Samiti Society Certificate",
-        href: "#",
+        href: "/assets/mandate-disclosure/list-of-elected-governing-body-(3).pdf",
       },
       {
         label: "Water Health and Sanitation Certificate",
-        href: "/assets/mandate-disclosure/sanitation-&-hygine.pdf",
+        href: "#",
       },
     ],
   },
@@ -86,11 +86,11 @@ export const mandateDisclosureSections = [
     rows: [
       {
         label: "Annual Academic Calendar",
-        href: "#",
+        href: "/assets/mandate-disclosure/academic-calendar-26-27.pdf",
       },
       {
         label: "School Management Committee",
-        href: "#",
+        href: "/assets/mandate-disclosure/smc-(2).pdf",
       },
       {
         label: "List of Parent Teacher Association Members (PTA)",
@@ -98,7 +98,7 @@ export const mandateDisclosureSections = [
       },
       {
         label: "Last Three Years Result of the Board Examination",
-        href: "#",
+        href: "/assets/mandate-disclosure/result-compressed-f.pdf",
       },
     ],
   },

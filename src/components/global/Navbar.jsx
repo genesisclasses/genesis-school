@@ -106,7 +106,7 @@ export default function Navbar() {
           </span>
           <span className="flex items-center border-b-2 border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit md:mx-0 md:text-[14px] tracking-wide">
             <Mail size={14} className="mr-2" />
-            <a href="mailto:info@genesisschool.in ">info@genesisschool.in</a>
+            <a href="mailto:thegenesisschoolknl@gmail.com">thegenesisschoolknl@gmail.com</a>
           </span>
         </div>
       </div>
