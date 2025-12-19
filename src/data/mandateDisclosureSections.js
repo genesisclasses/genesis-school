@@ -58,7 +58,7 @@ export const mandateDisclosureSections = [
       },
       {
         label: "No Objection Certificate",
-        href: "/assets/mandate-disclosure/no-objection-certificate.pdf",
+        href: "/assets/mandate-disclosure/no-objection-2-certificate.pdf",
       },
       {
         label: "Building Safety Certificate",
@@ -74,7 +74,7 @@ export const mandateDisclosureSections = [
       },
       {
         label: "Water Health and Sanitation Certificate",
-        href: "#",
+        href: "/assets/mandate-disclosure/water-health-and-sanitation-certificate.pdf",
       },
     ],
   },
