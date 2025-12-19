@@ -58,7 +58,7 @@ export const mandateDisclosureSections = [
       },
       {
         label: "No Objection Certificate",
-        href: "/assets/mandate-disclosure/no-objection-2-certificate.pdf",
+        href: "/assets/mandate-disclosure/No Objection Certificate .pdf",
       },
       {
         label: "Building Safety Certificate",
@@ -94,7 +94,7 @@ export const mandateDisclosureSections = [
       },
       {
         label: "List of Parent Teacher Association Members (PTA)",
-        href: "#",
+        href: "/assets/mandate-disclosure/PTA.pdf",
       },
       {
         label: "Last Three Years Result of the Board Examination",
@@ -138,7 +138,7 @@ export const mandateDisclosureSections = [
         {
           type: "link",
           label: "Youtube",
-          href: "#",
+          href: "https://youtube.com/@thegenesis_school?si=yesaeJtD0FHVQfRW",
         },
       ],
     ],
