@@ -29,7 +29,7 @@ export default function MandateDisclosureInfo({ section }) {
                 1
               </td>
               <td
-                className="border border-gray-200 px-4 py-3 text-center font-medium tracking-wide"
+                className="border border-gray-200 px-4 py-3 text-center font-medium"
                 colSpan={2}
               >
                 {year}
@@ -44,6 +44,9 @@ export default function MandateDisclosureInfo({ section }) {
   /* ===================================================== */
   /* ALL OTHER TABLES */
   /* ===================================================== */
+
+  let serial = 0;
+
   return (
     <div className="overflow-x-auto bg-white border border-gray-200 rounded-md shadow-sm">
       <table
@@ -58,19 +61,21 @@ export default function MandateDisclosureInfo({ section }) {
 
         <tbody>
           {rows.map((row, i) => {
+            serial++;
+
             /* ================= ACTION TABLE ================= */
             if (isActionTable) {
               return (
                 <tr key={i}>
-                  <td className="border border-gray-200 text-center font-semibold py-3 tracking-wide">
-                    {i + 1}
+                  <td className="border border-gray-200 text-center font-semibold py-3">
+                    {serial}
                   </td>
 
-                  <td className="border border-gray-200 px-4 py-3 tracking-wide">
+                  <td className="border border-gray-200 px-4 py-3">
                     {row.label}
                   </td>
 
-                  <td className="border border-gray-200 px-4 py-3 text-center tracking-wide">
+                  <td className="border border-gray-200 px-4 py-3 text-center">
                     <a
                       href={row.href}
                       target="_blank"
@@ -89,15 +94,22 @@ export default function MandateDisclosureInfo({ section }) {
 
             return (
               <tr key={i}>
-                <td className="border border-gray-200 text-center font-semibold py-3 tracking-wide">
-                  {isSubRow ? "" : i + 1}
+                {/* SERIAL NUMBER */}
+                <td className="border border-gray-200 text-center font-semibold py-3">
+                  {serial}
                 </td>
 
-                <td className="border border-gray-200 px-4 py-3 font-medium tracking-wide">
+                {/* LABEL */}
+                <td
+                  className={`border border-gray-200 px-4 py-3 ${
+                    isSubRow ? "pl-8 font-normal" : "font-medium"
+                  }`}
+                >
                   {label}
                 </td>
 
-                <td className="border border-gray-200 px-4 py-3 text-center tracking-wide">
+                {/* VALUE */}
+                <td className="border border-gray-200 px-4 py-3 text-center">
                   {typeof value === "object" ? (
                     <a
                       href={value.href}

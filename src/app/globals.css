@@ -1,32 +1,37 @@
 @import "tailwindcss";
 
-@theme inline {
-  /* Map next/font variables to Tailwind font utilities */
-  --font-sans: var(--font-lato);
-  --font-serif: var(--font-kameron);
-}
-
-/* Default font except h1/h2 - using CSS variable */
-body, div, p, ul, li, h3, h4, h5, h6, button, input, label, Link {
-  font-family: var(--font-lato), sans-serif;
-}
-
+/* ==============================
+   BASE TYPOGRAPHY
+============================== */
 body {
+  font-family: var(--font-lato), sans-serif;
   overflow-x: hidden;
+}
+
+/* ONLY h1, h2 use Cormorant */
+h1,
+h2 {
+  font-family: var(--font-cormorant), serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-h1, h2, span, a {
-  font-family: var(--font-kameron), serif;
+/* ==============================
+   UTILITIES
+============================== */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-
-/* Shimmer animation for loading placeholders in blogs */
+/* ==============================
+   ANIMATIONS
+============================== */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -54,18 +59,4 @@ h1, h2, span, a {
 
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.no-scrollbar {
-  -webkit-overflow-scrolling: touch;
-}
-html {
-  scroll-behavior: smooth;
 }
