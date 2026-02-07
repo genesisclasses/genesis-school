@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone",
   images: {
-    domains: ["res.cloudinary.com"], // ✅ allow Cloudinary images
+    domains: ["res.cloudinary.com"],
     remotePatterns: [
       {
         protocol: "https",
@@ -13,4 +14,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;   // ✅ REQUIRED IN .mjs
+export default nextConfig;
