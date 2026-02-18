@@ -163,12 +163,16 @@ export default function Footer() {
                   <p className='w-[200px] md:w-fit -mt-1'>The Genesis School sector-8, urban estate, Karnal 132001, Haryana</p>
                 </a>
               </li>
-              <li className="flex md:justify-start  justify-center gap-2 items-center">
+              <li className="flex md:justify-start justify-center gap-2 items-center">
                 <Phone size={16} />
-                <Link href="tel:+919876543210" className="border-b-2 text-16px md:text-[14px] xl:text-[16px] border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0">
-                  <p className=''>+91 98765 43210</p>
-                  <p className=''>+91 9671111069</p>
-                </Link>
+                <div className="flex flex-col items-center md:items-start">
+                  <Link href="tel:+919876543210" className="border-b-2 text-16px md:text-[14px] xl:text-[16px] border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit">
+                    +91 98765 43210
+                  </Link>
+                  <Link href="tel:+919671111069" className="border-b-2 text-16px md:text-[14px] xl:text-[16px] border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit">
+                    +91 9671111069
+                  </Link>
+                </div>
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
                 <Mail size={19} />
