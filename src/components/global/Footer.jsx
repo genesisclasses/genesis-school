@@ -151,8 +151,8 @@ export default function Footer() {
           {/* Contact Us */}
           <div >
             <h4 className="font-semibold mb-4 text-base">Contact Us</h4>
-            <ul className="space-y-2 text-sm text-center md:text-left">
-              <li className="flex md:justify-start justify-center gap-2 items-start">
+            <ul className="md:space-y-6 space-y-4 text-sm text-center md:text-left">
+              <li className="flex md:justify-start justify-center  gap-0 md:gap-2 items-start">
                 <MapPin size={16} />
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Genesis+School,+Sector+45,+Karnal,+Haryana+122003"
@@ -160,13 +160,14 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="border-b-2  border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0 text-16px md:text-[14px] xl:text-[16px]"
                 >
-                  <p>Genesis School, Sector 45,<br />Karnal, Haryana – 122003</p>
+                  <p className='w-[200px] md:w-fit -mt-1'>The Genesis School sector-8, urban estate, Karnal 132001, Haryana</p>
                 </a>
               </li>
               <li className="flex md:justify-start  justify-center gap-2 items-center">
                 <Phone size={16} />
                 <Link href="tel:+919876543210" className="border-b-2 text-16px md:text-[14px] xl:text-[16px] border-transparent hover:border-[#F8B535] transition-all duration-200 w-fit  md:mx-0">
                   <p className=''>+91 98765 43210</p>
+                  <p className=''>+91 9671111069</p>
                 </Link>
               </li>
               <li className="flex md:justify-start justify-center gap-2 items-center">
@@ -179,63 +180,63 @@ export default function Footer() {
           </div>
           {/* Social Links */}
           {/* Social Links */}
-<div>
-  <h4 className="font-semibold mb-4 text-base">Social Links</h4>
-  <ul className="space-y-6">
-    <li className="flex md:justify-start justify-center items-center">
-      <Link
-        href="https://instagram.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-4"  // increased gap
-      >
-        <Instagram size={20} />
-      </Link>
-    </li>
+          <div>
+            <h4 className="font-semibold mb-4 text-base">Social Links</h4>
+            <ul className="space-y-6">
+              <li className="flex md:justify-start justify-center items-center">
+                <Link
+                  href="https://instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4"  // increased gap
+                >
+                  <Instagram size={20} />
+                </Link>
+              </li>
 
-    <li className="flex md:justify-start justify-center items-center">
-      <Link
-        href="https://facebook.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-4"  // increased gap
-      >
-        <Facebook size={20} />
-      </Link>
-    </li>
+              <li className="flex md:justify-start justify-center items-center">
+                <Link
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4"  // increased gap
+                >
+                  <Facebook size={20} />
+                </Link>
+              </li>
 
-    <li className="flex md:justify-start justify-center items-center">
-      <Link
-        href="https://youtube.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-4"  // increased gap
-      >
-        <Youtube size={20} />
-      </Link>
-    </li>
-  </ul>
-</div>
+              <li className="flex md:justify-start justify-center items-center">
+                <Link
+                  href="https://youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4"  // increased gap
+                >
+                  <Youtube size={20} />
+                </Link>
+              </li>
+            </ul>
+          </div>
 
         </div>
       </div>
       {/* Bottom Bar */}
       <div className="bg-[#09254a] h-[70px] w-full text-white flex items-center px-4 font-lato italic ">
-  <div className="w-full max-w-[1729px] mx-auto flex justify-between items-center text-[12px] md:text-[16px] xl:px-[75px] 2xl:px-[91px]">
+        <div className="w-full max-w-[1729px] mx-auto flex justify-between items-center text-[12px] md:text-[16px] xl:px-[75px] 2xl:px-[91px]">
 
-    {/* Left */}
-    <p>Copyright ©The Genesis School 2025.</p>
+          {/* Left */}
+          <p>Copyright ©The Genesis School 2025.</p>
 
-    {/* Right */}
-    <p className='text-[12px] md:text-[16px]'>
-      Maintained by{" "}
-      <Link href="https://indiefluence.in/" className="underline">
-        Indiefluence
-      </Link>
-    </p>
+          {/* Right */}
+          <p className='text-[12px] md:text-[16px]'>
+            Maintained by{" "}
+            <Link href="https://indiefluence.in/" className="underline">
+              Indiefluence
+            </Link>
+          </p>
 
-  </div>
-</div>
+        </div>
+      </div>
 
     </footer>
   );
