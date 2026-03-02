@@ -30,7 +30,7 @@ const Card = ({ title, iconPath, href, onActivate }) => {
         h-52 sm:h-56 lg:h-58 xl:h-59
         relative z-10 min-w-[260px]
         lg:min-w-5 xl:min-w-60
-        text-left cursor-pointer
+        text-left cursor-pointer md:mt-10 xl:mt-0
       "
       aria-label={`Go to ${title}`}
     >
