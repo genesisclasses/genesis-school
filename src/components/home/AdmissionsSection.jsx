@@ -35,7 +35,7 @@ const AdmissionsSection = () => (
         mb-3 md:mb-4 tracking-wide
       ">
         Admissions for <br className="md:hidden" />
-        2025-26 are now open!
+        2026-27 are now open!
       </h1>
 
       {/* Features */}

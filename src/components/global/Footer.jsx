@@ -229,7 +229,7 @@ export default function Footer() {
         <div className="w-full max-w-[1729px] mx-auto flex justify-between items-center text-[12px] md:text-[16px] xl:px-[75px] 2xl:px-[91px]">
 
           {/* Left */}
-          <p>Copyright ©The Genesis School 2025.</p>
+          <p>Copyright ©The Genesis School 2026.</p>
 
           {/* Right */}
           <p className='text-[12px] md:text-[16px]'>

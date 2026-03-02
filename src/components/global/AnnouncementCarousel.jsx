@@ -9,13 +9,13 @@ const announcements = [
     id: 1,
     icon: '🗓️',
     title: 'UPDATE',
-    message: 'The Genesis School students excel at State-Level Science Olympiad 2025.'
+    message: 'The Genesis School students excel at State-Level Science Olympiad 2026.'
   },
   {
     id: 2,
     icon: '🏅',
     title: 'EVENT',
-    message: 'Annual Sports Meet 2025 held at The Genesis School Campus.'
+    message: 'Annual Sports Meet 2026 held at The Genesis School Campus.'
   }
 ];
 
