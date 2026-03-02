@@ -52,7 +52,7 @@ const Hero = () => {
         {/* Buttons: responsive width */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mt-2">
           <Link
-            href="https://www.youtube.com/watch?v=D4yhGhKx60U"
+            href="https://youtu.be/CujvdBFfftM"
             target="_blank"
             rel="noopener noreferrer"
             className="
