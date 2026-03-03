@@ -47,7 +47,7 @@ const Hero = () => {
           rounded-4xl text-xs sm:text-sm shadow-lg cursor-pointer
           w-[200px] sm:w-[220px] tracking-wide
           transition duration-300 hover:bg-black hover:text-white active:bg-[#333333]">
-          <p>Watch Full Documentation</p>
+          <p>Watch Full Documentary</p>
         </Link>
 
         <Link
